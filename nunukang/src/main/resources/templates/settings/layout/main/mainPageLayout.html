@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lagn="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <th:block th:replace="settings/config/main/mainPageLayoutConfig :: mainPageLayoutConfig"></th:block>
+</head>
+<body>
+
+
+    <div class="slideMessageDiv">
+        <div class="commonMessageHeaderOutterDiv">
+            <div class="commonMessageHeaderFunctionalDiv">
+                <p id="closeMessageDiv"><span><i class="fa-solid fa-angle-left"></i> simjungh</span></p>
+            </div> 
+            <div class="commonMessageHeaderSubDiv">
+                <!-- <div class="commonMessageHeaderInnerSubDiv1">test</div>
+                <div class="commonMessageHeaderInnerSubDiv2">test</div> -->
+            </div>
+        </div>
+        
+        <div class="commonUserSearchOutterDiv">
+            <div class="changeColorObj">
+                <div class="searchIconDiv">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="searchInputDiv">
+                    <input type="text" class="searchInput">
+                </div>
+            </div>
+        </div>
+        <div class="slideMessageInnerTmpDiv"></div>
+        <div class="commonMessageContentDiv">
+            <div class="commonMessageContentHeaderDiv">
+                <div>
+                    <p>메시지</p>
+                </div>
+            </div>
+            <div class="messagesOutterDiv">
+                <div class="messagesDiv">
+                    <div class="messageDiv">
+                        <div class="messageUserProfileImgDiv">
+                            <img th:src="@{/images/test2.png}">
+                        </div>
+                        <div class="messageInfoDiv"></div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+    </div>
+
+    <div class="commonAlertOutterDiv">
+        <div class="commonAlertHeaderOutterDiv" >
+            <div class="commonAlertHeaderFunctionalDiv">
+                <p id="closeAlertDivButton"><span><i class="fa-solid fa-angle-left"></i> 알림</span></p>
+            </div> 
+            <div class="commonAlertHeaderSubDiv">
+                <!-- <div class="commonMessageHeaderInnerSubDiv1">test</div>
+                <div class="commonMessageHeaderInnerSubDiv2">test</div> -->
+            </div>
+        </div>
+        <div class="commonAlertContentDiv">
+            <div class="commonAlertContentIconDiv">
+                <div class="theme">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+            </div>
+            <div class="commonAlertContentTextDiv">
+                <div>
+                    <div class="commonAlertContentText1">
+                        <p>팔로우 요청</p>
+                    </div>
+                    <div class="commonAlertContentText2">
+                        <p>요청을 승인하거나 무시합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slideMainOutterDiv">
+        <div class="slideMainDiv">
+            <th:block th:replace="settings/fragments/common/commonUpperMenuBar :: commonUpperMenuBar"></th:block>
+        
+            <th:block layout:fragment="postsBar"></th:block>
+            
+            <th:block th:replace="settings/fragments/common/commonLowerMenuBar :: commonLowerMenuBar"></th:block>
+
+            <!-- postInfoSlideDiv -->
+            <div class="postInfoDivInSlideMainDiv changeColorObj" onclick="showPostInfoDiv()">
+                <div class="postInfoGapDiv changeColorObj">
+                    <div class="changeColorObj2"></div>
+                </div> 
+                <div class="postInfoButton1Div postButtonDiv">
+                    <div>
+                        <div class="postInfoButton1DivButton1 changeColorObj2">
+                            <div class="postInfo1IconDiv">
+                                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                            </div>
+                            <div class="postInfo1TextDiv">
+                                <p>공유</p>
+                            </div>
+                        </div>
+                        <div class="postInfoButton1DivButton2 changeColorObj2">
+                            <div class="postInfo1IconDiv">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </div>
+                            <div class="postInfo1TextDiv">
+                                <p>저장</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="postInfoButton2Div postButtonDiv">
+                    <div class="changeColorObj2">
+                        <div class="postInfo2IconDiv">
+                            <i class="fa-solid fa-user-minus"></i>
+                        </div>
+                        <div class="postInfo2TextDiv">
+                            <p>팔로우 취소</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="postInfoButton3Div postButtonDiv">
+                    <div class="changeColorObj2">
+                        <div class="postInfo2IconDiv postInfoReportDiv">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <div class="postInfo2TextDiv postInfoReportDiv">
+                            <p>신고</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    
+    </div>
+    
+
+    
+
+</body>
+</html>
