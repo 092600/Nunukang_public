@@ -12,6 +12,7 @@
 
 
     <div class="slideMessageDiv">
+        
         <div class="commonMessageHeaderOutterDiv">
             <div class="commonMessageHeaderFunctionalDiv">
                 <p id="closeMessageDiv"><span><i class="fa-solid fa-angle-left"></i> simjungh</span></p>
@@ -21,61 +22,79 @@
                 <div class="commonMessageHeaderInnerSubDiv2">test</div> -->
             </div>
         </div>
-        
-        <div class="commonUserSearchOutterDiv">
-            <div class="changeColorObj">
-                <div class="searchIconDiv">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <div class="searchInputDiv">
-                    <input type="text" class="searchInput">
-                </div>
-            </div>
-        </div>
-        <div class="slideMessageInnerTmpDiv"></div>
-        <div class="commonMessageContentDiv">
-            <div class="commonMessageContentHeaderDiv">
-                <div>
-                    <p>메시지</p>
-                </div>
-            </div>
-            <div class="messagesOutterDiv">
-                <div class="messagesDiv">
-                    <div class="messageDiv">
-                        <div class="messageUserProfileImgDiv">
-                            <img th:src="@{/images/test2.png}">
-                        </div>
-                        <div class="messageInfoDiv"></div>
+        <div class="slideMessageScrollDiv">
+            <div class="commonUserSearchOutterDiv">
+                <div class="userSearchDiv">
+                    <div class="searchIconDiv">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="searchInputDiv">
+                        <input type="text" class="searchInput" placeholder="검색">
                     </div>
                 </div>
             </div>
-        </div>    
+            <div class="slideMessageInnerTmpDiv"></div>
+            <div class="commonMessageContentDiv">
+                <div class="commonMessageContentHeaderDiv">
+                    <div>
+                        <p>메시지</p>
+                    </div>
+                </div>
+                <div class="messagesOutterDiv">
+                    <div class="messagesDiv">
+                        <div class="messageDiv" th:each="n : ${#numbers.sequence(1,11)}">
+                            <div class="messageUserProfileImgDiv">
+                                <img th:src="@{/images/test2.png}">
+                            </div>
+                            <div class="messageInfoDiv">
+                                <div>
+                                    <div class="messageUsernameDiv">
+                                        <p>simjungh</p>
+                                    </div>
+                                    <div class="messageTimeInfoDiv">
+                                        <p>14분 전 전송됨</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="messageFunctionalOutterDiv">
+                                <div class="messageFunctionalDiv1"></div>
+                                <div class="messageFunctionalDiv2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>      
+        </div>
 
     </div>
 
+
+    
     <div class="commonAlertOutterDiv">
         <div class="commonAlertHeaderOutterDiv" >
             <div class="commonAlertHeaderFunctionalDiv">
                 <p id="closeAlertDivButton"><span><i class="fa-solid fa-angle-left"></i> 알림</span></p>
             </div> 
             <div class="commonAlertHeaderSubDiv">
-                <!-- <div class="commonMessageHeaderInnerSubDiv1">test</div>
-                <div class="commonMessageHeaderInnerSubDiv2">test</div> -->
+                <!-- <div class="commonMessageHeaderInnerSubDiv1">test</div> -->
+                <!-- <div class="commonMessageHeaderInnerSubDiv2">test</div> -->
             </div>
         </div>
-        <div class="commonAlertContentDiv">
-            <div class="commonAlertContentIconDiv">
-                <div class="theme">
-                    <i class="fa-solid fa-user-plus"></i>
-                </div>
-            </div>
-            <div class="commonAlertContentTextDiv">
-                <div>
-                    <div class="commonAlertContentText1">
-                        <p>팔로우 요청</p>
+        <div class="commonAlertScrollDiv">
+            <div class="commonAlertContentDiv">
+                <div class="commonAlertContentIconDiv">
+                    <div class="theme">
+                        <i class="fa-solid fa-user-plus"></i>
                     </div>
-                    <div class="commonAlertContentText2">
-                        <p>요청을 승인하거나 무시합니다.</p>
+                </div>
+                <div class="commonAlertContentTextDiv">
+                    <div>
+                        <div class="commonAlertContentText1">
+                            <p>팔로우 요청</p>
+                        </div>
+                        <div class="commonAlertContentText2">
+                            <p>요청을 승인하거나 무시합니다.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -83,12 +102,13 @@
     </div>
 
     <div class="slideMainOutterDiv">
+
         <div class="slideMainDiv">
-            <th:block th:replace="settings/fragments/common/commonUpperMenuBar :: commonUpperMenuBar"></th:block>
+            <th:block th:replace="settings/fragments/common/upperMenu/commonUpperMenuBar :: commonUpperMenuBar"></th:block>
         
             <th:block layout:fragment="postsBar"></th:block>
             
-            <th:block th:replace="settings/fragments/common/commonLowerMenuBar :: commonLowerMenuBar"></th:block>
+            <th:block th:replace="settings/fragments/common/lowerMenu/commonLowerMenuBar :: commonLowerMenuBar"></th:block>
 
             <!-- postInfoSlideDiv -->
             <div class="postInfoDivInSlideMainDiv changeColorObj" onclick="showPostInfoDiv()">
@@ -136,8 +156,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
 
     

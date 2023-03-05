@@ -14,7 +14,6 @@ function test2() {
 
 
 function showPostInfoDiv() {
-    // $("#postInfoDivInSlideMainDiv").css("display","block");
     $(".postInfoDivInSlideMainDiv").slideToggle(400);
 }
 

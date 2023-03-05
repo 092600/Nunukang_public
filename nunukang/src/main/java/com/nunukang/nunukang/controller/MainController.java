@@ -10,5 +10,11 @@ public class MainController {
     public String mainPage() {
         return "pages/main/mainPage";
     }
+
+
+    @GetMapping(value = "/mypage")
+    public String myPage() {
+        return "pages/main/mypage";
+    }
     
 }

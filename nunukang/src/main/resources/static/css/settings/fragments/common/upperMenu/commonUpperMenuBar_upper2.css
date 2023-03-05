@@ -1,0 +1,67 @@
+@media ( max-width: 768px ) {
+    
+    .commonUpperMenuBarOutterDiv {
+        width : 100vw;
+        height : 8vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+ 
+        .commonUpperHeaderFunctionalDiv {
+            width : 65%;
+            height : 100%;
+
+            display : flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .commonUpperHeaderFunctionalDiv p {
+                width : 80%;
+                height : 90%;
+
+                display : flex;
+                align-items:flex-end;
+                justify-content: left;
+
+                font-size : 25px;
+                font-weight: 400;
+            }
+
+
+        .commonUpperHeaderSubDiv {
+            width : 35%;
+            height : 100%;
+
+            display : flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .commonUpperHeaderInnerSubDiv1 {
+                width : 50%;
+                height : 100%;
+
+                display : flex;
+                align-items: center;
+                justify-content: right;
+            }
+
+            .commonUpperHeaderInnerSubDiv2 {
+                width : 50%;
+                height : 100%;
+
+                display : flex;
+                align-items: center;
+                justify-content: center;
+            } 
+
+
+
+    
+}
+
