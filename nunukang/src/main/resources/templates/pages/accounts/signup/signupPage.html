@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sodipodi="http://java.sun.com/xml/ns/j2ee"
+        xmlns:inkscape="http://java.sun.com/xml/ns/javaee"
+        layout:decorate="~{settings/layout/pages/accounts/signup/accountsSignupLayout}"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>누누강 : 메인페이지</title>
+
+    <th:block th:replace="settings/config/pages/accounts/signup/signupPageConfig :: signupPageConfig"></th:block>
+    
+
+</head>
+<body>
+
+    <div layout:fragment="content">
+         <div>
+
+            <div class="nameDiv">
+                <div>
+                    <div class="nameTextDiv">
+                        <p>이름 </p>
+                    </div>
+                    <div class="nameInputDiv">
+                        <input id="name">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="emailDiv">
+                <div>
+                    <div class="emailTextDiv">
+                        <p>이메일 </p>
+                    </div>
+                    <div class="emailInputDiv">
+                        <input id="email">
+                        <button type="button">중복확인</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="passwordDiv">
+                <div>
+                    <div class="passwordTextDiv">
+                        <p>비밀번호 </p>
+                    </div>
+                    <div class="passwordInputDiv">
+                        <input id="password">
+                    </div>
+                    <p class="passwordInfoPTag"></p>
+                </div>
+            </div>
+            
+            <div class="passwordDiv">
+                <div>
+                    <div class="passwordTextDiv">
+                        <div class="passwordTextDiv1">
+                            <p>비밀번호 재확인</p>
+                        </div>
+                    </div>
+                    <div class="passwordInputDiv">
+                        <input id="password2">
+                    </div>
+                    <p class="passwordInfoPTag"></p>
+                </div>
+            </div>     
+            
+        </div>
+         
+        
+    </div>
+
+
+</body>
+</html>

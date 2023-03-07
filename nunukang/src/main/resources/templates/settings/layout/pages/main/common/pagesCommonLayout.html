@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+
+    <th:block th:replace="settings/config/pages/main/common/pagesCommonLayoutConfig :: pagesCommonLayoutConfig"></th:block>
+</head>
+<body>
+
+    <div th:replace="settings/fragments/pages/main/common/header/header :: header"></div>
+
+    <div class="content" layout:fragment="content"></div>
+
+    <div th:replace="settings/fragments/pages/main/common/footer/footer :: footer"></div>
+
+</body>
+</html>

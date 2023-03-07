@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+
+  <th:block th:fragment="mapPageConfig">
+
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/pages/main/map/map.css}" >
+
+    <!-- js -->
+    <script th:src="@{/js/pages/main/map/map.js}"></script>
+
+    <!-- google map -->
+    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+    <script defer th:src="@{'https://maps.googleapis.com/maps/api/js?'+'key='+${@environment.getProperty('google_map_secret_key')}+'&callback=initMap&v=weekly'}"></script>
+
+    
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>  
+
+  
+
+  </th:block>
+
+</head>
+
+</html>

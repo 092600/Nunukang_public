@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div th:fragment="footer" class="footerOuterDiv">
+        <div>
+            <a th:href="@{/ranking}">
+                <div class="footerMenuButton">
+                    <div class="footerMenuImgDiv">
+                        <i class="fa-solid fa-ranking-star"></i>
+                    </div>
+                    <div class="footerMenuTextDiv">
+                        <p>순위</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a th:href="@{/pictures}">
+                <div class="footerMenuButton">
+                    <div class="footerMenuImgDiv">
+                        <i class="fa-regular fa-images"></i>
+                    </div>
+                    <div class="footerMenuTextDiv">
+                        <p>나의어장</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a th:href="@{/}">
+                <div class="footerMenuButton">
+                    <div class="footerMenuImgDiv">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <div class="footerMenuTextDiv">
+                        <p>사진 찍기</p>
+                    </div>
+                
+                </div>
+            </a>
+        </div>
+        <div>
+            <a th:href="@{/map}">
+                <div class="footerMenuButton">
+                    <div class="footerMenuImgDiv">
+                        <i class="fa-solid fa-map"></i>
+                    </div>
+                    <div class="footerMenuTextDiv">
+                        <p>지도</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a th:href="@{/community}">
+                <div class="footerMenuButton">
+                    <div class="footerMenuImgDiv">
+                        <i class="fa-regular fa-comment"></i>
+                    </div>
+                    <div class="footerMenuTextDiv">
+                        <p>커뮤니티</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

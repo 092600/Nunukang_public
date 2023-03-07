@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <div th:fragment="header" class="headerOuterDiv">
+            <div class="headerLeft">
+                <a th:href="@{/}"><img th:src="@{/images/nunukangLogo/small_logo.png}"></a>
+            </div>
+            <div class="headerCenter"></div>
+            <div class="headerRight">
+                <div>
+                    <span>
+                        <a th:href="@{/accounts/myinfo}"><i class="fa-regular fa-circle-user"></i></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+</html>

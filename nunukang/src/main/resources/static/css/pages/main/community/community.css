@@ -1,0 +1,347 @@
+.buttonDiv {
+    position: absolute;
+    width : 350px;
+    height: 350px;
+    top : 59.5%;
+    right : 4%;
+    z-index: 10;
+}
+
+/*.buttonDiv {*/
+/*    position: absolute;*/
+/*    width : 350px;*/
+/*    height: 350px;*/
+/*    top : 72.5%;*/
+/*    right : -65.5%;*/
+/*    z-index: 10;*/
+/*}*/
+.communityOutterDiv {
+    /*margin-top : 1%;*/
+
+    width : 92%;
+    height : 100%;
+    overflow: auto;
+}
+
+.appearButtonDiv {
+    width : 152px;
+    height: 152px;
+    border-radius: 100%;
+    border : 5px solid black;
+    font-size : 68px;
+    color : white;
+    background-color: black;
+    position: absolute;
+    top : 75%;
+    right : 3%;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.appearButtonDiv p{
+    margin-top : 13%;
+}
+
+.createPostButtonDiv {
+    width : 110px;
+    height: 110px;
+    border-radius: 100%;
+    border : 5px solid black;
+    font-size : 64px;
+    color : white;
+    background-color: black;
+    position: relative;
+    top : 2%;
+    right : -53%;
+    display : none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.createPostButtonDiv p{
+    margin-top : 13%;
+}
+#postWriter{
+    display: none;
+}
+.searchPostButtonDiv {
+    width : 110px;
+    height: 110px;
+    border-radius: 100%;
+    border : 5px solid black;
+
+    font-size : 63px;
+    color : white;
+    background-color: black;
+
+    position: relative;
+    top : 58%;
+    right : -17%;
+
+    display : none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.searchPostButtonDiv p{
+    margin-top : 13%;
+}
+
+.communityInnerHeaderDiv {
+    width : 100%;
+    height : 11%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.communityInnerHeaderSubDiv {
+    width : 100%;
+    height: 74%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 25px;
+    background-color: white;
+}
+
+.communityHeaderInnerDiv1 {
+    width : 43%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size : 36px;
+    border-radius: 5px;
+}
+
+.communityHeaderInnerDiv1 button {
+    font-size : 44px;
+    background-color: white;
+    border : 3px solid gray;
+    padding : 17px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+}
+
+.communityHeaderInnerDiv2 {
+    width : 43%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.communityInnerHeaderSubDiv a {
+    width : 14%;
+    height : 100%;
+}
+.communityHeaderInnerDiv3 {
+    width : 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size : 70px;
+    border-radius: 25px;
+
+}
+
+.alertDiv {
+    width: 60%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color : gray;
+}
+.alertCntDiv {
+    width: 40%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.alertCntTextDiv {
+    font-size : 37px;
+    font-weight: bolder;
+    background-color: red;
+    width : 300px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    top : -30px;
+    left : -45px;
+    padding-left: 12px;
+    padding-right: 12px;
+    color : white;
+    border-radius: 35px;
+}
+
+.communityInnerContentDiv {
+    width : 100%;
+    height : 89%;
+}
+
+.postMainDiv {
+    width : 100%;
+    height: 64%;
+
+    /*padding-top : 11px;*/
+    border-bottom : 2px solid #6f94e6;
+    background-color: white;
+}
+
+.postHeaderDiv {
+    width : 100%;
+    height : 160px;
+    display: flex;
+
+    border-bottom: 2px solid black;
+}
+
+.userProfileImgDiv{
+    width : 20%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.userProfileImg {
+    width : 85%;
+    height: 85%;
+    border-radius: 50%;
+}
+.postHeaderInfoDiv {
+    width : 35%;
+    height: 100%;
+
+    display: grid;
+    text-align: center;
+    align-items: center;
+}
+.usernamePTag {
+    font-size : 42px;
+}
+.postTimePTag {
+    font-size : 28px;
+    margin-top : -50px;
+}
+.postEtcDiv {
+    width : 45%;
+    height: 100%;
+}
+
+.postContentDiv {
+    width : 100%;
+    height : 76.5%;
+
+    display: inline-block;
+}
+
+.postContentInnerDiv {
+    width : 100%;
+    min-height: 277px;
+    max-height: 56%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.postContentInnerDiv div{
+    min-height: 30%;
+    max-height: 100%;
+    width : 96%;
+    height : 96%;
+    font-size : 36px;
+    word-break:break-all
+}
+.postContentInfoDiv{
+    width : 100%;
+    min-height: 121px;
+    height : 20%;
+    border-top : 2px solid gray;
+
+    display: flex;
+}
+.postLikeDiv{
+    width : 33%;
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    margin-left : 37px;
+}
+
+.postLikeITag {
+    font-size: 69px;
+    margin-right: 22px;
+    color : gray;
+}
+.postLikePTag {
+    font-size: 36px;
+    padding-bottom : -8px;
+}
+
+.postUnLikeITag {
+    font-size: 69px;
+    margin-right: 22px;
+    color : red;
+}
+.postUnLikePTag {
+    font-size: 36px;
+    padding-bottom : -8px;
+}
+.postViewCntDiv {
+    width : 67%;
+
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-size : 34px;
+    margin-right: 22px;
+}
+.postImgDiv{
+    width : 100%;
+    min-height: 135px;
+    height : 24%;
+
+    display: flex;
+    border-top : 2px solid gray;
+    border-bottom : 2px solid gray;
+}
+.postImgDiv img {
+    width: 128px;
+    height: 93%;
+    min-height: 125px;
+    margin : 4px;
+    /*margin-right : 6px;*/
+    border : 2px solid gray;
+}
+
+.postGapDiv {
+    width : 100%;
+    height : 22px;
+    background-color: #6f94e6;
+}

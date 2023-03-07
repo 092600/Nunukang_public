@@ -1,0 +1,157 @@
+@media ( max-width: 768px ) {
+
+    .nameDiv {
+        width : 100%;
+        height : 77px;;
+
+        display: flex;
+        align-items: start;
+        justify-content: center;
+
+        /* margin-bottom : 15px; */
+    }
+
+        .nameDiv>div {
+            width : 95%;
+            height : 100%;
+        }
+
+            .nameTextDiv {
+                width : 100%;
+                height : 20px;
+                
+                font-size : 17px;
+                text-align: left;
+                /* background-color: blue; */
+            }
+
+            .nameInputDiv {
+                width : 97%;
+                height : 47px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;                
+            }
+
+                .nameInputDiv input {
+                    width : 100%;
+                    height : 33px;
+
+                    margin-top : 3px;
+
+                    border : 2px solid black;
+                    border-radius: 10px;;
+                }
+
+    
+    .emailDiv {
+        width : 100%;
+        height : 77px;;
+
+        display: flex;
+        align-items: start;
+        justify-content: center;
+
+        /* margin-bottom : 25px; */
+        /* background-color: red; */
+    }
+
+        .emailDiv>div {
+            width : 95%;
+            height : 100%;
+        }
+
+            .emailTextDiv {
+                width : 100%;
+                height : 20px;
+                
+                font-size : 17px;
+                text-align: left;
+            }
+
+            .emailInputDiv {
+                width : 97%;
+                height : 47px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;                        
+            }
+
+                .emailInputDiv input {
+                    width : 76%;
+                    height : 33px;
+
+                    margin-top : 3px;
+
+                    border : 2px solid black;
+                    border-radius: 10px;;
+                }
+
+                .emailInputDiv button {
+                    width : 22%;
+                    height : 38px;
+
+                    font-size : 13px;
+
+                    margin-left : 2%;
+                    margin-top : 2px;
+
+                    background-color: white;
+                    border : 2px solid black;
+                    border-radius: 10px;;
+                }
+
+        .passwordDiv {
+            width : 100%;
+            height : 76px;
+            
+            display: flex;
+            align-items: start;
+            justify-content: center;
+
+            /* margin-top : 24px; */
+        }
+
+        
+            .passwordDiv>div {
+                width : 95%;
+                height : 100%;
+            }
+
+
+
+            .passwordInputDiv {
+                width : 97%;
+                height : 36px;
+
+                display: flex;
+                align-items: center;
+                justify-content: left;                      
+            }
+
+
+                .passwordInputDiv input {
+                    width : 100%;
+                    height : 33px;
+
+                    /* margin-top : 4%; */
+
+                    border : 2px solid black;
+                    border-radius: 10px;;
+                }
+
+
+            .passwordInfoPTag {
+                width : 95%;
+                height : 100%;
+                text-align: left;
+
+                color : red;
+                font-size : 13px;
+                margin-left : 2px;
+                margin-top : 3px;
+            }
+
+}

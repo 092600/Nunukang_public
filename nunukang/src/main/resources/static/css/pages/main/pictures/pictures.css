@@ -1,0 +1,103 @@
+@media (min-width: 650px) {
+    .myFishsOutterDiv {
+        width : 90%;
+        height : 100%;
+    }
+
+    .myFishsHeaderDiv {
+        width : 100%;
+        height : 16%;
+    }
+    .myFishsHeaderDiv div{
+        width : 100%;
+        height : 100%;
+
+        display: table;
+        margin : 0px auto;
+    }
+    .myFishsHeaderDiv div p{
+        display: table-cell;
+
+        font-size : 53px;
+
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .myFishsContentDiv {
+        width : 100%;
+        height : 80%;
+        overflow: scroll;
+    }
+
+    .myFishsContentOutterDiv {
+        width : 100%;
+        height : 50%;
+        display: table;
+    }
+
+    .noneImagesDiv {
+        width : 100%;
+        height : 200%;
+        /*background-color: red;*/
+        text-align: center;
+    }
+
+    .non {
+        width : 35%;
+        height : 35%;
+        margin-top : 16%;
+        margin-bottom: 3%;
+    }
+
+    .noneImagesDiv div p{
+        font-size : 47px;
+        margin-top : 19px;
+    }
+    .myFishsContentInnerDiv {
+        display :inline-block;
+        float: left;
+        width : 50%;
+        height : 100%;
+    }
+
+    .myFishsContentInnerHeaderDiv {
+        width : 100%;
+        height : 22%;
+        background-color: #000000;
+    }
+
+    .myFishsContentInnerHeaderDiv p{
+        text-align: center;
+        font-size : 32px;
+        position: relative;
+        bottom: 20px;
+        color : white;
+    }
+    .myFishsContentInnerContentDiv {
+        width : 100%;
+        height : 78%;
+    }
+
+    .pictureDeleteDiv {
+        width : 62px;
+        height : 62px;
+        position: relative;
+        top : 27px;
+        left : 19px;
+        display : inline-block;
+        text-align: center;
+        z-index: 5;
+    }
+
+    .pictureDeleteDiv:after {
+        content: "\00d7";
+        font-size : 62px;
+        color : white;
+    }
+
+    .fishPicture {
+        width : 100%;
+        height : 100%;
+    }
+}

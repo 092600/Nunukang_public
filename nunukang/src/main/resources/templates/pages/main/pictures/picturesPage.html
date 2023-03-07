@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sodipodi="http://java.sun.com/xml/ns/j2ee"
+        xmlns:inkscape="http://java.sun.com/xml/ns/javaee"
+        layout:decorate="~{settings/layout/pages/main/common/pagesCommonLayout}"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>누누강 : 메인페이지</title>
+
+    <th:block th:replace="settings/config/pages/main/pictures/picturesPageConfig :: picturesPageConfig"></th:block>
+
+</head>
+<body>
+
+    <div layout:fragment="content">
+        <div class="myFishsOutterDiv">
+            <div class="myFishsHeaderDiv">
+                <div>
+                    <p>
+                        <span th:text="test"></span>
+                        <!-- <span th:text="${session.user.getName()}"></span> -->
+                        <span>님과 누누강이 함께한 추억들</span>
+                    </p>
+                </div>
+            </div>
+            <div class="myFishsContentDiv">
+                <input type="hidden" id="email" th:value="test">
+                <!-- <input type="hidden" id="email" th:value="${session.user.getEmail()}"> -->
+                <div class="myFishsContentOutterDiv" id="myFishsContentOutterDiv">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+@media (min-width: 650px) {
+
+    .headerOuterDiv {
+        width: 100vw;
+        height: 10vh;
+
+        display: flex;
+    }
+
+
+        .headerLeft {
+            width: 24%;
+            height: 100%;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+            .headerLeft img {
+                width: 100%;
+                height: 100%;
+
+                margin-left: 4%;
+            }
+
+        .headerCenter {
+            width: 61%;
+            height: 100%;
+        }
+
+
+        .headerRight {
+            width: 15%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .headerRight svg {
+                width : 112px;
+                height: 112px;
+                margin-right : 36px;
+                color: rgba(0, 0, 0, 0.4);
+            }
+    
+}
+
+
+

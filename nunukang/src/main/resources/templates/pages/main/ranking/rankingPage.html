@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sodipodi="http://java.sun.com/xml/ns/j2ee"
+        xmlns:inkscape="http://java.sun.com/xml/ns/javaee"
+        layout:decorate="~{settings/layout/pages/main/common/pagesCommonLayout}"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>누누강 : 메인페이지</title>
+
+    <th:block th:replace="settings/config/pages/main/ranking/rankingPageConfig :: rankingPageConfig"></th:block>
+
+    
+</head>
+<body>
+
+    <div layout:fragment="content" >
+        <div class="rankingOutterDiv">
+            <div class="rankingHeaderDiv">
+                <div class="rankingHeaderTextDiv">
+                    <p>누누강 <span th:text="참돔"></span>  랭킹</p>
+                </div>
+                <div class="rankingHeaderSelectDiv">
+                    <select id="rankingSelectTag" onchange="test()">
+                        <option selected value="1">참돔</option>
+                        <option value="2">감성돔</option>
+                        <option value="3">광어</option>
+                        <option value="4">우럭</option>
+                        <option value="5">돌돔</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rankingContentOutterDiv">
+                <input type="hidden" id="rankCount" value="5" >
+                <div class="rankingContentInnerDiv" id="rankingContentInnerDiv">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

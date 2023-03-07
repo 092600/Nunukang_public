@@ -1,0 +1,320 @@
+@media (min-width: 650px) {
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+        .content {
+            width: 100%;
+            height: 78vh;
+            background-color: cornflowerblue;
+
+            display : flex;
+            justify-content: center;
+        }
+
+        .indexContainer {
+            width : 90%;
+            height: 85%;
+
+            margin-top: 10%;
+        }
+        .indexContentDiv {
+            width : 96%;
+            height : 84%;
+            /*background-color: yellow;*/
+        }
+        .contentMainPTag {
+            font-size : 64px;
+            font-weight: bolder;
+            padding-top : 23px;
+            text-align: center;
+        }
+
+        .indexContentSubDiv {
+            display: inline-block;
+            text-align: left;
+            font-size : 38px;
+            line-height: 67px;
+            margin-top : 88px;
+        }
+        .indexContentInnerDiv {
+            width : 100%;
+            height : 100%;
+
+            position: relative;
+            display :flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .indexContentInnerDiv img {
+            width : 92%;
+            height : 92%;
+            border : 3px solid black;
+        }
+
+
+        .indexButtonOuterDiv {
+            width : 100%;
+            height : 16%;
+            /*display: table;*/
+        }
+
+        .indexButton {
+            width : 100%;
+            height : 121px;
+            font-size : 42px;
+            font-weight: bolder;
+            border : 3px solid black;
+            border-radius: 25px;
+            background-color: blue;
+            color : white;
+        }
+        #pictureSubmitButton {
+            width : 100%;
+            height : 121px;
+            font-size : 42px;
+            font-weight: bolder;
+            color : white;
+        }
+        #mainDiv{
+            /*display : none;*/
+        }
+        #imgDiv{
+            display:none;
+        }
+
+        .camera {
+            display : none;
+        }
+        .cameraDiv{
+            width : 100%;
+            height : 121px;
+            border : 3px solid black;
+            border-radius: 25px;
+            background-color: blue;
+            color : white;
+            font-size: 42px;
+            font-weight: bolder;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+        }
+        .cameraDiv div{
+            position: relative;
+            top : 29%;
+        }
+
+        .submitPictureDiv {
+            width : 100%;
+            height : 121px;
+            font-size: 42px;
+            font-weight: bolder;
+            border : 3px solid black;
+            border-radius: 25px;
+            background-color: blue;
+            color : white;
+
+            text-align: center;
+            position: relative;
+            align-items: center;
+            /*display: inline-block;*/
+            display : none;
+            justify-content : center;
+        }
+
+        .fish_species_namePTag {
+            text-align: center;
+            font-size : 36px;
+            font-weight: bolder;
+        }
+
+        .fish_sizePTag {
+            text-align: center;
+            font-size : 31px;
+
+
+        }
+
+        .brp {
+            margin-top : 24px;
+        }
+
+
+
+
+
+    /*    */
+
+    .loadingDiv {
+        position: absolute;
+        width : 100%;
+        height: 74vh;
+        background-color: black;
+        opacity: 0.9;
+        display : none;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+    .loadingDiv>div{
+        background-color: #4545e5;
+        width : 420px;
+        height : 420px;
+    }
+
+    .loader {
+        border: 16px solid #f3f3f3; /* Light grey */
+        border-top: 16px solid #2671c5; /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    /*    */
+
+    /*    */
+    .loadingDiv {
+        background: #6ca3a3;
+    }
+
+    svg#fish {
+        top: 45%;
+    }
+    /* Fish Animation */
+    svg.fish{
+        overflow:visible;
+    }
+
+    @-webkit-keyframes swim
+    {
+        0% {margin-left: -235px}
+        90% {margin-left: 100%;}
+        100% {margin-left: 100%;}
+    }
+
+    @keyframes swim
+    {
+        0% {margin-left: -235px}
+        70% {margin-left: 100%;}
+        100% {margin-left: 100%;}
+    }
+
+    .fish{
+        width: 425px;
+        height: 194px;
+        margin-left: -235px;
+        position: absolute;
+        animation: swim 20s;
+        -webkit-animation: swim 20s;
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        -webkit-animation-timing-function: linear;
+    }
+
+    svg #fish1,
+    svg #fish2,
+    svg #fish3,
+    svg #fish4,
+    svg #fish5,
+    svg #fish6 {
+        fill:#528484;
+
+        -moz-animation: bounce 2s infinite;
+        -webkit-animation: bounce 2s infinite;
+        animation: bounce 2s infinite;
+    }
+
+    svg #fish2{
+        animation-delay: 0.5s;
+        -webkit-animation-delay: 0.5s;
+    }
+
+    svg #fish3{
+        animation-delay: 0.2s;
+        -webkit-animation-delay: 0.2s;
+    }
+
+    svg #fish4{
+        animation-delay: 0.4s;
+        -webkit-animation-delay: 0.4s;
+    }
+
+    svg #fish5{
+        animation-delay: 0.1s;
+        -webkit-animation-delay: 0.1s;
+    }
+
+    svg #fish6{
+        animation-delay: 0.3s;
+        -webkit-animation-delay: 0.3s;
+    }
+
+    /**/
+    @-moz-keyframes bounce {
+        0%, 50%, 100% {
+            -moz-transform: translateY(0);
+            transform: translateY(0);
+        }
+        25% {
+            -moz-transform: translateY(-5px);
+            transform: translateY(-5px);
+        }
+        75% {
+            -moz-transform: translateY(-3px);
+            transform: translateY(-3px);
+        }
+    }
+    @-webkit-keyframes bounce {
+        0%, 50%, 100% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+        25% {
+            -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+        }
+        75% {
+            -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+        }
+    }
+    @keyframes bounce {
+        0%, 50%, 100% {
+            -moz-transform: translateY(0);
+            -ms-transform: translateY(0);
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+        25% {
+            -moz-transform: translateY(-5px);
+            -ms-transform: translateY(-5px);
+            -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+        }
+        75% {
+            -moz-transform: translateY(-3px);
+            -ms-transform: translateY(-3px);
+            -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+        }
+    }
+
+    .loadingText {
+        font-size : 56px;
+        color : white;
+    }
+    /*    */
+}

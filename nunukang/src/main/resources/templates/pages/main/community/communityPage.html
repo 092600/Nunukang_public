@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sodipodi="http://java.sun.com/xml/ns/j2ee"
+        xmlns:inkscape="http://java.sun.com/xml/ns/javaee"
+        layout:decorate="~{settings/layout/pages/main/common/pagesCommonLayout}"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>누누강 : 메인페이지</title>
+
+    <th:block th:replace="settings/config/pages/main/community/communityPageConfig :: communityPageConfig"></th:block>
+
+</head>
+<body>
+
+    <div layout:fragment="content">
+        <div class="communityOutterDiv">
+            <div class="communityInnerHeaderDiv">
+                <div class="communityInnerHeaderSubDiv">
+                    <div class="communityHeaderInnerDiv1">
+                    </div>
+                    <div class="communityHeaderInnerDiv2"></div>
+                    <a href="/accounts/alert">
+                        <div class="communityHeaderInnerDiv3">
+                            <div class="alertDiv">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+                            <div class="alertCntDiv">
+                                <!-- <div th:if="${alertCnt != 0}" class="alertCntTextDiv">
+                                    <p th:text="${alertCnt}"></p>
+                                </div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="communityInnerContentDiv">
+                <div th:each="post : ${posts}">
+                    <div class="postMainDiv" >
+                        <div class="postHeaderDiv">
+                            <div class="userProfileImgDiv">
+                                <img class="userProfileImg" th:src="@{/images/nunukangLogo/small_logo.png}">
+                            </div>
+                            <div class="postHeaderInfoDiv">
+                                <p class="usernamePTag" th:text="${post.getPostWriterName()}"></p>
+                                <p class="postTimePTag" th:text="${#temporals.format(post.getCreatedDate(), 'yyyy년 MM월 dd일 HH시 mm분')}"></p>
+                            </div>
+                            <div class="postEtcDiv">
+                            </div>
+                        </div>
+                        <div class="postContentDiv">
+                            <a th:href="@{${'/community/post/'+post.getPostId}}">
+                                <div class="postContentInnerDiv">
+                                    <div th:text="${post.getPostContent()}"></div>
+                                </div>
+                            </a>
+                            <div class="postContentInfoDiv">
+                                <div class="postLikeDiv">
+                                    <p th:if="${!#lists.contains(post.getPostLikeUsers(), session.user.getId())}">
+                                        <i class="fa-solid fa-heart postLikeITag" th:postId="${post.getPostId()}"
+                                            onclick="postLike(this, this.getAttribute('postid'))"></i>
+                                        <p class="postLikePTag" th:if="${!#lists.contains(post.getPostLikeUsers(), session.user.getId())}"
+                                           th:text="${#lists.size(post.getPostLikeUsers())}" ></p></p>
+                                    <p th:if="${#lists.contains(post.getPostLikeUsers(), session.user.getId())}">
+                                        <i class="fa-solid fa-heart postUnLikeITag" th:postId="${post.getPostId()}"
+                                           onclick="postUnLike(this, this.getAttribute('postid'))"></i>
+                                        <p class="postUnLikePTag" th:if="${#lists.contains(post.getPostLikeUsers(), session.user.getId())}"
+                                           th:text="${#lists.size(post.getPostLikeUsers())}"></p></p>
+                                </div>
+                                <div class="postViewCntDiv">
+                                    <p><span>조회수 :</span><span th:text="${post.getViewCnt()}"></span></p>
+                                </div>
+                            </div>
+                            <div class="postImgDiv" >
+                                <img th:each="num : ${#numbers.sequence(1, post.getImageCnt(), 1)}" th:src="@{'/post/images/'+${post.getPostId}+'/Pictures/image'+${num}+'.jpg'}">
+                            </div>
+                            <div class="postGapDiv"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="buttonDiv">
+                <div class="searchPostButtonDiv" id="searchPostButton" onclick="searchPost()">
+                    <p><i class="fa-solid fa-magnifying-glass"></i></p>
+                </div>
+                <a th:href="@{/community/post}">
+                    <div class="createPostButtonDiv" id="createPostButton">
+                        <p><i class="fa-solid fa-plus"></i></p>
+                    </div>
+                </a>
+                <div class="appearButtonDiv" onclick="appearDiv()">
+                    <p><i class="fa-solid fa-bars"></i></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
