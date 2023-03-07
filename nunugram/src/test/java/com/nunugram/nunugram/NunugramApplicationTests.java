@@ -1,10 +1,10 @@
-package com.nunukang.nunukang;
+package com.nunugram.nunugram;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NunukangApplicationTests {
+class NunugramApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lagn="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <th:block th:replace="settings/config/common/commonLayoutConfig :: commonLayoutConfig"></th:block>
+</head>
+<body>
+
+    <th:block th:replace="settings/fragments/slide/messagePage :: messagePage"></th:block>
+    <th:block th:replace="settings/fragments/slide/alertPage :: alertPage"></th:block>
+
+    <th:block th:replace="settings/fragments/upperMenu/common/commonUpperMenuBar :: commonUpperMenuBar"></th:block>
+    
+    <th:block layout:fragment="commonContentDiv"></th:block>
+    
+    <th:block th:replace="settings/fragments/lowerMenu/common/commonLowerMenuBar :: commonLowerMenuBar"></th:block>
+
+</body>
+</html>

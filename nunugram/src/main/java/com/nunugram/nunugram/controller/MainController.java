@@ -1,4 +1,4 @@
-package com.nunukang.nunukang.controller;
+package com.nunugram.nunugram.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

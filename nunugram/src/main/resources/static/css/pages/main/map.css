@@ -1,0 +1,163 @@
+@media (prefers-color-scheme: light) { 
+    .locationClickEventDiv {
+        background-color: rgb(224, 224, 224);
+    }
+}
+
+@media (prefers-color-scheme: dark) { 
+    .locationClickEventDiv {
+        background-color: rgba(13, 13, 13, 0.99);
+    }
+}
+
+@media ( max-width: 768px ) {
+    .marker-label {
+        margin-top : -38px;
+    }
+
+
+    .googleMapDiv {
+        width : 100vw;
+        height : 81vh;
+
+        
+    }
+    
+    .commonLowerMenuBar {
+        position : fixed;
+        bottom : 0vh;
+    }
+    .locationClickEventDiv {
+        width : 100vw;
+        height : 73vh;
+
+        display : none;
+
+        position: fixed;
+        
+        border-radius: 20px 20px 0px 0px;
+        z-index: 100;
+        bottom : 8vh;
+
+        overflow-y: scroll;
+    }
+
+
+        .locationInfoHeaderDiv {
+            width : 100%;
+            height : 11%;
+
+            display : flex;
+            align-items: center;
+            justify-content: center;
+
+            /* background-color: yellow; */
+        }
+
+            .locationFravoriteButtonDiv {
+                width : 15%;
+                height : 100%;
+
+                display : flex;
+                align-items: center;
+                justify-content: center;
+
+                font-size: 20px;
+                
+                /* background-color : red; */
+            }
+            .locationNameInfoDiv {
+                width : 70%;
+                height : 100%;
+
+                display : flex;
+                align-items: center;
+                justify-content: center;
+                
+                /* background-color : blue; */
+            }
+
+                .locationNameInfoDiv img {
+                    width : 20px;
+                    height : 20px;
+                }
+
+            .locationClickDivDelButtonDiv {
+                width : 15%;
+                height : 100%;
+                
+                display : flex;
+                align-items: center;
+                justify-content: center;
+                
+                font-size: 27px;
+
+                /* background-color : aqua; */
+            }
+
+
+        .locationTemperatureOutterDiv {
+            width : 100%;
+            height : 73%;
+
+            /* background-color: red; */
+        }
+
+            .locationTemperatureOutterHeaderDiv {
+                width : 100%;
+                height : 11%;
+
+                display : flex;
+                align-items: center;
+                justify-content: center;
+
+                /* background-color: beige; */
+            }
+
+
+            .locationTemperatureOutterContentDiv {
+                width : 100%;
+                height : 74%;
+
+                background-color: blue;
+            }
+
+            .locationTemperatureOutterFunctionalDiv {
+                width : 100%;
+                height : 15%;
+
+                display : flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+                .locationTemperatureFunctionalButton {
+                    width : 55%;
+                    height : 100%;
+
+                    display : flex;
+                    align-items: center;
+                    justify-content: left;
+                }
+
+
+                .sunriseTimeDiv {
+                    width : 21%;
+                    height : 100%;
+
+                    display : flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .sundownTimeDiv {
+                    width : 21%;
+                    height : 100%;
+
+                    display : flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+}
+
+

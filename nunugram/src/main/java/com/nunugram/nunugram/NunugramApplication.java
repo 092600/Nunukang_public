@@ -1,13 +1,13 @@
-package com.nunukang.nunukang;
+package com.nunugram.nunugram;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NunukangApplication {
+public class NunugramApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NunukangApplication.class, args);
+		SpringApplication.run(NunugramApplication.class, args);
 	}
 
 }

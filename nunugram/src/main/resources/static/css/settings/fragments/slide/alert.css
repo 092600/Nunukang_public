@@ -1,0 +1,207 @@
+@media (prefers-color-scheme: light) {
+  
+    .commonAlertOutterDiv {
+        background-color: white;
+    }
+
+        .commonAlertContentDiv {
+            border-bottom : 1px solid rgb(205, 205, 205);
+        }
+
+
+
+    .theme {
+        color: black;
+        border-color : black;
+    }
+  
+  
+    
+  
+  }
+  
+  @media (prefers-color-scheme: dark) {
+  
+  
+  
+    .commonAlertOutterDiv {
+      background-color: black;
+    }
+  
+      .commonAlertContentDiv {
+          border-bottom : 1px solid rgb(49, 49, 49);
+      }
+  
+    .theme {
+        color: white;
+        border-color : rgb(255, 255, 255);
+    }
+  
+  
+  
+  }
+  
+  
+  @media ( max-width: 768px ) {
+  
+    /* alertDiv */
+    .commonAlertOutterDiv {
+        width : 100vw;
+        height : 100vh;
+    
+        float : right;
+        display : none;
+        position : absolute;
+        right : 0px;
+    
+        z-index: 100;
+    }
+            /* messageDiv */
+        .commonAlertHeaderOutterDiv {
+            width : 100%;
+            height : 8%;
+    
+            display : flex;
+            align-items: center;
+            justify-content: center;
+    
+            margin-bottom : 1%;
+        }
+    
+    
+    
+            .commonAlertHeaderFunctionalDiv {
+                width : 65%;
+                height : 100%;
+    
+                display : flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+                .commonAlertHeaderFunctionalDiv p {
+                    width : 80%;
+                    height : 90%;
+    
+                    display : flex;
+                    align-items:flex-end;
+                    justify-content: left;
+    
+                    font-size : 25px;
+                    font-weight: 400;
+                }
+    
+    
+            .commonAlertHeaderSubDiv {
+                width : 35%;
+                height : 100%;
+    
+                display : flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+                .commonAlertHeaderInnerSubDiv1 {
+                    width : 50%;
+                    height : 100%;
+    
+                    display : flex;
+                    align-items: center;
+                    justify-content: right;
+                }
+    
+                .commonAlertHeaderInnerSubDiv2 {
+                    width : 50%;
+                    height : 100%;
+    
+                    display : flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+    
+        .commonAlertScrollDiv {
+            width : 100%;
+            height : 91%;
+    
+            overflow-y: scroll;
+        }
+            .commonAlertContentDiv {
+                width : 100%;
+                height : 13%;
+                margin-top : 1%;
+                padding-bottom : 4%;
+    
+                display : flex;
+                align-items: center;
+                justify-content: left;
+            }
+    
+                .commonAlertContentIconDiv {
+                    width : 24%;
+                    height : 94%;
+    
+                    display : flex;
+                    align-items: center;
+                    justify-content: right;
+    
+                    margin-top : 3%;
+                }
+    
+                    .commonAlertContentIconDiv div {
+                        width : 64px;
+                        height : 64px;
+    
+                        display : flex;
+                        align-items: center;
+                        justify-content: center;
+                        
+                        border-radius: 50%;
+    
+                        font-size : 29px;
+    
+                        border-width: 1px;
+                        border-style: solid;
+                        /* background-color: blue; */
+                    }
+    
+                .commonAlertContentTextDiv {
+                    width : 76%;
+                    height : 97%;
+                    
+                    
+                    display : flex;
+                    align-items: center;
+                    justify-content: right;
+    
+                    margin-top : 3%;
+                }
+    
+                    .commonAlertContentTextDiv>div {
+                        width : 95%;
+                        height : 100%;
+                    }
+    
+                    .commonAlertContentText1 {
+                        width : 100%;
+                        height : 63%;
+    
+                        font-size : 18px;
+    
+                        display : flex;
+                        align-items: center;
+                        justify-content: left;
+                        /* background-color: aqua; */
+                    }
+    
+                    .commonAlertContentText2 {
+                        width : 100%;
+                        height : 5%;
+                        
+                        font-size : 14px;
+    
+                        display : flex;
+                        align-items: center;
+                        justify-content: left;
+                        /* background-color: yellow; */
+                    }
+  }

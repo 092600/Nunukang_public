@@ -1,0 +1,803 @@
+@media (prefers-color-scheme: light) { 
+    * {
+        color : black;
+    }
+
+    .userProfileFunctionButton1 {
+        background-color: rgb(224, 224, 224);;
+    }
+
+    .userProfileImgPlusButton {
+        border : 2px solid white;
+    }
+
+    .recommendUserDiv {
+        background-color: white;
+        border : 1px solid rgb(181, 181, 181);
+    }
+
+    .storyCreateButton  {
+        border : 1px solid rgb(205, 205, 205);
+        color : black;
+    }
+
+    .storyListImg  {
+        background-color : rgb(205, 205, 205);
+        color : black;
+    }
+
+
+    .usersPostsHeaderDiv {
+        border-width : 1px;
+        border-bottom-style : solid;
+        border-color : rgba(0, 0, 0, 0.337);
+    }
+
+    .userTagedPostsHeaderDiv {
+        border-width : 1px;
+        border-bottom-style : solid;
+        border-color : rgb(128, 128, 128);
+    }
+
+    .postsImgs {
+        /* border : 1px solid black; */
+    }
+
+}
+
+@media (prefers-color-scheme: dark) { 
+    * {
+        color : white;
+    }
+
+    .userProfileFunctionButton1 {
+        background-color:rgb(31, 31, 31);
+    }
+
+    .userProfileFunctionButton2 {
+        background-color:rgba(24, 24, 24, 0.802);
+    }
+
+    .userProfileImgPlusButton {
+        border : 2px solid black;
+    }
+
+    .recommendUserDiv {
+        background-color:rgb(31, 31, 31);
+    }
+
+    .storyCreateButton {
+        border : 1px solid rgb(38, 38, 38);
+        font-weight: lighter;
+    }
+
+    .storyListImg  {
+        background-color :  rgb(38, 38, 38);
+        color : black;
+    }
+
+    .usersPostsHeaderDiv {
+        border-width : 2px;
+        border-bottom-style : solid;
+        border-color : rgb(128, 128, 128);;
+    }
+
+    .userTagedPostsHeaderDiv {
+        border-width : 2px;
+        border-bottom-style : solid;
+        border-color : rgba(0, 0, 0, 0.337);
+    }
+
+    .postsImgs {
+        border : 1px solid black;
+    }
+}
+
+
+
+
+
+
+@media ( max-width: 768px ) {
+
+    .myPageOutterDiv {
+        width : 100vw;
+        height : 82vh;
+    }
+
+    .mypageScrollOutterDiv {
+        width : 100%;
+        height : 100%;
+
+        overflow-y: scroll;
+    }
+
+        .userProfileDiv {
+            display : inline;
+
+            width : auto;
+            height : auto;
+
+            margin-top : 2%;
+        }
+
+            .userProfileMainDiv {
+                width : auto;
+                height : auto;
+
+                display : inline-block;
+            }
+            
+
+                .userInfoDiv1 {
+                    width : 100%;
+                    height : 63%;
+
+                    margin-top : 2%;
+                    margin-bottom : 2%;
+                    display : flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                    .userProfileImgInnerDiv {
+                        width : 33%;
+                        height : 100%;
+
+                        display : flex;
+                        align-items: baseline;
+                        justify-content: center;
+                    }
+
+                        .userProfileImgInnerDiv img {
+                            width : 82px;
+                            height : 82px;
+
+                            border-radius: 50%;
+                        }
+
+                        .userProfileImgPlusButtonDiv {
+                            width : 0%;
+                            height : 0%;
+
+                            position: relative;
+                        }
+
+                            .userProfileImgPlusButton {
+                                width : 23px;
+                                height : 23px;
+
+                                left : -26px;;
+                                top : -3px;
+                                
+                                position: relative;
+
+                                display : flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                border-radius: 50%;
+                                background-color: rgb(83, 151, 247);
+                                color : white;
+                            }
+
+                                .userProfileImgPlusButton:after {
+                                    content : "+";
+                        
+                                    font-size : 22px;
+                                    margin-top : 3px;
+                                    font-weight: 600;;
+                                }
+
+                    .userPostNFollowInfoDiv {
+                        width : 67%;
+                        height : 82px;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: left;
+                    }
+
+
+                        .powerPostNFollowTextOutterDiv {
+                            width : 26%;
+                            height : 82px;
+
+                            margin-left : 4%;
+                            margin-right : 5%;
+                            
+                            /* background-color: yellow; */
+                        }
+
+
+                            .powerPostNFollowText1 {
+                                width : 100%;
+                                height : 80%;
+                                
+                                display : flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                font-size : 14px;
+                                font-weight: 800;
+                            }
+
+
+                            .powerPostNFollowText2 {
+                                width : 100%;
+                                height : 10%;
+                                
+                                margin-top : -25%;
+
+                                display : flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                font-size : 12px;
+                            }
+
+                .userInfoDiv2 {
+                    width : 100%;
+                    height : auto;
+
+                    margin-top : 2%;
+                    display : inline-block;
+                }   
+
+                    .usernameDiv {
+                        width : 100%;
+                        height : auto;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        font-size : 16px;
+                        margin-bottom : 3%;
+                    }
+
+                        .usernameTextDiv {
+                            width : 82%;
+                        }
+
+                        .usernameFunctionalDiv {
+                            width : 8%;
+                            text-align: center;
+                        }
+
+                    .userIntroduceDiv {
+                         width : 100%;
+                         height: auto;
+
+                         display : flex;
+                         align-items: center;
+                         justify-content: center;
+                         font-size : 15px;
+                         
+                    }
+
+                        .userIntroduceDiv div {
+                            width : 90%;
+                            white-space: normal;
+
+                            max-height : 105px;
+
+                            overflow-y: scroll;
+                        }
+
+                
+
+
+            .userProfileFunctionalDiv {
+                width : 100%;
+                height : 65px;;
+
+                display : flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+                .userProfileFunctionButton1 {
+                    width : 38%;
+                    height : 30px;
+
+                    margin-right : 2%;
+
+                    border-radius: 10px;
+
+                    display : flex;
+                    align-items: center;
+                    justify-content: center;
+
+
+                    font-size : 13px;
+                }
+
+                .userProfileFunctionButton2 {
+                    width : 10%;
+                    height : 30px;
+
+                    border-radius: 10px;
+                
+
+                    display : flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    font-size : 13px;
+                }
+
+
+        .recommendUsersDiv {
+            width : 100%;
+            height : 37%;
+        }
+
+            .recommendUsersTextDiv {
+                width : 100%;
+                height : 16%;
+                
+                display : flex;
+                align-items: center;
+                justify-content: center;
+
+                font-size : 13px;
+                /* background-color: aqua; */
+            }
+
+                .recommendUsersTextInnerDiv {
+                    width : 73%;
+                    height : 100%;
+
+                    display : flex;
+                    align-items: center;
+                    justify-content: left;
+
+                    /* background-color: blanchedalmond; */
+                }
+
+                .recommendUsersTextFunctionalDiv {
+                    width : 19%;
+                    height : 100%;
+
+                    display : flex;
+                    align-items: center;
+                    justify-content : right;
+                }
+
+
+            .recommendUserOutterDiv {
+                width : 100%;
+                height : 80%;
+
+                display : flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+                .recommendUsersInnerDiv {
+                    width : 94%;
+                    height : 100%;
+
+                    display : flex;
+                    align-items: center;
+                    justify-content: left;
+
+                    overflow-x: auto;
+                }
+
+                    .recommendUserDiv {
+                        min-width : 109px;
+                        height : 96%;
+
+                        border-radius: 9px;
+                        margin-right : 7px;
+                    }
+
+                        .recommendUserProfileImgDiv {
+                            width : 100%;
+                            height : 50%;
+
+                            display : flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            margin-top : 0.5%;
+                            margin-bottom : 1%;
+                        }
+
+                            .recommendUserProfileImgDiv img {
+                                width : 66px;
+                                height : 66px;
+
+                                border-radius: 50%;;
+
+                            }
+
+                        .recommendUserDeleteDiv {
+                            width : 0px;
+                            height : 0px;
+
+                            position : relative;
+                        }
+
+                            .recommendUserDeleteDiv div {
+                                width: 22px;;
+                                height : 22px;;
+
+                                position: absolute;
+
+                                left: 89px;
+                                color : black;
+
+                                z-index: 5;
+                            }
+
+                                .recommendUserDeleteDiv div:after {
+                                    content: "\00d7";
+
+                                    font-size : 22px;
+                                }
+
+                        .recommendUsernameDiv {
+                            width : 100%;
+                            height : 11%;
+
+                            display : flex;
+                            align-items: center;
+                            justify-content: center;
+                            
+                            font-size : 13px;
+                            font-weight: 600;
+                        }
+
+
+                    .recommentUserIntroDiv {
+                        width : 100%;
+                        height : auto;
+                        min-height : 27px;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                        .recommentUserIntroDiv div {
+                            width : 74px;
+                            height : auto;
+
+                            display : inline-block;
+
+                            font-size : 10px;
+                        }
+
+                    .recommentUserFollowDiv {
+                        width : 100%;
+                        height : 18%;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: center;
+                        
+                        margin-top : 1%;
+                    }
+
+                        .recommentUserFollowDiv div {
+                            width : 90%;
+                            height : 24px;
+
+                            display : flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            border-radius: 6px;;
+                            background-color: rgb(31, 132, 246);
+
+                            font-size : 12px;
+                            color : white;
+                        }
+
+        .storyHilightDiv {
+            width : 100%;
+            height : 26%;
+
+            /* background-color: teal; */
+        }
+
+            .storyHilightHeaderDiv {
+                width : 100%;
+                height : 32px;
+
+                display : flex;
+                align-items: center;
+                justify-content: center;
+
+                font-size : 12px;
+            }
+
+                .storyHilightHeaderTextDiv {
+                    width : 73%;
+                    height : 100%;
+                }
+
+                    .storyHilightHeaderTextDiv div {
+                        height : 50%;
+
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: left;
+                    }
+                    
+                    .storyHilightHeaderText1 {
+                        font-weight: 400;;
+                    }
+
+                    .storyHilightHeaderText1 {
+                        font-weight: 900;;
+                    }
+
+
+
+                .storyHilightHeaderFunctionalDiv {
+                    width : 19%;
+                    height : 40%;
+
+                    display : flex;
+                    align-items: center;
+                    justify-content: right;
+                }
+
+            .storyHilightContentOutterDiv {
+                width : 100%;
+                height : 78%;
+
+                display : flex;
+                align-items: center;
+                justify-content: center;
+
+                /* background-color: red; */
+            }
+
+                .storyHilightContentDiv {
+                    width : 96%;
+                    height : 88%;
+    
+                    overflow-x: scroll;
+
+                    display : flex;
+                    align-items: baseline;
+                    justify-content: left;
+                }
+
+                    .storyCreateOutterDiv {
+                        width : 80px;
+                        height : 78%;
+                                
+                        display : inline-flex;
+                    }
+
+
+
+                        .storyCreateButtonOutterDiv {
+                            width : 100%;
+                            height : 100%;
+
+                            display : flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        .storyCreateButton {
+                            width : 64px;
+                            height : 64px;
+
+                            display : flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            border-radius: 50%;
+                        }
+
+                            .storyCreateButton:after {  
+                                content : "+";
+
+                                font-size : 45px;
+                                margin-top : 8%;
+
+                                font-weight: 200;
+                            }
+
+                        .storyCreateTextDiv {
+                            width : 80px;
+                            height : 22%;
+
+                            font-size : 12px;
+                        }
+                        
+
+                        .storyCreateTextDiv p {
+                            text-align: center;
+                        }
+
+
+
+                /* .storyListDiv {
+                    width : 80px;
+                    height : 78%;
+                            
+                    display : inline-block;
+                } */
+
+                    .storyListImgDiv {
+                        width : 100%;
+                        height : 100%;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                        .storyListImg {
+                            width : 64px;
+                            height : 64px;
+
+                            display : flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            border-radius: 50%;
+                        }
+
+                    .storyListTextDiv {
+                        width : 80px;
+                        height : 22%;
+
+                        font-size : 12px;
+                    }
+
+                        .storyListTextDiv p {
+                            text-align: center;
+                        }
+
+
+
+        .userPostsDiv {
+            width : 100%;
+            min-height : 310px;
+            max-height : 360px;
+            height : auto;
+        }
+
+            .userPostsHeaderDiv {
+                width : 100%;
+                height : 44px;;
+
+                display : flex;
+                align-items: center;
+                justify-content: center;
+            }
+                
+                .userPostsHeaderDiv>div {
+                    width : 50%;
+                    height : 100%;
+
+                    display : flex;
+                    align-items: center;
+                    justify-content: center;
+
+
+                    margin-top : -9px;
+                }
+
+                .usersPostsHeaderDiv {
+                    font-size : 25px;
+
+                    border-bottom : 1px solid gray;
+                }
+
+                .userTagedPostsHeaderDiv {
+                    font-size : 22px;
+                    border-bottom : 1px solid black;
+                }
+
+            
+            
+            .userPostsContentDiv {
+                width : 100%;
+                height : 366px;
+                
+                display : flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+                .userPostsContentDiv>div {
+                    width : 100%;
+                    height : 100%;
+
+                    /* background-color: yellow; */
+                }
+
+                .userPostRowDiv {
+                    width : 100%;
+                    height : 33%;
+
+                    display : flex;
+                    align-items: center;
+                    justify-content: left;
+
+                    /* margin-left : 0.0.7%;
+                    margin-left : 0.05%;
+                    margin-right : 0.1%; */
+
+                    /* background-color: yellow; */
+                }
+
+                    .userPostRowDiv div {
+                        width : 32.5%;
+                        height : 98%;
+                        
+                        margin-right : 0.4%;
+                        margin-bottom : 0.4%;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: left;
+                    }
+
+                    .userPostRowDiv div img {
+                        width : 100%;
+                        height : 100%;
+                    }
+
+
+
+            .userTagedPostsContentDiv {
+                width : 100%;
+                height : 366px;
+
+                display : flex;
+                align-items: center;
+                justify-content: center;
+                
+                display : none;
+            }
+
+                .userTagedPostsContentDiv>div {
+                    width : 100%;
+                    height : 100%;
+
+                    /* background-color: yellow; */
+                }
+
+                    .userTagedPostsRowDiv {
+                        width : 100%;
+                        height : 33%;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: left;
+
+                    }
+
+                        .userTagedPostsRowDiv div {
+                            width : 32.5%;
+                            height : 100%;
+
+                            margin-right : 0.4%;
+                            margin-bottom : 0.4%;
+
+                            display : flex;
+                            align-items: center;
+                            justify-content: left;
+                        }
+
+                        .userTagedPostsRowDiv div img {
+                            width : 100%;
+                            height : 100%;
+                        }
+
+
+
+}
