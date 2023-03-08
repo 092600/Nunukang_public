@@ -19,7 +19,7 @@
             .nameTextDiv {
                 width : 100%;
                 height : 20px;
-                
+
                 font-size : 17px;
                 text-align: left;
                 /* background-color: blue; */
@@ -31,7 +31,7 @@
 
                 display: flex;
                 align-items: center;
-                justify-content: center;                
+                justify-content: center;
             }
 
                 .nameInputDiv input {
@@ -44,10 +44,10 @@
                     border-radius: 10px;;
                 }
 
-    
+
     .emailDiv {
         width : 100%;
-        height : 77px;;
+        height : 92px;;
 
         display: flex;
         align-items: start;
@@ -60,12 +60,13 @@
         .emailDiv>div {
             width : 95%;
             height : 100%;
+
         }
 
             .emailTextDiv {
                 width : 100%;
                 height : 20px;
-                
+
                 font-size : 17px;
                 text-align: left;
             }
@@ -76,7 +77,7 @@
 
                 display: flex;
                 align-items: center;
-                justify-content: center;                        
+                justify-content: center;
             }
 
                 .emailInputDiv input {
@@ -103,18 +104,25 @@
                     border-radius: 10px;;
                 }
 
+                .emailInfoPTag {
+                    width : 100%;
+                    height : 24px;
+
+                    color : red;
+                    font-size : 12px;
+                    /* display : none; */
+                }
+
         .passwordDiv {
             width : 100%;
             height : 76px;
-            
+
             display: flex;
             align-items: start;
             justify-content: center;
-
-            /* margin-top : 24px; */
         }
 
-        
+
             .passwordDiv>div {
                 width : 95%;
                 height : 100%;
@@ -128,7 +136,7 @@
 
                 display: flex;
                 align-items: center;
-                justify-content: left;                      
+                justify-content: left;
             }
 
 
@@ -144,12 +152,12 @@
 
 
             .passwordInfoPTag {
-                width : 95%;
+                width : 100%;
                 height : 100%;
                 text-align: left;
 
                 color : red;
-                font-size : 13px;
+                font-size : 12px;
                 margin-left : 2px;
                 margin-top : 3px;
             }

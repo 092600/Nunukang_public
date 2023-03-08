@@ -8,11 +8,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <title>누누강 : 메인페이지</title>
 
     <th:block th:replace="settings/config/pages/accounts/signup/signupPageConfig :: signupPageConfig"></th:block>
-    
+
 
 </head>
 <body>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="emailDiv">
                 <div>
                     <div class="emailTextDiv">
@@ -38,8 +38,9 @@
                     </div>
                     <div class="emailInputDiv">
                         <input id="email">
-                        <button type="button">중복확인</button>
+                        <button type="button" onclick="existsCheckByUserEmail(this)">중복확인</button>
                     </div>
+                    <p class="emailInfoPTag"></p>
                 </div>
             </div>
 
@@ -50,12 +51,12 @@
                         <p>비밀번호 </p>
                     </div>
                     <div class="passwordInputDiv">
-                        <input id="password">
+                        <input type="password" id="password">
                     </div>
-                    <p class="passwordInfoPTag"></p>
+                    <p class="passwordInfoPTag" id="passwordInfoPTag1"></p>
                 </div>
             </div>
-            
+
             <div class="passwordDiv">
                 <div>
                     <div class="passwordTextDiv">
@@ -64,15 +65,15 @@
                         </div>
                     </div>
                     <div class="passwordInputDiv">
-                        <input id="password2">
+                        <input type="password" id="password2">
                     </div>
-                    <p class="passwordInfoPTag"></p>
+                    <p class="passwordInfoPTag" id="passwordInfoPTag2"></p>
                 </div>
-            </div>     
-            
+            </div>
+
         </div>
-         
-        
+
+
     </div>
 
 

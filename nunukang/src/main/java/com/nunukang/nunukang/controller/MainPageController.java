@@ -2,6 +2,8 @@ package com.nunukang.nunukang.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
 
 @Controller
 public class MainPageController {
@@ -38,7 +40,12 @@ public class MainPageController {
     // accounts
 
     @GetMapping(value = "/accounts/login")
-    public String loginPage() {
+    public String loginPage(@RequestParam(name = "error", required = false) String errorMessage,
+        Model model) {
+
+        model.addAttribute("errorMessage", errorMessage);
+
+
         return "pages/accounts/login/loginPage";
     }
 

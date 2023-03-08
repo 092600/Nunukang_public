@@ -19,15 +19,14 @@
             <div class="myFishsHeaderDiv">
                 <div>
                     <p>
-                        <span th:text="test"></span>
-                        <!-- <span th:text="${session.user.getName()}"></span> -->
+                        <!-- <span th:text="test"></span> -->
+                        <span th:text="${#authentication.principal.user.name}"></span>
                         <span>님과 누누강이 함께한 추억들</span>
                     </p>
                 </div>
             </div>
             <div class="myFishsContentDiv">
-                <input type="hidden" id="email" th:value="test">
-                <!-- <input type="hidden" id="email" th:value="${session.user.getEmail()}"> -->
+                <input type="hidden" id="email" th:value="${#authentication.principal.user.email}">
                 <div class="myFishsContentOutterDiv" id="myFishsContentOutterDiv">
 
                 </div>

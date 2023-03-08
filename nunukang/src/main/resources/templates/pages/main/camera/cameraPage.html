@@ -56,6 +56,16 @@
             </svg>
         </div>
         <div class="indexContainer">
+            <div class="fishNameOutterDiv">
+                <div class="fishNameDiv">
+                    <div class="fishNameImgDiv">
+                        <i class="fa-solid fa-pencil"></i>
+                    </div>
+                    <div class="fishNameTextDiv">
+                        <input id="fileName" placeholder="사진 이름을 입력해주세요">
+                    </div>
+                </div>
+            </div>
             <div class="indexContentDiv" id="mainDiv">
                 <p class="contentMainPTag">누누강 알림</p>
                 <div class="indexContentSubDiv">
@@ -69,7 +79,7 @@
                     <p>해당 서비스를 사용해주시면 감사하겠습니다.</p>
                 </div>
             </div>
-            <div class="indexContentDiv" id="imgDiv">
+            <div class="indexContentDiv" id="imgDiv" >
                 <p class="fish_species_namePTag"></p>
                 <p class="fish_sizePTag"></p>
                 <div class="indexContentInnerDiv">
@@ -77,10 +87,10 @@
                 </div>
             </div>
             <div class="indexButtonOuterDiv">
-                <div class="cameraDiv" id="cameraDiv" onclick="cameraClick()">
+                <div class="cameraDiv" id="cameraDiv" >
                     <div >
                         <form id="cameraFormTag">
-                            <!-- <input type="hidden" id="email" name="email" th:value="${session.user.getEmail()}"> -->
+                            <input type="hidden"  id="email" name="email" th:value="${#authentication.principal.user.email}">
                             <input type="file" value="사진찍기" class="camera" id="camera" name="picture" capture="camera" accept="image/*" onchange="getPic()" />
                         </form>
                         <label className="input-file-button" id="cameraButton" for="camera">
@@ -88,9 +98,9 @@
                         </label>
                     </div>
                 </div>
-                <div class="submitPictureDiv" id="submitPictureDiv" onclick="submitPictureDivClick()">
+                <div class="submitPictureDiv" id="submitPictureDiv" onclick="sendPicture()">
                     <div>
-                        <label id="pictureSubmitButton" onclick="sendPicture()">물고기종 및 크기 확인하기</label>
+                        <label id="pictureSubmitButton" >물고기종 및 크기 확인하기</label>
                     </div>
                 </div>
             </div>

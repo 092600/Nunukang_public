@@ -1,4 +1,5 @@
-userProfileImgPath: file:///Users/sim/nodamFiles/user/
+fishPicturePath: file://fish_picture_save_path
+postPicturePath: file://post_picture_save_path
 
 google_map_secret_key: google_map_secret_key
 
@@ -50,7 +51,7 @@ spring:
           ssl.enable : true
           ssl.trust : smtp.naver.com
           starttls.enable : true
-  
+
   server:
     address: 0.0.0.0
     port: 8080

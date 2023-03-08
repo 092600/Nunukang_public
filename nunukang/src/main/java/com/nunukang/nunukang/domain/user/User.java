@@ -8,7 +8,6 @@ import javax.persistence.*;
 import com.nunukang.nunukang.domain.alert.Alert;
 import com.nunukang.nunukang.domain.fish.Fish;
 import com.nunukang.nunukang.domain.post.Post;
-import com.nunukang.nunukang.domain.post.hashtag.HashTag;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -32,19 +31,19 @@ public class User {
     private List<Post> posts = new ArrayList<Post>();
 
 
-    @ManyToOne
-    @JoinColumn
-    private User userFollowing = this;
+    // @ManyToOne
+    // @JoinColumn
+    // private User userFollowing = this;
 
-    @ManyToOne
-    @JoinColumn
-    private User userFollower = this;
+    // @ManyToOne
+    // @JoinColumn
+    // private User userFollower = this;
 
-    @OneToMany(mappedBy = "userFollowing")
-    private List<User> followingList = new ArrayList<User>();
+    // @OneToMany(mappedBy = "userFollowing")
+    // private List<User> followingList = new ArrayList<User>();
 
-    @OneToMany(mappedBy = "userFollower")
-    private List<User> followerList = new ArrayList<User>();
+    // @OneToMany(mappedBy = "userFollower")
+    // private List<User> followerList = new ArrayList<User>();
 
 
     @ManyToMany
@@ -53,33 +52,34 @@ public class User {
     @OneToMany(mappedBy = "alert")
     private List<Alert> alerts;
 
-    @OneToMany(mappedBy = "fishingUser")
-    private List<Fish> fishs;
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private List<Fish> fishs = new ArrayList<Fish>();
 
-    //  연관관계 편의 메서드
-    public void following(User following) {
-        this.followingList.add(following);
+    // //  연관관계 편의 메서드
+    // public void following(User following) {
+    //     this.followingList.add(following);
 
-        if(!following.getFollowerList().contains(this)) {
-            following.getFollowerList().add(this);
-        }
+    //     if(!following.getFollowerList().contains(this)) {
+    //         following.getFollowerList().add(this);
+    //     }
 
-        if(!following.getUserFollower().getFollowerList().contains(this)) {
-            following.getUserFollower().getFollowerList().add(this);
-        }
-    }
+    //     if(!following.getUserFollower().getFollowerList().contains(this)) {
+    //         following.getUserFollower().getFollowerList().add(this);
+    //     }
+    // }
 
-    public void addFollower(User follower) {
-        this.followerList.add(follower);
+    // public void addFollower(User follower) {
+    //     this.followerList.add(follower);
 
-        if(follower.getFollowingList().contains(this)) {
-            follower.getFollowingList().add(this);
-        }
-        //연관관계의 주인을 통한 확인
-        if(!follower.getUserFollowing().getFollowingList().contains(this)) {
-            follower.getUserFollowing().getFollowingList().add(this);
-        }
-    }
+    //     if(follower.getFollowingList().contains(this)) {
+    //         follower.getFollowingList().add(this);
+    //     }
+    //     //연관관계의 주인을 통한 확인
+    //     if(!follower.getUserFollowing().getFollowingList().contains(this)) {
+    //         follower.getUserFollowing().getFollowingList().add(this);
+    //     }
+    // }
 
 
 }
