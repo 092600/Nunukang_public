@@ -1,22 +1,23 @@
 package com.nunukang.nunukang.domain.user;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
 
 import com.nunukang.nunukang.domain.alert.Alert;
+import com.nunukang.nunukang.domain.comment.Comment;
 import com.nunukang.nunukang.domain.fish.Fish;
 import com.nunukang.nunukang.domain.post.Post;
 import lombok.Getter;
 import lombok.Setter;
+import java.util.ArrayList;
 
 @Setter
 @Getter
 @Entity
 public class User {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(generator = "userSequenceGenerator")
     @Column(name = "user_id")
     private Long id;
 
@@ -27,9 +28,11 @@ public class User {
     @Enumerated
     private UserRole role = UserRole.User;
 
-    @OneToMany(mappedBy = "post_writer")
-    private List<Post> posts = new ArrayList<Post>();
+    @OneToMany(mappedBy = "postWriter")
+    private List<Post> posts;
 
+    // @OneToMany(mappedBy = "likers")
+    // private List<Post> likePosts;
 
     // @ManyToOne
     // @JoinColumn
@@ -46,15 +49,15 @@ public class User {
     // private List<User> followerList = new ArrayList<User>();
 
 
-    @ManyToMany
-    private List<Post> likePosts;
-
     @OneToMany(mappedBy = "alert")
     private List<Alert> alerts;
 
-    @OneToMany
-    @JoinColumn(name = "user_id")
-    private List<Fish> fishs = new ArrayList<Fish>();
+    @OneToMany(mappedBy = "user", targetEntity = Comment.class)
+    private List<Comment> comments;
+
+    // @OneToMany(fetch = FetchType.LAZY)
+    // @JoinColumn(name = "user_id")
+    // private List<Fish> fishs;
 
     // //  연관관계 편의 메서드
     // public void following(User following) {

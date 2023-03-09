@@ -50,6 +50,7 @@ function sendPicture(){
     } else {
         if (confirm("입력하신 이름으로 사진을 저장하시겠습니까?")){
             $("#fileName").attr("readonly",true);
+            $(".submitPictureDiv").prop("onclick", null).off("click");
             $(".loadingDiv").css("display","flex");
             $.ajax({
                 url:'http://127.0.0.1:5000',

@@ -19,23 +19,26 @@ function searchPost(){
     alert('search');
 }
 
-function createPost(){
-    alert('create');
-}
 
 
 
-
-function postLike(obj, postId) {
+function postLike(obj, post_id, user_id) {
     obj.style.color = "red";
 
-    console.log(postId);
+    console.log(post_id);
+
+    const data = {
+        id : user_id,
+    }
+
     $.ajax({
-        url : '/api/v4/post/'+postId+"/like",
-        type:'PATCH',
-        success:function(result){
-            console.log(result);
-            if (result){
+        url : '/api/v4/community/post/'+post_id+"/like",
+        type : 'PATCH',
+        dataType : 'JSON',
+        contentType : "application/json",
+        data : JSON.stringify(data),
+        success:function(bool){
+            if (bool) {
                 history.go(0);
             }
         },
@@ -45,14 +48,21 @@ function postLike(obj, postId) {
     });
 }
 
-function postUnLike(obj, postId) {
+function postUnLike(obj, post_id, user_id) {
     obj.style.color = "gray"
 
+    const data = {
+        id : user_id,
+    }
+
     $.ajax({
-        url : '/api/v4/post/'+postId+"/unlike",
-        type:'PATCH',
-        success:function(result){
-            if (result){
+        url : '/api/v4/community/post/'+post_id+"/unlike",
+        type : 'PATCH',
+        dataType : 'JSON',
+        contentType : "application/json",
+        data : JSON.stringify(data),
+        success:function(bool){
+            if (bool) {
                 history.go(0);
             }
         },

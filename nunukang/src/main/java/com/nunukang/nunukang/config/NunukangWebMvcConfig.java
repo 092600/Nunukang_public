@@ -17,12 +17,16 @@ public class NunukangWebMvcConfig implements WebMvcConfigurer {
     @Value("${postPicturePath}")
     String postPicturePath;
 
+
+
+
     public void addResourceHandlers(ResourceHandlerRegistry registry){
         registry.addResourceHandler("/fish/images/**")
                 .addResourceLocations(fishPicturePath);
         registry.addResourceHandler("/post/images/**")
                 .addResourceLocations(postPicturePath);
     }
+
 }
 
 

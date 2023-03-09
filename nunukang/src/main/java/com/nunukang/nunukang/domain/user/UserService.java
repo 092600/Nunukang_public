@@ -14,6 +14,12 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
+
+    public Optional<User> findById(Long id) {
+        return userRepository.findById(id);
+    }
+
+    
     public boolean existsByEmail(String email) {
         return userRepository.existsByEmail(email);
     }
@@ -34,4 +40,6 @@ public class UserService {
             return false;
         }
     }
+
+    
 }

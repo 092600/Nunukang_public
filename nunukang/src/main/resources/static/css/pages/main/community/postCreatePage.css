@@ -1,0 +1,411 @@
+@media (min-width: 650px) {
+
+    /* header */
+    .postCreateHeaderDiv{
+        width : 100%;
+        height : 25%;
+    }
+
+        /* functional Div */
+
+        .postFunctionalDiv{
+            width : 100%;
+            height : 43%;
+
+            display: flex;
+        }
+
+        .postReturnPageButtonDiv{
+            width : 25%;
+            height: 100%;
+
+            font-size : 71px;
+
+            display : flex;
+            align-items : end;
+            justify-content: left;
+            text-align: left;
+        }
+
+        .postCreateButtonDiv{
+            width : 75%;
+            height: 100%;
+            display: flex;
+
+            align-items : flex-end;
+            justify-content: right;
+        }
+
+        .postStoreButton {
+            width : 22%;
+            height : 68%;
+            border : 4px solid black;
+            border-radius: 18%;
+            background-color: royalblue;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size : 33px;
+            color : white;
+        }
+        .postSaveButton {
+            width : 22%;
+            height : 68%;
+            border : 4px solid black;
+            border-radius: 18%;
+            background-color: darkblue;
+            margin-left : 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size : 33px;
+            color : white;
+        }
+        /* functional Div */
+
+        /* postTitleDiv */
+        .postTitleDiv{
+            width : 100%;
+            height : 57%;
+
+            display : flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* postTitleDiv */
+        .postTitleDiv input{
+            width: 99%;
+            height: 66%;
+
+            font-size: 52px;
+            background-color: cornflowerblue;
+
+            border : 0px;
+            border-bottom: 5px solid rgba(0, 0, 0, 0.34);
+        }
+
+        .postWriterEmail{
+            display: none;
+        }
+
+        .postWriterName{
+            display: none;
+        }
+
+    /* header */
+
+    /*content*/
+    .postContentOutterDiv{
+        width : 100%;
+        height : 74%;
+    }
+
+    .postContentTextDiv {
+        width : 100%;
+        height : 75%;
+
+        display : flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .postContentTextDiv textarea{
+        width : 98%;
+        height : 100%;
+
+        font-size : 38px;
+    }
+
+    .postContentImgOutterDiv {
+        width : 100%;
+        height : 25%;
+
+        display : flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .postContentImgInnerDiv {
+        width : 98%;
+        height : 95%;
+
+        display : flex;
+        align-items: center;
+        justify-content: left;
+
+        margin-top : 7px;
+        border-top : 8px solid gray;
+        border-bottom : 8px solid gray;
+        background-color: white;
+    }
+
+    .postImgDiv {
+        width : 168px;
+        height : 168px;
+        background-color: white;
+
+        border : 5px solid gray;
+
+        margin-left : 11px;
+        position: relative;
+    }
+
+    .postImgDiv img{
+        width : 168px;
+        height : 168px;
+    }
+
+    .imgDeleteDiv {
+        width : 40px;
+        height: 40px;
+        border: 4px solid black;
+        border-radius: 50%;
+        background-color: red;
+
+        position: absolute;
+        right : 2px;
+        top : 2px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .imgDeleteDiv:after {
+        content: "\00d7";
+        font-size : 55px;
+        margin-top: 8px;
+    }
+
+    .imgZoomUpDiv {
+        width : 82%;
+        height : 43%;
+
+        position: absolute;
+        top : 20%;
+
+        display : none;
+        border : 7px solid black;
+    }
+    .imgZoomUpDiv img{
+        width : 100%;
+        height : 100%;
+
+        position: absolute;
+    }
+
+    .imgZoomDownDiv {
+        width : 55px;
+        height: 55px;
+        border: 4px solid black;
+        border-radius: 50%;
+        background-color: red;
+
+        position: absolute;
+        right : 2px;
+        top : 2px;
+
+        z-index: 10;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .imgZoomDownDiv:after {
+        content: "\00d7";
+        font-size : 55px;
+        margin-top: 8px;
+    }
+    /* content */
+
+    /* subdiv*/
+    .postSubOutterDiv{
+        width : 100%;
+        height : 11%;
+
+        display: flex;
+        padding-top: 6px;
+
+        align-items : center;
+        justify-content: center;
+    }
+
+    .postSubInnerDiv {
+        width : 98%;
+        height : 100%;
+
+        display: flex;
+
+        background-color: white;
+        align-items : center;
+        justify-content: left;
+        text-align: center;
+    }
+
+    .taggingDiv {
+        width : 107px;
+        height : 93px;
+        padding-top : 15px;
+        padding-left : 8px;
+    }
+
+    .taggingDiv button{
+        font-size : 71px;
+        color : gray;
+        border: 0px;
+        background-color: white;
+    }
+
+    .appendImgDiv {
+        width : 107px;
+        height : 93px;
+        padding-top : 6px;
+        padding-left : 8px;
+    }
+
+    .appendImgDiv button{
+        font-size : 82px;
+        color : gray;
+        border: 0px;
+        background-color: white;
+    }
+
+    .appendImgInput {
+        display: none;
+    }
+    /* subdiv */
+
+    .hashtagDiv {
+        width : 92%;
+        height: 64%;
+
+        position: absolute;
+        top : 13%;
+
+        background-color: white;
+
+        border : 7px solid black;
+        display: none;
+
+        z-index: 5;
+    }
+
+    .hashtagDeleteDiv {
+        width : 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: white;
+
+        position: absolute;
+        right : 2px;
+        top : 2px;
+
+        z-index: 10;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hashtagDeleteDiv:after {
+        content: "\00d7";
+        font-size : 75px;
+        margin-top: 8px;
+    }
+
+    .hashtagHeaderDiv {
+        width : 100%;
+        height : 18%;
+
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: left;
+
+        border-bottom: 4px solid black;
+    }
+
+    .hashtagHeaderDiv p {
+        font-size: 58px;
+        font-weight: bolder;
+        margin-left : 7%;
+    }
+
+    .hashtagContentDiv {
+        width : 100%;
+        height : 82%;
+
+        overflow: auto;
+    }
+    .followerInfoDiv {
+        width : 100%;
+        height : 16%;
+
+        display : flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+
+        border-bottom: 4px solid black;
+    }
+
+    .hashtagButtonDiv {
+        width: 16%;
+        height: 100%;
+
+        display : flex;
+        align-items: center;
+        justify-content: center;
+
+        border-right: 3px solid black;
+    }
+
+
+    .hashtagButtonDiv div{
+        width : 65%;
+        height: 65%;
+
+        border: 4px solid black;
+
+        font-size : 58px;
+        font-weight: bold;
+        color : black;
+        display : flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hashtagUserProfileDiv {
+        width: 23%;
+        height: 100%;
+
+        display : flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hashtagUserProfileDiv img{
+        width : 60%;
+        height : 70%;
+    }
+
+    .hashtagUsernameDiv {
+        width: 61%;
+        height: 100%;
+
+        font-size : 42px;
+
+        display : flex;
+        align-items: center;
+        justify-content: left;
+    }
+
+    .hashtagUsernameDiv p{
+        margin-left : 5%;
+    }
+
+}

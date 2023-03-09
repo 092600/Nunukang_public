@@ -29,7 +29,6 @@ public class Fish extends FishTime {
 
 
     @ManyToOne
-    @JoinColumn(name = "TEAM_ID", insertable = false,
-    			updatable = false)
+    @JoinColumn(name = "user_id")
     private User fishingUser;
 }

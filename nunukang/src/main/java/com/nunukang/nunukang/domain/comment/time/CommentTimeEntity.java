@@ -1,8 +1,7 @@
-package com.nunukang.nunukang.domain.fish.time;
+package com.nunukang.nunukang.domain.comment.time;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
-import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 
@@ -15,10 +14,8 @@ import lombok.Getter;
 @Getter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public abstract class FishTime {
-
-    @Column(name = "created_date", updatable = false)
-    @CreatedDate()
-    private LocalDateTime createdDate;
+public abstract class CommentTimeEntity {
     
+    @CreatedDate
+    private LocalDate createDate;
 }
