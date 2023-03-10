@@ -1,14 +1,13 @@
 $(document).ready(function(){
-    var email = $("#email").val();
+    const id = $("#id").val();
 
     $.ajax({
-        url: "/api/v4/fish/pictures?email="+email,
+        url: "/api/v4/fish/pictures?id="+id,
         type: "GET",
         cache: true,
         async: false,
-        success: function (fsihs) {
-            
-            if (fsihs == ""){
+        success: function (fish) {
+            if (fish == ""){
                 $("#myFishsContentOutterDiv").append(
                     '<div class="noneImagesDiv">' +
                         '<div>'+
@@ -19,16 +18,15 @@ $(document).ready(function(){
                     '</div>'
                 )
             } else {
-                console.log(fsihs);
-                for (var i=0; i<=fsihs.length;i++){
+                for (var i=0; i<=fish.length;i++){
                     $("#myFishsContentOutterDiv").append(
                         '<div class="myFishsContentInnerDiv">'+
                             '<div class="myFishsContentInnerHeaderDiv">'+
-                                '<div class="pictureDeleteDiv" onClick="deletePicture('+fsihs.at(i).id+')"></div>'+
-                                '<p>'+fsihs.at(i).pictureName+'</p>'+
+                                '<div class="pictureDeleteDiv" onClick="deletePicture('+fish.at(i).id+')"></div>'+
+                                '<p>'+fish.at(i).pictureName+'</p>'+
                             '</div>'+
                             '<div class="myFishsContentInnerContentDiv">'+
-                                '<a href="/myfishs/picture/'+fsihs.at(i).id+'"><img class="fishPicture" src="'+fsihs.at(i).picturePath+'.jpg"></a>'+
+                                '<a href="/picture/'+fish.at(i).id+'"><img class="fishPicture" src="'+fish.at(i).picturePath+'.jpg"></a>'+
                             '</div>'+
                         '</div>'
 
@@ -40,9 +38,6 @@ $(document).ready(function(){
             console.error(err);
         }
     });
-        
-    
-    
 })
 
 function deletePicture(e){

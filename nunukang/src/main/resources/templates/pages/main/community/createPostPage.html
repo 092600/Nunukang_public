@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sodipodi="http://java.sun.com/xml/ns/j2ee"
+        xmlns:inkscape="http://java.sun.com/xml/ns/javaee"
+        layout:decorate="~{settings/layout/pages/main/common/pagesCommonLayout}"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>누누강 : 메인페이지</title>
+
+    <th:block th:replace="settings/config/pages/main/community/postCreatePageConfig :: postCreatePageConfig"></th:block>
+
+</head>
+<body>
+
+    <div layout:fragment="content">
+        <div class="imgZoomUpDiv" id="imgZoomUpDiv">
+            <div class="imgZoomDownDiv" id="imgZoomDownDiv" onclick="imgZoomDown()"></div>
+            <img id="zoomUpImg">
+        </div>
+        <div class="hashtagDiv">
+            <div class="hashtagDeleteDiv" id="hashtagDeleteDiv" onclick="deleteHashtagDiv()"></div>
+            <div class="hashtagHeaderDiv">
+                <p>해쉬태그하기</p>
+            </div>
+            <!-- <div class="hashtagContentDiv">
+                <div class="followerInfoDiv" th:each="follower : ${followerList}">
+                    <div class="hashtagButtonDiv">
+                        <div id="hashtagButtonClickDiv" th:email="${follower.getId()}" checked="false" onclick="hashtag(this, this.getAttribute('email'))">
+                            <i class="fa-solid fa-circle-check" id="hashtagCheckITag"></i>
+                        </div>
+                    </div>
+                    <div class="hashtagUserProfileDiv">
+                        <img th:src="@{/images/nunukangLogo/small_logo.png}">
+                    </div>
+                    <div class="hashtagUsernameDiv">
+                        <p th:text="${follower.getEmail()}"></p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="communityOutterDiv">
+            <div class="communityInnerContentDiv">
+                <form class="postCreateForm" id="postCreateForm"></form>
+                <div class="postCreateHeaderDiv">
+                    <div class="postFunctionalDiv">
+                        <div class="postReturnPageButtonDiv">
+                            <a href="/community"><i class="fa-solid fa-arrow-left"></i></a>
+                        </div>
+                        <div class="postCreateButtonDiv">
+                            <div class="postSaveButton" onclick="postSave()">
+                                <span>글 저장</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="postTitleDiv">
+                        <input type="text" class="postWriterEmail" id="postWriterEmail" th:value="${#authentication.principal.user.email}">
+                        <input type="text" class="postWriterName" id="postWriterName" th:value="${#authentication.principal.user.name}">
+                        <input type="hidden"  id="id" th:value="${#authentication.principal.user.id}">
+                        <input type="text" id="postTitle" placeholder="제목 추가">
+                    </div>
+                </div>
+                <div class="postContentOutterDiv">
+                    <div class="postContentTextDiv">
+                        <textarea id="postContent" cols="40" rows="40" placeholder="우리의 소중한 추억을 공유해봐요.&#13;&#10;사진도 첨부할 수 있어요"></textarea>
+                    </div>
+                    <div class="postContentImgOutterDiv">
+                        <div class="postContentImgInnerDiv" id="postContentImgInnerDiv"></div>
+                    </div>
+                </div>
+                <div class="postSubOutterDiv">
+                    <div class="postSubInnerDiv">
+                        <div class="appendImgDiv">
+                            <button onclick="postAppendImg()"><i class="fa-solid fa-image"></i></button>
+                            <input type="file" multiple accept="image/*" class="appendImgInput" id="appendImgInput" onchange="getImages(this)">
+                        </div>
+                        <div class="taggingDiv">
+                            <button onclick="hashtagging()"><i class="fa-solid fa-hashtag"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+</html>

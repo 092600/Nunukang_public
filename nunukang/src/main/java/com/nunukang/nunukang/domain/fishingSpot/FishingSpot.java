@@ -17,7 +17,7 @@ import lombok.Getter;
 @Getter
 @Entity
 public class FishingSpot {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(generator = "fishingSpotSequenceGenerator")
     @Column(name = "fishing_spot_id")
     private Long id;
     

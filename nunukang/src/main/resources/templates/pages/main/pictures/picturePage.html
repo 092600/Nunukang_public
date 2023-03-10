@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sodipodi="http://java.sun.com/xml/ns/j2ee"
+        xmlns:inkscape="http://java.sun.com/xml/ns/javaee"
+        layout:decorate="~{settings/layout/pages/main/common/pagesCommonLayout}"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>누누강 : 메인페이지</title>
+
+    <th:block th:replace="settings/config/pages/main/pictures/picturesPageConfig :: picturesPageConfig"></th:block>
+
+</head>
+<body>
+
+    <div layout:fragment="content">
+        <div class="pictureOutterDiv">
+            <img class="beforeImg" th:src="@{/images/accounts/before.png}" onclick="goToBeforePage()">
+            <div class="pictureInnerHeaderDiv">
+                <p class="pictureNamePTag" th:text="${fish.getPictureName()}"></p>
+                <!-- <p class="pictureSpeicesNamePTag" th:text="${fish.getFishSpeicesName()}"></p> -->
+            </div>
+            <div class="pictureInnerContentDiv">
+                <div class="pictureImgDiv">
+                    <img id="pictureImg" th:src="@{${fish.getPicturePath()}}" onclick="changeImg(this)">
+                    <div id="pictureImgInnerDiv" onclick="changeImg(this)">
+                        <!-- <p><span>어종이름 :</span><span th:text="${fish.getFishSpeicesName()}"></span> </p> -->
+                        <p><span>길이 :</span><span th:text="${fish.getFishSize()}"></span>cm</p>
+                        <p><span>길이 점수 :</span><span th:text="${fish.getFishScore()}"></span> </p>
+                        <p><span>날짜 :</span><span th:text="${#temporals.format(fish.getCreatedDate(), 'yyyy년 MM월 dd일 HH시 mm분')}"></span> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

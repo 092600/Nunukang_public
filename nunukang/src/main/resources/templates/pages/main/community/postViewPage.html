@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sodipodi="http://java.sun.com/xml/ns/j2ee"
+        xmlns:inkscape="http://java.sun.com/xml/ns/javaee"
+        layout:decorate="~{settings/layout/pages/main/community/communityCreatePostLayout}"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>누누강 : 메인페이지</title>
+
+    <th:block th:replace="settings/config/pages/main/community/postViewPageConfig :: postViewPageConfig"></th:block>
+
+</head>
+<body>
+
+    <div layout:fragment="content">
+        <div class="imgZoomUpDiv" id="imgZoomUpDiv">
+            <div class="imgZoomDownDiv" id="imgZoomDownDiv" onclick="imgZoomDown()"></div>
+            <img id="zoomUpImg">
+        </div>
+        <div class="communityOutterDiv">
+            <div class="communityInnerContentDiv">
+                <form class="postCreateForm" id="postCreateForm"></form>
+                <div class="postCreateHeaderDiv">
+                    <div class="postFunctionalDiv">
+                        <div class="postReturnPageButtonDiv">
+                            <a href="/community"><i class="fa-solid fa-arrow-left"></i></a>
+                        </div>
+                        <div class="postCreateButtonDiv">
+                            <div class="postSaveButton"
+                                th:if="${post.postWriter.email} == ${#authentication.principal.user.email}"
+                            th:postId="${post.id}" th:onclick="deletePost(this.getAttribute('postId'))">
+                                <span>글 삭제</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="postTitleDiv">
+                        <input type="text" class="postWriterEmail" id="postWriterEmail" th:value="${#authentication.principal.user.email}">
+                        <input type="text" class="postWriterName" id="postWriterName" th:value="${#authentication.principal.user.name}">
+                        <input type="hidden"  id="id" th:value="${#authentication.principal.user.id}">
+                        <input type="text" id="postTitle" th:value="${post.title}" readonly>
+                    </div>
+                </div>
+                <div class="postContentOutterDiv">
+                    <div class="postContentTextDiv">
+                        <textarea id="postContent" cols="40" rows="40" readonly th:text="${post.content}"></textarea>
+                    </div>
+                    <div class="postContentImgOutterDiv">
+                        <div class="postContentImgInnerDiv" id="postContentImgInnerDiv">
+                            <img class="postImgDiv" th:each="image : ${images}" th:src="@{${image.imageSavePath}}" onclick="imgZoomUp(this)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="commentOutterDiv">
+                    <!-- <div class="commentGapDiv"></div> -->
+        
+                    <div class="commentHeaderDiv">
+                        <div>
+                            <p>댓글</p>
+                        </div>
+                    </div>
+
+                    <div class="commentContentDiv" th:each="comment : ${post.comments}">
+                        <div class="commentUserInfoDiv">
+                            <div>
+                                <div class="commentUserProfileDiv">
+                                    <img th:src="@{/images/guideImg.jpg}">
+                                </div>
+                                <div class="commentUserNameDiv">
+                                    <p th:text="${comment.user.name}"></p>
+                                </div>
+                                <div class="commentUserEtcDiv">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="commentCreateContentDiv">
+                            <div>
+                                <textarea th:text="${comment.content}" readonly></textarea>
+                            </div>
+                        </div>
+                        <div class="commentCreateButtonDiv">
+                            <div>
+                                <button 
+                                th:comment_id="${comment.id}"
+                                 th:onclick="deleteComment(this.getAttribute('comment_id'))">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="commentNullContentDiv">
+                        <div class="commentUserInfoDiv">
+                            <div>
+                                <div class="commentUserProfileDiv">
+                                    <img th:src="@{/images/guideImg.jpg}">
+                                </div>
+                                <div class="commentUserNameDiv">
+                                    <p th:text="${#authentication.principal.user.name}"></p>
+                                </div>
+                                <div class="commentUserEtcDiv">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="commentCreateContentDiv">
+                            <div>
+                                <textarea id="commentContentTextarea" placeholder="댓글을 입력해주세요."></textarea>
+                            </div>
+                        </div>
+                        <div class="commentCreateButtonDiv">
+                            <div>
+                                <button 
+                                th:post_id="${post.id}"
+                                th:user_id="${#authentication.principal.user.id}"
+                                 th:onclick="saveComment(this.getAttribute('post_id'), this.getAttribute('user_id'))">등록</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
