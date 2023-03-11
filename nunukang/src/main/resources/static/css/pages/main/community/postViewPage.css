@@ -203,6 +203,7 @@
 
         display : none;
         border : 7px solid black;
+        z-index : 5;
     }
     .imgZoomUpDiv img{
         width : 100%;

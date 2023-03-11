@@ -38,7 +38,7 @@ public class MainPageController {
     }
 
     @GetMapping(value = "/pictures")
-    public String cameraPage() {
+    public String picturesPage() {
         return "pages/main/pictures/picturesPage";
     }
 

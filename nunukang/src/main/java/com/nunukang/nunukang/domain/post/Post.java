@@ -31,8 +31,9 @@ public class Post extends PostTimeEntity {
     @ManyToOne
     private User postWriter;
 
-    @OneToMany
-    private List<User> likers;
+    @ManyToMany
+    @JoinColumn(name = "like_post")
+    private List<User> likers = new ArrayList<User>();
 
 
     @OneToMany(mappedBy = "postId")

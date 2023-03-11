@@ -1,88 +1,133 @@
 @media (min-width: 650px) {
 
-    .marker-label {
-        margin-top : -38px;
-    }
-
-
-    .googleMapDiv {
-        width : 100vw;
-        height : 78vh;
-    }
-    
-    .commonLowerMenuBar {
-        position : fixed;
-        bottom : 0vh;
-    }
-
-    
-    .locationClickEventDiv {
-        width : 100vw;
-        height : 70vh;
-
+    .lodingDiv {
         display : none;
 
-        position: fixed;
-        
-        border-radius: 20px 20px 0px 0px;
-        z-index: 100;
-        bottom : 8vh;
+        position: absolute;
+        width : 10vh;
+        height : 10vh;
+        font-size: 13px;
+        color : black;
+        /* background-color: red; */
 
-        overflow-y: scroll;
+        z-index: 100;
+        top : 43%;
+        left : 45%;
     }
 
+        .spinner {
+            animation: spin 2.5s linear infinite;
+        }
+    .content {
+        position: relative;
+    }
 
-        .locationInfoHeaderDiv {
+    .fishingSpotTypeButtonDiv {
+        width : 16%;
+        height : 30%;
+
+        position: relative;
+        z-index: 3;
+
+        left : 84vw;
+        top : 8%;
+    }
+
+        .fishingSpotTypeButtonDiv>div {
             width : 100%;
-            height : 11%;
+            height : 33%;
 
             display : flex;
             align-items: center;
             justify-content: center;
         }
 
-            .locationFravoriteButtonDiv {
-                width : 15%;
-                height : 100%;
+        .fishingSpotTypeButtonDiv>div div {
+            width : 80%;
+            height : 80%;
 
-                display : flex;
-                align-items: center;
-                justify-content: center;
+            display : flex;
+            align-items: center;
+            justify-content: center;
 
-                font-size: 20px;
-            }
-            .locationNameInfoDiv {
-                width : 70%;
-                height : 100%;
+            border : 2px solid black;
+            border-radius: 25px;
 
-                display : flex;
-                align-items: center;
-                justify-content: center;
-            }
+            font-size : 34px;
+            font-weight: 500;
 
-                .locationNameInfoDiv img {
-                    width : 20px;
-                    height : 20px;
-                }
-
-            .locationClickDivDelButtonDiv {
-                width : 15%;
-                height : 100%;
-                
-                display : flex;
-                align-items: center;
-                justify-content: center;
-                
-                font-size: 27px;
-            }
-
-
-        .locationTemperatureOutterDiv {
-            width : 100%;
-            height : 73%;
+            background-color: rgba(168, 168, 168, 0.36);
+            /* background-color: rgba(31, 31, 31, 0.36); */
         }
 
-            .locationTemperatureOutterHeaderDiv {
+
+        .tmp {
+            position: relative;
+            bottom : 0%;
+
+            height : 30%;
+            width : 100%;
+
+            display: flex;
+            background-color: red;
+
+        }
+
+        .fishingSpotInfoOutterDiv {
+            width : 100%;
+            /* height : 88%; */
+            height : -50%;
+
+            position: relative;
+            background-color: #5075E5;
+
+            top : 85%;
+            /* bottom : 0; */
+            z-index: 2;
+
+            border-radius: 20px 20px 0px 0px;
+
+            /* display : none; */
+        }
+
+        .marker-label {
+            margin-top : -75px;
+            color : white;
+        }
+
+
+        .googleMapDiv {
+            width : 100vw;
+            height : 78vh;
+
+            z-index : 1;
+            position: relative;
+        }
+        
+        .commonLowerMenuBar {
+            position : fixed;
+            bottom : 0vh;
+        }
+
+        
+        .locationClickEventDiv {
+            width : 100vw;
+            /* height : 70vh; */
+            /* height : 70vh; */
+
+            display : none;
+
+            position: fixed;
+            
+            border-radius: 20px 20px 0px 0px;
+            z-index: 100;
+            bottom : 8vh;
+
+            overflow-y: scroll;
+        }
+
+
+            .locationInfoHeaderDiv {
                 width : 100%;
                 height : 11%;
 
@@ -91,35 +136,18 @@
                 justify-content: center;
             }
 
-
-            .locationTemperatureOutterContentDiv {
-                width : 100%;
-                height : 74%;
-
-                background-color: blue;
-            }
-
-            .locationTemperatureOutterFunctionalDiv {
-                width : 100%;
-                height : 15%;
-
-                display : flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-                .locationTemperatureFunctionalButton {
-                    width : 55%;
+                .locationFravoriteButtonDiv {
+                    width : 15%;
                     height : 100%;
 
                     display : flex;
                     align-items: center;
-                    justify-content: left;
+                    justify-content: center;
+
+                    font-size: 20px;
                 }
-
-
-                .sunriseTimeDiv {
-                    width : 21%;
+                .locationNameInfoDiv {
+                    width : 70%;
                     height : 100%;
 
                     display : flex;
@@ -127,14 +155,81 @@
                     justify-content: center;
                 }
 
-                .sundownTimeDiv {
-                    width : 21%;
+                    .locationNameInfoDiv img {
+                        width : 20px;
+                        height : 20px;
+                    }
+
+                .locationClickDivDelButtonDiv {
+                    width : 15%;
                     height : 100%;
+                    
+                    display : flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+                    font-size: 27px;
+                }
+
+
+            .locationTemperatureOutterDiv {
+                width : 100%;
+                height : 73%;
+            }
+
+                .locationTemperatureOutterHeaderDiv {
+                    width : 100%;
+                    height : 11%;
 
                     display : flex;
                     align-items: center;
                     justify-content: center;
                 }
+
+
+                .locationTemperatureOutterContentDiv {
+                    width : 100%;
+                    height : 74%;
+
+                    background-color: blue;
+                }
+
+                .locationTemperatureOutterFunctionalDiv {
+                    width : 100%;
+                    height : 15%;
+
+                    display : flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                    .locationTemperatureFunctionalButton {
+                        width : 55%;
+                        height : 100%;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: left;
+                    }
+
+
+                    .sunriseTimeDiv {
+                        width : 21%;
+                        height : 100%;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .sundownTimeDiv {
+                        width : 21%;
+                        height : 100%;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
 
                
 }

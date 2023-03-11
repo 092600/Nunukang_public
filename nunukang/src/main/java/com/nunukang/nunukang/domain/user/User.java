@@ -31,6 +31,7 @@ public class User {
     @OneToMany(mappedBy = "postWriter")
     private List<Post> posts;
 
+
     // @OneToMany(mappedBy = "likers")
     // private List<Post> likePosts;
 
