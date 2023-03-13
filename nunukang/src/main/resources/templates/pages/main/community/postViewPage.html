@@ -67,7 +67,7 @@
                         <div class="commentUserInfoDiv">
                             <div>
                                 <div class="commentUserProfileDiv">
-                                    <img th:src="@{/images/guideImg.jpg}">
+                                    <img th:src="@{${comment.user.profileImg}}">
                                 </div>
                                 <div class="commentUserNameDiv">
                                     <p th:text="${comment.user.name}"></p>
@@ -95,7 +95,7 @@
                         <div class="commentUserInfoDiv">
                             <div>
                                 <div class="commentUserProfileDiv">
-                                    <img th:src="@{/images/guideImg.jpg}">
+                                    <img th:src="@{${#authentication.principal.user.profile.profileImg}}">
                                 </div>
                                 <div class="commentUserNameDiv">
                                     <p th:text="${#authentication.principal.user.name}"></p>

@@ -1,4 +1,4 @@
-package com.nunukang.nunukang.domain.post.dto;
+package com.nunukang.nunukang.domain.post.imageDto;
 
 import java.util.List;
 

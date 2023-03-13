@@ -121,4 +121,45 @@ public class MainPageController {
         return "pages/accounts/signup/signupPage";
     }
 
+
+    
+    @GetMapping(value = "/accounts/mypage")
+    public String myPage(Authentication auth, Model model) {
+        NunukangUserDetails nud = (NunukangUserDetails) auth.getPrincipal();
+        User tmp = nud.getUser();
+
+        model.addAttribute("user", userService.findById(tmp.getId()).get());
+        
+        return "pages/accounts/mypage/myPage";
+    }
+
+
+    @GetMapping(value = "/accounts/alert")
+    public String alertPage() {
+        return "pages/accounts/alert/alertPage";
+    }
+
+    @GetMapping(value = "/accounts/mypage/profile")
+    public String profilePage(Authentication auth, Model model) {
+        NunukangUserDetails nud = (NunukangUserDetails) auth.getPrincipal();
+        User tmp = nud.getUser();
+        System.out.println(tmp);
+        
+        model.addAttribute("user", userService.findById(tmp.getId()).get());
+
+        return "pages/accounts/profile/profilePage";
+    }
+
+    @GetMapping(value = "/accounts/user/{id}")
+    public String userPage(@PathVariable(value = "id") Long id, Model model) {
+        Optional<User> optionalUser = userService.findById(id);
+        if (optionalUser.isPresent()) {
+            model.addAttribute("user", optionalUser.get());
+            
+            return "pages/accounts/userpage/userpage";
+        } else {
+
+            return "pages/main/community/communityPage";
+        }
+    }
 }

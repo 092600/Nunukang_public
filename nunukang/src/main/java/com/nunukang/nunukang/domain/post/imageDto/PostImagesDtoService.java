@@ -1,4 +1,4 @@
-package com.nunukang.nunukang.domain.post.dto;
+package com.nunukang.nunukang.domain.post.imageDto;
 
 
 
@@ -24,6 +24,7 @@ import javax.transaction.Transactional;
 public class PostImagesDtoService {
 
     private final PostImageService postImageService;
+    
     @Value("${postPicturePath}")
     // postPicturePath: file:///Users/sim/Nunukang/Post/
     private String thymeleafUsePostPicturePath;
@@ -34,7 +35,7 @@ public class PostImagesDtoService {
         String postPath = defaultPostImageSavePath + post.getId();
 
         // 로컬 서버에 이미지 저장을 위한 디렉토리 생성
-        String postPicturesPath = this.createDirectory(postPath);
+        String postPicturesPath = createDirectory(postPath);
         
         int cnt = 0;
         for (MultipartFile image : postImagesDto.getImages()) {
@@ -44,8 +45,6 @@ public class PostImagesDtoService {
 
             // images의 image를 PostImage 객체로 만들고 인자로 받은 Post 객체와 연관관계를 설정해준다.
             PostImage tmp = new PostImage(post, cnt + ".png", thymeleafUsePostPicturePath);
-            System.out.println(post.getImages());
-            System.out.println(tmp);
             post.getImages().add(tmp);
 
             // postImage 객체 저장

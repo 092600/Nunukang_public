@@ -1,0 +1,319 @@
+@media (min-width: 650px) {
+   .content>div {
+        width : 100%;
+        height : 100%;
+
+        overflow-y: scroll;
+   }
+
+      .alertOutterDiv {
+         /* position: fixed; */
+
+         width : 100%;
+         height : 100%;
+
+         background-color: yellow;
+      }
+
+      .mypageHeaderDiv {
+         width : 100%;
+         height : 10%;
+         
+         display : flex;
+         align-items: center;
+         justify-content: right;
+
+         /* background-color: yellow; */
+      }
+
+         .before {
+            width : 22%;
+            height : 100%;
+            
+            display : flex;
+            align-items: center;
+            justify-content: left;
+
+            font-size : 62px;
+            /* margin-left : 4% */
+         }
+
+         .tmp {
+            width : 46%;
+            height : 100%;
+         }
+
+         .alert {
+            width : 14%;
+            height : 99%;
+
+            display : flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size : 70px;
+            color : black;
+
+            margin-top : 1%;
+            /* background-color: red;; */
+         }
+
+         .setting {
+            width : 14%;
+            height : 100%;
+
+            display : flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size : 70px;
+            color : black;
+            /* background-color: red;; */
+         }
+
+      .userInfoDiv {
+         width : 100%;
+         height : auto;
+/* 
+         margin-top : 4%; */
+      }
+
+         .userProfileDiv {
+            width : 100%;
+            height : 270px;;
+
+            display : flex;
+         }
+
+            .userProfile {
+               width : 30%;
+               height : 100%;
+
+               display : flex;
+               align-items: center;
+               justify-content: center;
+            }
+
+               .userProfile img {
+                  width : 188px;
+                  height : 188px;
+
+                  border : 2px solid black;
+                  border-radius: 50%;
+               }
+
+            .userFollow {
+               width : 70%;
+               height: 100%;
+
+               display : flex;
+            }
+
+            .userFollow>div {
+               width : 33.3%;
+               height : 100%;
+
+               display : flex;
+               align-items: center;
+               justify-content: center;
+
+               font-size : 46px;
+            }
+
+               .userFollow>div p {
+                  width : 100%;
+                  height : 30%;
+
+                  text-align: center;
+               }
+
+            .cnt {
+               font-size : 40px;
+            }
+      
+         .userIntroduceDiv {
+            width : 100%;
+            height : auto;
+         }
+
+            .userIntro1Div {
+               width : 100%;
+               height : 87px;;
+
+               display : flex;
+               align-items: center;
+               justify-content: center;
+               
+               /* background-color: yellow; */
+            }
+
+               .username {
+                  width : 62%;
+                  height : 100%;
+                  font-size : 47px;
+
+                  display : flex;
+                  align-items: center;
+                  justify-content: left;
+
+                  margin-left : 8%;
+
+                  /* background-color: red; */
+               }
+
+               .usernameFunctionalDiv {
+                  width : 27%;
+                  height : 100%;
+
+                  margin-right : 3%;
+
+                  font-size : 55px;
+
+                  display : flex;
+                  align-items: flex-start;
+                  justify-content: right;
+
+                  /* background-color: blue; */
+               }
+
+               
+               .usernameFunctionalDiv {
+                  width : 30%;
+                  height : 100%;
+
+                  
+                  
+               }
+
+            .userIntro2Div {
+               width : 100%;
+               height : auto;
+               
+               display : flex;
+               align-items: center;
+               justify-content: right;
+
+               font-size :34px;
+
+               margin-bottom : 2%;
+            }
+
+               .userIntro2Div div {
+                  width : 91%;
+                  height : auto;
+
+                  margin-right : 3%;
+               }
+
+
+      .follwOutterDiv {
+         width : 100%;
+         height : 83px;;
+
+         margin-top : 5%;
+         margin-left : 2%;
+      }
+
+         .followButtonDiv {
+            width : 100%;
+            height : 100%;
+
+            display : flex;
+            align-items: center;
+            justify-content: center;
+
+         }
+
+            .followButton {
+               width : 92%;
+               height : 100%;
+
+               font-size : 37px;
+               border-radius: 35px;
+
+               display : flex;
+               align-items: center;
+               justify-content: center;
+
+               background-color: white;
+            }
+
+         .unfollowButtonDiv {
+            width : 100%;
+            height : 100%;
+
+            display : flex;
+            align-items: center;
+            justify-content: center;
+
+         }
+
+            .unFollowButton {
+               width : 92%;
+               height : 100%;
+
+               font-size : 37px;
+               border-radius: 35px;
+
+               display : flex;
+               align-items: center;
+               justify-content: center;
+
+               background-color: white;
+            }
+                  
+      .gapDiv {
+         width : 100%;
+         height : 100px;
+      }
+      .userFunctionalDiv {
+         width : 100%;     
+         height : 38%;
+
+         /* background-color: beige ; */
+         margin-top : 4%;
+      }
+
+
+      .settingFunctionalDiv {
+         width : 98%;
+         height : 40% !important;;
+
+         position: absolute;
+         bottom : 0px;
+
+         display : flex;
+         align-items: center;
+         justify-content: center;
+
+         display : none;
+
+         border-radius: 40px 40px 0px 0px;
+         background-color: cornflowerblue;
+
+         border : 4px solid black;
+      }
+
+      .settingFunctionalDiv>div {
+         width : 72%;
+         height : 85%;
+
+      }
+
+      .settingFunctionalDiv>div div {
+         width : 100%;
+         height : 125px;
+
+         display : flex;
+         align-items: center;
+         justify-content: center;
+         
+         background-color: white;
+
+         margin-bottom : 5%;
+         font-size : 45px;
+         font-weight: 700;;
+
+         border-radius: 45px;;
+      }
+}

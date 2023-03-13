@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sodipodi="http://java.sun.com/xml/ns/j2ee"
+        xmlns:inkscape="http://java.sun.com/xml/ns/javaee"
+        layout:decorate="~{settings/layout/pages/main/common/pagesCommonLayout}"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>누누강 : 메인페이지</title>
+
+    <th:block th:replace="settings/config/pages/accounts/userpage/userPageConfig :: userPageConfig"></th:block>
+
+
+    <!-- <script th:src="@{/js/mainPages/index.js}"></script> -->
+</head>
+<body>
+
+    
+    <div layout:fragment="content">
+        <div>
+            <div class="mypageHeaderDiv">
+                <div class="before" onclick="goBackPage()"><i class="fa-solid fa-arrow-left"></i></div>
+                <div class="tmp"></div>
+
+                <div class="alert"></div>
+                <div class="setting"></div>
+            </div>
+            <div class="userInfoDiv">
+                <div class="userProfileDiv">
+                    <div class="userProfile">
+                        <img th:src="@{${user.profile.profileImg}}">
+                    </div>
+                    <div class="userFollow">
+                        <div>
+                            <div>
+                                <p>게시물</p>
+                                <p class="cnt" th:text="${#lists.size(user.posts)}">3</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>팔로우</p>
+                                <p class="cnt">44</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>팔로잉</p>
+                                <p class="cnt">53</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="userIntroduceDiv">
+                    <div class="userIntro1Div">
+                        <div class="username">
+                            심정훈
+                        </div>
+                        <div class="usernameFunctionalDiv" id="usernameFunctionalDiv" onclick="foldUserIntroDiv()">
+                            <i class="fa-solid fa-chevron-down" id="fold"></i>
+                        </div>
+                    </div>
+                    <div class="userIntro2Div">
+                        <div th:text="${user.profile.intro}">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="follwOutterDiv" >
+                <!-- <div class="followButtonDiv">
+                    <div class="followButton">
+                        <p>팔로우</p>
+                    </div>
+                </div> -->
+                <div class="unfollowButtonDiv">
+                    <div class="unFollowButton">
+                        <p>팔로우 취소</p>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="gapDiv"></div>
+
+            <div class="userFunctionalDiv">
+
+            </div>
+
+        </div>
+        <div class="settingFunctionalDiv">
+            <div>
+                <a th:href="@{/accounts/mypage/profile}"><div>프로필 편집</div></a>
+                <a th:href="@{/logout}"><div>로그아웃</div></a>
+            </div>
+        </div>        
+    </div>
+
+</body>
+</html>

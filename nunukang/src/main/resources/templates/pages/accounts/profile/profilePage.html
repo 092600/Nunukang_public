@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sodipodi="http://java.sun.com/xml/ns/j2ee"
+        xmlns:inkscape="http://java.sun.com/xml/ns/javaee"
+        layout:decorate="~{settings/layout/pages/main/common/pagesCommonLayout}"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>누누강 : 메인페이지</title>
+
+    <th:block th:replace="settings/config/pages/accounts/profile/profilePageConfig :: profilePageConfig"></th:block>
+
+
+    <!-- <script th:src="@{/js/mainPages/index.js}"></script> -->
+</head>
+<body>
+
+    
+    <div layout:fragment="content">
+        <div>
+            <input type="hidden" id="user_id" th:value="${user.id}">
+            <div class="profileHeaderDiv">
+                <div class="before" onclick="goBackPage()"><i class="fa-solid fa-arrow-left"></i></div>
+                <div class="profileHeaderTextDiv">
+                    <p>프로필 편집</p>
+                </div>
+                <div class="tmp"></div>
+            </div>
+
+            <div class="profileImgDiv">
+                <div class="userBackgroundImg">
+                    <img id="backgroundImgDiv" th:src="@{${user.profile.backgroundImg}}">
+                    <div class="backgroundCameraDiv">
+                        <div class="backgroundCamera">
+                            <i class="fa-solid fa-camera" onclick="getBackgroundImg()"></i>
+                            <input type="file" class="backgroundImg" id="backgroundImg" onchange="changeBackgroundImg(this)">
+                        </div>
+                    </div>
+                </div>
+                <div class="userBackgroundImg2">
+                    <div class="userProfile">
+                        <div class="userProfileImg">
+                            <img id="profileImgDiv" th:src="@{${user.profile.profileImg}}">
+                        </div>
+                        <div class="cameraDiv">
+                            <div class="camera">
+                                <i class="fa-solid fa-camera" onclick="getProfileImg()"></i>
+                                <input type="file" class="profileImg" id="profileImg" onchange="changeProfileImg(this)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="userInfoDiv">
+                <div>
+                    <div class="textDiv">
+                        <p>이름</p>
+                    </div>
+                    <div class="inputDiv">
+                        <p th:text=${user.name}></p>
+                    </div>    
+                </div>
+                
+
+                <div class="userIntroDiv" >
+                    <div class="userIntroTextDiv">
+                        상태메세지
+                    </div>
+                    <div class="userIntroInputDiv">
+                        <textarea id="userIntroTextarea" th:text="${user.profile.intro}" maxlength="53" onchange="changable()"></textarea>
+                    </div>    
+                </div>
+                
+                <div class="userInfoTmpDiv">
+
+                </div>
+            
+            </div>
+            <div class="profileUpdateButtonDiv">
+                <div onclick="changeProfile()">
+                    프로필 변경
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

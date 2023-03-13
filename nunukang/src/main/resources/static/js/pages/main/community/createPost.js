@@ -140,7 +140,7 @@ function postSave(){
         formData.append("images["+i+"]", imageList[i]);
     }
 
-    formData.append("post", new Blob([JSON.stringify(post)], {type : "application/json"}));
+    formData.append("user", new Blob([JSON.stringify(post)], {type : "application/json"}));
 
     $.ajax({
         url: '/api/v4/community/post/create',

@@ -13,14 +13,16 @@ function loading() {
 
 
 function getFishingSpot(type) {
-
+    console.log(type);
     if (type == null) {
+        console.log('null');
         $.ajax({
             url: "/api/v4/map/fisingSpot?type=OCEAN",
             type: "GET",
             cache: false,
             async: false,
             success: function (result) {
+                console.log(result);
                 spots = result;
             },
             error: function (err) {
@@ -50,9 +52,8 @@ function getFishingSpot(type) {
 
 
 function initMap(type) {
-
+    console.log(type);
     this.map = new google.maps.Map(document.getElementById("googleMapDiv"), {
-        // zoom: 11,
         zoom: 8,
     });
 
@@ -88,7 +89,7 @@ function initMap(type) {
     
     const spots = getFishingSpot(type);
     const markers = spots.map((i) => {
-        
+        console.log(i)
         const marker = new google.maps.Marker({
             position : new google.maps.LatLng(i["gps"]["latitude"], i["gps"]["longitude"]),
 
@@ -103,7 +104,19 @@ function initMap(type) {
             icon: {
                 url : "/images/pngwing.png",
                 scaledSize: new google.maps.Size(43, 58), // scaled size    
-            } 
+            } ,
+            address:  {
+                locationName : i["name"],
+                address : i["address"],
+                gps : {
+                    latitude : i["gps"]["latitude"],
+                    longitude : i["gps"]["longitude"],
+                },
+                capacity : i["capacity"],
+                number : i["number"],
+                price : i["price"]
+                
+            }
         })
 
         // marker.addListener("click", function() {
@@ -113,7 +126,12 @@ function initMap(type) {
 
 
         marker.addListener("click", function() {
-            locationClickEvent();
+            hideFishingSpotInfoContent1();
+            hideFishingSpotInfoContent2();
+            hideFishingSpotInfoContent3();
+            // $(".fishingSpotInfoOutterDiv").css("display", "none");
+            locationClickEvent(marker);
+            getFishingSpotWeather(marker["address"]);
         });
 
         return marker;
@@ -140,15 +158,6 @@ function initMap(type) {
                                         '<div class="fishingSpotButton fishingSpotType3Button" onclick="initMap('+"'FLAT'"+')">' +
                                             '<p>평지</p>' +
                                         '</div>' +
-                                    '</div>' +
-
-                                    
-                                '</div>' +
-                                '<div class="tmp">' +
-                                    '<div class="fishingSpotInfoOutterDiv" id="fishingSpotInfoOutterDiv">' +
-                                        '<div></div'+
-                                        '<div></div'+
-                                        '<div></div'+
                                     '</div>' +
                                 '</div>');
 
@@ -179,23 +188,163 @@ function setDefaultMapLocation() {
 
 function locationClickEvent() {
     
-    if ($(".fishingSpotInfoOutterDiv").css("display") != "none") {
-        // $("#fishingSpotInfoOutterDiv").slideToggle(400);
-        // $(".fishingSpotInfoOutterDiv").css("height", "0px");
-        // $(".fishingSpotInfoOutterDiv").css("display", "block");
-        // $("#fishingSpotInfoOutterDiv").animate({'top': "78vh"}, 1000);
-        // $("#fishingSpotInfoOutterDiv").animate({'top': '78%'}, 1000);
-        $(".fishingSpotInfoOutterDiv").slideToggle(400);    
+    if ($(".tmp").css("display") != "none") {
+        $(".tmp").slideToggle(300);    
     } else {
-        // $(".fishingSpotInfoOutterDiv").css("display", "block");
-        // $("#fishingSpotInfoOutterDiv").animate({'top': '78%'}, 1000);
-        // $(".fishingSpotInfoOutterDiv").css("display", "none");
-        // $("#fishingSpotInfoOutterDiv").animate({'bottom': $("#fishingSpotInfoOutterDiv").height()}, 1000);
-        // $(".fishingSpotInfoOutterDiv").css("display", "block");
-        // $("#fishingSpotInfoOutterDiv").animate({'top': "-6vh"}, 1000);
-        $(".fishingSpotInfoOutterDiv").slideToggle(400);
-        
-
+        $(".tmp").slideToggle(300);
     }
 }
+
+
+
+
+
+
+
+
+function getFishingSpotWeather(address) {
+    loading();
+
+    const formData = new FormData();
+    formData.append("latitude", address["gps"]["latitude"]);
+    formData.append("longitude", address["gps"]["longitude"]);
+    
+    $.ajax({
+        url:'http://127.0.0.1:5000/weather/location',
+        type:'POST',
+        cache : false,
+        contentType: false,               // * 중요 *
+        processData: false,               // * 중요 *
+        enctype : 'multipart/form-data',  // * 중요 *
+        // crossDomain: true,
+        data : formData,
+        success: function (result) {
+            console.log(result)
+            $(".fishingSpotNamePTag").text(address["locationName"]);
+
+            result.at(0).forEach(setupWeatherDatas);
+            
+            getFishingSpotMap(address);
+            loading();            
+        },
+        error: function (err) {
+            loading();          
+        }
+    });
+}
+
+
+
+function setupWeatherDatas(weatherData) {
+    $(".fishingSpotWeatherContentDiv").append(
+        '<div>'+
+            '<div class="timeDiv">'+
+                '<p>'+weatherData["dt_txt"].slice(8,10) + "일 " +weatherData["dt_txt"].slice(11,13)+'시</p>'+
+            '</div>'+
+            '<div class="weatherIconDiv">'+
+                '<img id="weatherIcon" src="'+"http://openweathermap.org/img/wn/"+weatherData["weather"][0]["icon"]+"@2x.png"+'">'+
+            '</div>'+
+            '<div class="tempDiv">'+
+                '<p>'+changeToCelsius(weatherData["main"]["temp"])+'°C</p>'+
+            '</div>'+
+            '<div class="feelsLikeDiv">'+
+                '<p>'+changeToCelsius(weatherData["main"]["feels_like"])+'°C</p>'+
+            '</div>'+
+            '<div class="rainDiv">'+
+                '<p>'+weatherData["clouds"]["all"]+'mm</p>'+
+            '</div>'+
+            '<div class="windDiv">'+
+                '<p>'+weatherData['wind']['speed']+'</p>'+
+            '</div>'+
+            '<div class="humidityDiv">'+
+                '<p>'+weatherData["main"]["humidity"]+'</p>'+
+            '</div>'+
+            '<div class="seaLevelDiv">'+
+                '<p>'+weatherData["main"]["sea_level"]+'</p>'+
+            '</div>'+
+        '</div>'            
+    );
+
+    showFishingSpotInfoContent1();
+    showFishingSpotInfoContent2();
+    showFishingSpotInfoContent3();
+}
+
+
+function showFishingSpotInfoContent1() {
+    $(".fishingSpotInfoContent1").css("display", "flex");
+}
+
+function hideFishingSpotInfoContent1() {
+    $(".fishingSpotNamePTag").text("");
+    $(".fishingSpotInfoContent1").css("display", "none");
+}
+
+function showFishingSpotInfoContent2() {
+    $(".fishingSpotInfoContent2").css("display", "flex");
+}
+
+function hideFishingSpotInfoContent2() {
+    $(".fishingSpotInfoContent2").css("display", "none");
+}
+
+
+function showFishingSpotInfoContent3() {
+    $(".fishingSpotInfoContent3").css("display", "flex");
+}
+
+function hideFishingSpotInfoContent3() {
+    $(".fishingSpotInfoContent3").css("display", "none");
+}
+
+
+function changeToCelsius(Fahrenheit) {
+    return Math.floor(Fahrenheit - 273.15, 3);
+}
+
+
+function getFishingSpotMap(address) {
+
+    const fishingSpotMap = new google.maps.Map(document.getElementById("fishingSpotMap"), {
+        center : {lat : Number(address['gps']['latitude']), lng : Number(address['gps']['longitude'])},
+        zoom: 17,
+      });
+
+    const marker = new google.maps.Marker({
+        position : new google.maps.LatLng(address["gps"]["latitude"], address["gps"]["longitude"]),
+        map : fishingSpotMap,
+        label: {
+            text : address["locationName"],
+            fontSize: "40px",
+            fontWeight: "bolder",
+            className: "marker-label",
+        },
+    });
+    
+
+    setupFishingSpotInfoContent3InnerDiv(address);
+}
+
+function setupFishingSpotInfoContent3InnerDiv(obj) {
+    document.getElementById("fishingSpotInfoContent3InnerDiv").replaceChildren();
+
+    if (obj["number"] == "") {
+        $(".fishingSpotInfoContent3InnerDiv").append(
+            '<p>이름 : <span class="nameTextSpan">'+obj["locationName"]+'</span></p>' +
+            '<p>주소 : <span class="addressTextSpan">'+obj["address"]+'</span></p>' +
+            '<p>가격 : <span class="priceTextSpan">'+obj["price"]+'</span></p>' +
+            '<p>수용인원 : <span class="capacityTextSpan">'+obj["capacity"]+'</span></p>' 
+        )    
+    } else {
+        $(".fishingSpotInfoContent3InnerDiv").append(
+            '<p>이름 : <span class="nameTextSpan">'+obj["locationName"]+'</span></p>' +
+            '<p>주소 : <span class="addressTextSpan">'+obj["address"]+'</span></p>' +
+            '<p>전화번호 : <span class="numberTextSpan">'+obj["number"]+'</span></p>' +
+            '<p>가격 : <span class="priceTextSpan">'+obj["price"]+'</span></p>' +
+            '<p>수용인원 : <span class="capacityTextSpan">'+obj["capacity"]+'</span></p>' 
+        )
+    }
+    
+}
+
 

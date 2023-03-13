@@ -1,0 +1,285 @@
+@media (min-width: 650px) {
+   .content>div {
+        width : 100%;
+        height : 100%;
+
+        overflow-x: hidden;
+        overflow-y: scroll;
+   }
+      .profileHeaderDiv {
+         width : 100%;
+         height : 9%;
+         
+         display : flex;
+      }
+
+         .before {
+            width : 15%;
+            height : 100%;
+
+            font-size: 66px;;
+
+            display : flex;
+            align-items: center;
+            justify-content: center;
+         }
+
+         .profileHeaderTextDiv {
+            width : 70%;
+            height : 99%;
+
+            font-size: 50px;;
+            font-weight: 700;
+
+            margin-top : 1%;
+
+            display : flex;
+            align-items: center;
+            justify-content: center;
+         }
+
+         .tmp {
+            width : 15%;
+            height : 100%;
+         }
+
+      .profileImgDiv {
+         width : 100%;
+         height : 51%;
+      }
+
+         .profileImgDiv {
+            width : 100%;
+            height : 51%;
+         }
+
+            .userBackgroundImg {
+               width : 100%;
+               height : 74%;
+            }
+
+               .userBackgroundImg img {
+                  width : 100%;
+                  height : 100%;
+
+                  border-top: 2px solid black;;
+                  border-bottom: 4px solid black;
+               }
+
+            .userBackgroundImg2 {
+               width : 100%;
+               height : 19%;
+
+               display : flex;
+               align-items: flex-end;
+               justify-content: center;
+
+               background-color: rgb(215, 215, 215);
+
+               padding-bottom: 1%;
+               border-bottom: 2px solid black;;
+            }
+
+               .userProfile {
+                  width : 260px;
+                  height : 260px;
+
+                  border-radius: 50%;
+               }
+
+                  .userProfileImg {
+                     width : 100%;
+                     height : 100%;
+
+                     border-radius: 50%;
+                     border : 4px solid black;
+                  }
+
+                     .userProfileImg img {
+                        width :100%;
+                        height : 100%;
+                        border-radius : 50%;
+
+                        background-color: white;
+                     }
+                     
+                  
+                  .cameraDiv {
+                     position: relative;
+                     width : 0%;
+                     height : 0%;
+                  }
+
+                     .camera {
+                        width : 80px;
+                        height : 80px;
+
+                        position: relative;
+
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        font-size : 44px;
+
+                        background-color: rgb(206, 206, 206);
+                        top : -80px;
+                        right : -200px;
+
+                        border-radius: 50%;
+                     }
+
+                        .profileImg {
+                           display : none;
+                        }
+                     
+                  .backgroundCameraDiv {
+                     width : 0%;
+                     height : 0%;
+                  }
+
+                     .backgroundCamera {
+                        width : 80px;
+                        height : 80px;
+                        position: relative;
+
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        font-size : 44px;
+
+                        background-color: rgb(206, 206, 206);
+                        top : -90px;
+                        left : 90vw;
+
+                        border-radius: 50%;
+                     }
+
+                        .backgroundImg {
+                           display : none;
+                        }
+      .userInfoDiv {
+         width : 100%;
+         height : 40%;
+
+         margin-top : 4%;
+      }
+
+         .userInfoDiv>div {
+            width : 100%;
+            min-height : 115px;
+            height : auto;
+            max-height: 188px;;
+
+            display : flex;
+            
+            /* background-color: aquamarine; */
+         }
+
+               .textDiv {
+                  width : 20%;
+                  height : 100%;
+
+                  margin-left : 2%;
+
+                  display : flex;
+                  align-items: center;
+                  justify-content: left;
+
+                  font-size : 41px;
+
+                  /* background-color: yellow; */
+               }
+
+
+               .inputDiv {
+                  width : 78%;
+                  height : 100%;
+
+                  display : flex;
+                  align-items: center;
+                  justify-content: left;
+               }
+
+                  .inputDiv p{
+                     width : 100%;
+                     height : 40%;
+
+                     font-size : 41px;
+
+                     background-color: cornflowerblue;
+                     border : 0px;
+                  }
+
+
+               .userIntroDiv {
+                  width : 100%;
+                  /* height : auto !important; */
+                  max-height: 188px;
+                  /* overflow-y: hidden !important; */
+                  /* max-height: 144px; */
+               }
+
+                  .userIntroTextDiv {
+                     width : 20%;
+                     height : auto;
+
+                     margin-left : 2%;
+
+                     display : flex;
+                     align-items: center;
+                     justify-content: left;
+
+                     font-size : 41px;
+                  }
+
+                  .userIntroInputDiv {
+                     width : 78%;
+                     height : 110px;
+                  }
+
+                     .userIntroInputDiv textarea  {
+                        width : 100%;
+                        height : 110px;
+
+                        overflow: visible;
+                        font-size : 41px;
+
+                        background-color: cornflowerblue;
+                        border : 0px;
+
+                        border-bottom: 4px solid black;;
+                     }
+
+                     
+
+      .profileUpdateButtonDiv {
+         width : 100%;
+         height : 250px;
+
+         display : flex;
+         align-items: center;
+         justify-content: center;
+
+         margin-top : 4%;
+      }
+
+         .profileUpdateButtonDiv div {
+            width : 80%;
+            height : 120px;
+
+            font-size : 42px;
+            font-weight: 700;;
+
+            display : flex;
+            align-items: center;
+            justify-content: center;
+
+
+            background-color: white;
+            border-radius: 40px;;
+         }
+}

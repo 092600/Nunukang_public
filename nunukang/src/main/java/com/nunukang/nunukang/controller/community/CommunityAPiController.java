@@ -15,12 +15,10 @@ import com.nunukang.nunukang.domain.comment.Comment;
 import com.nunukang.nunukang.domain.comment.CommentService;
 import com.nunukang.nunukang.domain.post.Post;
 import com.nunukang.nunukang.domain.post.PostService;
-import com.nunukang.nunukang.domain.post.dto.PostImagesDto;
-
+import com.nunukang.nunukang.domain.post.imageDto.PostImagesDto;
 import com.nunukang.nunukang.domain.user.User;
 import com.nunukang.nunukang.domain.user.UserService;
-import com.nunukang.nunukang.config.authentication.userDetails.NunukangUserDetails;
-import org.springframework.security.core.Authentication;
+
 
 import lombok.RequiredArgsConstructor;
 

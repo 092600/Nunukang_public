@@ -6,15 +6,14 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.nunukang.nunukang.domain.post.imageDto.PostImagesDto;
+import com.nunukang.nunukang.domain.post.imageDto.PostImagesDtoService;
 import com.nunukang.nunukang.domain.user.User;
 import com.nunukang.nunukang.domain.user.UserService;
-
-import com.nunukang.nunukang.domain.post.dto.PostImagesDtoService;
 
 import lombok.RequiredArgsConstructor;
 import java.util.List;
 
-import com.nunukang.nunukang.domain.post.dto.PostImagesDto;
 import javax.transaction.Transactional;
 
 @Service

@@ -27,7 +27,7 @@
         height : 30%;
 
         position: relative;
-        z-index: 3;
+        z-index: 5;
 
         left : 84vw;
         top : 8%;
@@ -62,33 +62,263 @@
 
 
         .tmp {
-            position: relative;
-            bottom : 0%;
+            position: absolute;
+            bottom : -16%;
 
-            height : 30%;
+            height : 108%;
             width : 100%;
 
             display: flex;
-            background-color: red;
+            display : none;
+
+            z-index: 1;
 
         }
 
-        .fishingSpotInfoOutterDiv {
-            width : 100%;
-            /* height : 88%; */
-            height : -50%;
+            .fishingSpotInfoOutterDiv {
+                width : 100%;
+                height : 100%;
 
-            position: relative;
-            background-color: #5075E5;
+                position: relative;
+                background-color: #5075E5;
 
-            top : 85%;
-            /* bottom : 0; */
-            z-index: 2;
+                z-index: 2;
 
-            border-radius: 20px 20px 0px 0px;
+                overflow-y: scroll;
 
-            /* display : none; */
-        }
+                border-radius: 40px 40px 0px 0px;
+            }
+
+                .fishingSpotInfoHeaderOutterDiv {
+                    width : 100%;
+                    height : 10%;
+                }
+
+                    .fishingSpotInfoHeader1Div {
+                        width : 100%;
+                        height : 100%;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .fishingSpotInfoHeader1InnerLeftDiv {
+                        width : 18%;
+                        height : 100%;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        font-size : 51px;
+                        color : rgb(202, 199, 199);
+                    }
+
+
+
+
+                    .fishingSpotInfoHeader1InnerCenterDiv {
+                        width : 64%;
+                        height : 100%;
+                    }
+
+                        .fishingSpotNameDiv {
+                            width : 100%;
+                            height : 100%;
+
+                            display : flex;
+                            align-items :center;
+                            /* align-items :flex-end; */
+                            justify-content: center;
+
+                            font-size : 46px;
+                            font-weight: 600;
+                        }
+
+
+                        /* .fishingSpotAddressDiv {
+                            width : 100%;
+                            height : 45%;
+
+                            display : flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            font-size : 38px;
+                            font-weight: 600;
+                        } */
+
+                    .fishingSpotInfoHeader1InnerRightDiv {
+                        width : 18%;
+                        height : 100%;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        font-size : 51px;
+
+                    }
+
+
+                .fishingSpotInfoContentDiv {
+                    width : 100%;
+                    height : 90%;
+
+                    overflow-y: scroll;
+                }
+
+                    .fishingSpotInfoContent1 {
+                        width : 100%;
+                        height : 60%;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        /* display : none; */
+                    }
+
+                        .fishingSpotWeatherHeaderDiv {
+                            width : 19%;
+                            height : 100%;
+                        }
+                            .fishingSpotWeatherHeaderDiv div {
+                                width : 190px;;
+                                height : 12%;
+
+                                display : flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                font-size : 36px;
+                                background-color: rgb(41, 159, 237);
+                            }
+
+                                .fishingSpotWeatherHeaderDiv div p {
+                                    width : 80%;
+                                    height : 40%;
+
+                                    text-align: left;
+                                }
+
+                                
+                            .timeHDiv {
+                                width : 100%;
+                                height : 13% !important;
+                            }
+
+                            .weatherIconHDiv {
+                                width : 100%;
+                                height : 15% !important;
+                            }
+
+
+
+
+                        .fishingSpotWeatherContentDiv {
+                            min-width : 81%;
+                            max-width : auto;
+
+                            height : 100%;
+
+                            display : flex;
+                            align-items: flex-start;
+
+                            flex-wrap: no-wrap;
+                            overflow-x: scroll;
+                            overflow-y: hidden;
+                        }
+
+
+                            .fishingSpotWeatherContentDiv>div {
+                                width : 194px;
+                                height : 100%;
+                                flex: 0 0 auto;
+
+                                /* display : inline-block; */
+
+                                font-size : 36px;
+                                background-color: rgb(41, 159, 237);
+                            }
+
+                                .fishingSpotWeatherContentDiv>div div {
+                                    width : 100%;
+                                    height : 12%;
+
+                                    display : flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+
+                                .fishingSpotWeatherContentDiv>div div p {
+                                    width : 100%;
+                                    height : 40%;
+
+                                    text-align: center;
+                                }
+
+
+                                .timeDiv {
+                                    width : 100%;
+                                    height : 13% !important;
+                                }
+
+                                .weatherIconDiv {
+                                    width : 100%;
+                                    height : 15% !important;
+                                }
+
+                            
+                    .fishingSpotInfoContent2 {
+                        width : 100%;
+                        height : 48%;
+
+                        display : flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        background-color: rgb(41, 159, 237);
+                    }
+
+                        .fishingSpotInfoContent2 div {
+                            width : 90%;
+                            height : 80%;
+
+                            border-radius: 60px;
+                        }
+
+                    .fishingSpotInfoContent3 {
+                        width : 100%;
+                        height : 30%;
+
+                        background-color: rgb(41, 159, 237);
+                    }
+
+                        .fishingSpotInfoContent3 div {
+                            width : 90%;
+                            height : 80%;
+
+                            border-radius: 60px;
+                        }
+
+                            .fishingSpotInfoContent3 div p  {
+                                width : 90%;
+
+                                font-size : 43px;
+                                border-radius: 60px;
+
+                                margin-left : 10%;
+                            }
+
+                                .addressTextSpan {
+                                    height : auto;
+                                }
+
+
+
+
 
         .marker-label {
             margin-top : -75px;
@@ -231,6 +461,7 @@
                         justify-content: center;
                     }
 
+        
                
 }
 

@@ -40,10 +40,10 @@
                     <div class="postMainDiv" >
                         <div class="postHeaderDiv">
                             <div class="userProfileImgDiv">
-                                <img class="userProfileImg" th:src="@{/images/nunukangLogo/small_logo.png}">
+                                <img class="userProfileImg" th:src="@{${post.postWriter.profile.profileImg}}">
                             </div>
                             <div class="postHeaderInfoDiv">
-                                <p class="usernamePTag" th:text="${post.postWriter.name}"></p>
+                                <a th:href="@{'/accounts/user/'+${post.postWriter.id}}"><p class="usernamePTag" th:text="${post.postWriter.name}"></p></a>
                                 <!-- <p class="postTimePTag" th:text="${#temporals.format(post.getCreatedDate(), 'yyyy년 MM월 dd일 HH시 mm분')}"></p> -->
                             </div>
                             <div class="postEtcDiv">
