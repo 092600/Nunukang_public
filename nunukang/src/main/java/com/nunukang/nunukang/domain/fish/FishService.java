@@ -17,10 +17,10 @@ import javax.transaction.Transactional;
 @Service
 @RequiredArgsConstructor
 public class FishService {
+
     private final UserRepository userRepository;
 
     private final FishRepository fishRepository;
-
 
     public Optional<Fish> findById(Long id) {
         return fishRepository.findById(id);

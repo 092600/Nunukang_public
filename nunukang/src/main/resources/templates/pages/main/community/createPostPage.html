@@ -24,8 +24,8 @@
             <div class="hashtagHeaderDiv">
                 <p>해쉬태그하기</p>
             </div>
-            <!-- <div class="hashtagContentDiv">
-                <div class="followerInfoDiv" th:each="follower : ${followerList}">
+            <div class="hashtagContentDiv">
+                <div class="followerInfoDiv" th:each="follower : ${followers}">
                     <div class="hashtagButtonDiv">
                         <div id="hashtagButtonClickDiv" th:email="${follower.getId()}" checked="false" onclick="hashtag(this, this.getAttribute('email'))">
                             <i class="fa-solid fa-circle-check" id="hashtagCheckITag"></i>
@@ -38,7 +38,7 @@
                         <p th:text="${follower.getEmail()}"></p>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
         <div class="communityOutterDiv">
             <div class="communityInnerContentDiv">

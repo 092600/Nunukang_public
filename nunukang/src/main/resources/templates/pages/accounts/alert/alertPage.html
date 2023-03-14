@@ -19,7 +19,68 @@
     
     <div layout:fragment="content">
         <div>
-            
+            <div class="alertHeaderDiv">
+                <div class="" onclick="goBackPage()">
+                    <p><span id="before"><i class="fa-solid fa-arrow-left"></i></span>알림</p>
+                </div>
+            </div>
+            <div class="alertsOutterDiv" th:unless="${#lists.isEmpty(newAlerts)}">
+                <div class="alertsTextDiv">
+                    <div>새로운 알림</div>
+                </div>
+                <div class="alertDiv" th:each="alert : ${newAlerts}">
+                    <div class="alertUserDiv" th:alert_user_id="${alert.makeAlertUser.id}" onclick="showUserProfile(this.getAttribute('alert_user_id'))">
+                        <div class="alertUserProfileDiv">
+                            <img th:src="${alert.makeAlertUser.profile.profileImg}">
+                        </div>
+                        <div class="alertUsernameDiv">
+                            <p th:text="${alert.makeAlertUser.name}"></p>
+                        </div>
+                    </div>
+                    <div class="alertContentDiv">
+                        <div>
+                            <div class="alertMessage" th:text="${alert.message}">
+                        
+                            </div>
+                            <div class="alertCreatedTimeDiv" th:text="${#calendars.format(alert.createdDate, 'yyyy년 MM월 dd일 HH시 mm분')}">
+
+                            </div>
+                        </div>
+                        <div class="alertDeleteButtonDiv" th:alert_id="${alert.id}" onclick="deleteAlert(this.getAttribute('alert_id'))">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="alertsOutterDiv" th:unless="${#lists.isEmpty(alerts)}">
+                <div class="alertsTextDiv">
+                    <div>읽은 알림</div>
+                </div>
+                <div class="alertDiv" th:each="alert : ${alerts}">
+                    <div class="alertUserDiv" th:alert_user_id="${alert.makeAlertUser.id}" onclick="showUserProfile(this.getAttribute('alert_user_id'))">
+                        <div class="alertUserProfileDiv" >
+                            <img th:src="${alert.makeAlertUser.profile.profileImg}">
+                        </div>
+                        <div class="alertUsernameDiv">
+                            <p th:text="${alert.makeAlertUser.name}"></p>
+                        </div>
+                    </div>
+                    <div class="alertContentDiv">
+                        <div>
+                            <div class="alertMessage" th:text="${alert.message}">
+                        
+                            </div>
+                            <div class="alertCreatedTimeDiv" th:text="${#calendars.format(alert.createdDate, 'yyyy년 MM월 dd일 HH시 mm분')}">
+
+                            </div>
+                        </div>
+                        <div class="alertDeleteButtonDiv" th:alert_id="${alert.id}" onclick="deleteAlert(this.getAttribute('alert_id'))">
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>

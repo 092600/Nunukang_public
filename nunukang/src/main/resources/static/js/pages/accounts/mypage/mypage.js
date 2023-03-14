@@ -29,3 +29,7 @@ function getSettingsDiv() {
     }
 
 }
+
+function showUserWritePosts() {
+    window.location.href = "/community/myposts";
+}

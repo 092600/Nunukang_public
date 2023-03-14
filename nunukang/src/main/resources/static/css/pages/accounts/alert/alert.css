@@ -1,276 +1,167 @@
 @media (min-width: 650px) {
    .content>div {
-        width : 100%;
+        width : 95%;
         height : 100%;
 
         overflow-y: scroll;
    }
 
-      .alertOutterDiv {
-         /* position: fixed; */
-
+      .alertHeaderDiv {
          width : 100%;
-         height : 100%;
+         height : 13%;
 
-         background-color: yellow;
-      }
-
-      .mypageHeaderDiv {
-         width : 100%;
-         height : 10%;
-         
          display : flex;
          align-items: center;
-         justify-content: right;
+         justify-content: left;
+      }
+         .alertHeaderDiv div {
+            width : 30%;
+            height : 100%;
+            margin-left : 2%;
 
-         /* background-color: yellow; */
+            font-size : 64px;
+            display : flex;
+            align-items: center;
+            justify-content: left;
+         }
+
+            .alertHeaderDiv div p {
+               width : 100%;
+               height : 50%;
+            }
+            #before {
+               font-size : 68px;
+
+               margin-right : 20px;
+            }
+
+
+      .alertsTextDiv {
+         width : 100%;
+         height : 180px;
+
+         display : flex;
+         align-items: center;
+         justify-content: center;
       }
 
-         .before {
-            width : 22%;
-            height : 100%;
-            
+         .alertsTextDiv div {
+            width : 100%;
+            height : 60%;
+
             display : flex;
             align-items: center;
             justify-content: left;
 
-            font-size : 62px;
-            margin-left : 4%
+            font-size : 49px;
+            font-weight: 600;
          }
-
-         .tmp {
-            width : 46%;
-            height : 100%;
-         }
-
-         .alert {
-            width : 14%;
-            height : 100%;
-
-            display : flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size : 70px;
-            color : black;
-            /* background-color: red;; */
-         }
-
-         .setting {
-            width : 14%;
-            height : 100%;
-
-            display : flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size : 70px;
-            color : black;
-            /* background-color: red;; */
-         }
-
-      .userInfoDiv {
+      .alertsOutterDiv {
          width : 100%;
          height : auto;
-/* 
-         margin-top : 4%; */
       }
 
-         .userProfileDiv {
-            width : 100%;
-            height : 270px;;
+         .alertDiv { 
+            width : 98%;
+            height : 240px;
 
             display : flex;
+
+            border-radius: 50px;
+
+            border : 4px solid black;
+            background-color: rgba(255, 255, 255, 0.828);
+
+            margin-bottom : 20px;
          }
 
-            .userProfile {
-               width : 30%;
-               height : 100%;
-
-               display : flex;
-               align-items: center;
-               justify-content: center;
-            }
-
-               .userProfile img {
-                  width : 188px;
-                  height : 188px;
-
-                  border : 2px solid black;
-                  border-radius: 50%;
-               }
-
-            .userFollow {
-               width : 70%;
+            .alertUserDiv {
+               width : 27%;
                height: 100%;
-
-               display : flex;
             }
 
-            .userFollow>div {
-               width : 33.3%;
-               height : 100%;
-
-               display : flex;
-               align-items: center;
-               justify-content: center;
-
-               font-size : 46px;
-            }
-
-               .userFollow>div p {
+               .alertUserProfileDiv {
                   width : 100%;
-                  height : 30%;
-
-                  text-align: center;
-               }
-
-            .cnt {
-               font-size : 40px;
-            }
-      
-         .userIntroduceDiv {
-            width : 100%;
-            height : auto;
-         }
-
-            .userIntro1Div {
-               width : 100%;
-               height : 87px;;
-
-               display : flex;
-               align-items: center;
-               justify-content: center;
-               
-               /* background-color: yellow; */
-            }
-
-               .username {
-                  width : 62%;
-                  height : 100%;
-                  font-size : 47px;
+                  height : 80%;
 
                   display : flex;
                   align-items: center;
-                  justify-content: left;
-
-                  margin-left : 8%;
-
-                  /* background-color: red; */
+                  justify-content: center;
                }
 
-               .usernameFunctionalDiv {
-                  width : 27%;
-                  height : 100%;
-
-                  margin-right : 3%;
-
-                  font-size : 55px;
-
+               .alertUsernameDiv {
+                  width : 100%;
+                  height : 20%;
+                  font-size : 44px;
                   display : flex;
-                  align-items: flex-start;
-                  justify-content: right;
+                  align-items: center;
+                  justify-content: center;
 
-                  /* background-color: blue; */
                }
+               .alertUserProfileDiv img {
+                  width : 160px;
+                  height : 160px;
+                  border-radius: 50%;
 
-               
-               .usernameFunctionalDiv {
-                  width : 30%;
-                  height : 100%;
+                  background-color: white;
 
-                  
-                  
-               }
-
-            .userIntro2Div {
-               width : 100%;
-               height : auto;
-               
-               display : flex;
-               align-items: center;
-               justify-content: right;
-
-               font-size :34px;
-
-               margin-bottom : 2%;
-            }
-
-               .userIntro2Div div {
-                  width : 91%;
-                  height : auto;
-
-                  margin-right : 3%;
+                  border :4px solid black;
                }
 
 
-      .follwOutterDiv {
-         width : 100%;
-         height : 83px;;
-
-         margin-top : 5%;
-         margin-left : 2%;
-      }
-
-         .followButtonDiv {
-            width : 100%;
-            height : 100%;
-
-            display : flex;
-            align-items: center;
-            justify-content: center;
-
-         }
-
-            .followButton {
-               width : 92%;
+            .alertContentDiv {
+               width : 73%;
                height : 100%;
-
-               font-size : 37px;
-               border-radius: 35px;
 
                display : flex;
                align-items: center;
                justify-content: center;
-
-               background-color: white;
+               margin-left : -2%;
             }
 
-         .unfollowButtonDiv {
-            width : 100%;
-            height : 100%;
-
-            display : flex;
-            align-items: center;
-            justify-content: center;
-
-         }
-
-            .unFollowButton {
-               width : 92%;
-               height : 100%;
-
-               font-size : 37px;
-               border-radius: 35px;
-
-               display : flex;
-               align-items: center;
-               justify-content: center;
-
-               background-color: white;
+            .alertContentDiv>div {
+               width : 90%;
+               height : 80%;
             }
-                  
-      .gapDiv {
-         width : 100%;
-         height : 100px;
-      }
-      .userFunctionalDiv {
-         width : 100%;     
-         height : 38%;
 
-         /* background-color: beige ; */
-         margin-top : 4%;
+               .alertMessage {
+                  width : 100%;
+                  height : 80%;
 
+                  font-size :40px;
+                  /* background-color: yellow; */
+               }
 
-      }
+               .alertDeleteButtonDiv {
+                  position: relative;
+
+                  width : 70px !important;
+                  height :64px !important;
+
+                  background-color: black !important;
+                  color : white;
+                  display : flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  top : -30%;
+                  font-size : 44px;
+                  border-radius: 50%;
+               }
+
+               .alertDeleteButtonDiv:after {
+                  content : "x";
+               }
+
+               .alertCreatedTimeDiv {
+                  width : 100%;
+                  height : 30%;
+
+                  /* display : inline-block !important; */
+                  bottom : 40px;
+
+                  font-size : 35px;
+               }
+
+            
 }

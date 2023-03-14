@@ -139,8 +139,12 @@ function postSave(){
     for (let i=0; i<imageList.length; i++) {
         formData.append("images["+i+"]", imageList[i]);
     }
-
-    formData.append("user", new Blob([JSON.stringify(post)], {type : "application/json"}));
+    
+    for (let i=0; i<hashtagUserList.length; i++) {
+        formData.append("postTaggedUsers["+i+"]", hashtagUserList[i]);
+    }
+    
+    formData.append("post", new Blob([JSON.stringify(post)], {type : "application/json"}));
 
     $.ajax({
         url: '/api/v4/community/post/create',

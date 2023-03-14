@@ -22,7 +22,12 @@
             <div class="mypageHeaderDiv">
                 <div class="before" onclick="goBackPage()"><i class="fa-solid fa-arrow-left"></i></div>
                 <div class="tmp"></div>
-                <div class="alert"><a th:href="@{/accounts/alert}"><i class="fa-solid fa-bell"></i></a></div>
+                <div class="alert" th:if="${existsNewAlerts == false}">
+                    <a th:href="@{/accounts/alert}"><i class="fa-solid fa-bell existsNewAlerts"></i></a>
+                </div>
+                <div class="alert" th:if="${existsNewAlerts == true}" >
+                    <a th:href="@{/accounts/alert}"><i class="fa-solid fa-bell nonExistsNewAlerts"></i></a>
+                </div>
                 <div class="setting" onclick="getSettingsDiv()"><a></a><i class="fa-solid fa-gear"></i></div>
             </div>
             <div class="userInfoDiv">
@@ -32,29 +37,28 @@
                     </div>
                     <div class="userFollow">
                         <div>
-                            <div>
+                            <div onclick="showUserWritePosts()">
                                 <p>게시물</p>
-                                <p class="cnt" th:text="${#lists.size(user.posts)}">3</p>
+                                <p class="cnt" th:text="${#lists.size(user.posts)}"></p>
                             </div>
                         </div>
                         <div>
                             <div>
-                                <p>팔로우</p>
-                                <p class="cnt">44</p>
+                                <p>팔로워</p>
+                                <p class="cnt" th:text="${#lists.size(follower)}"></p>
                             </div>
                         </div>
                         <div>
                             <div>
                                 <p>팔로잉</p>
-                                <p class="cnt">53</p>
+                                <p class="cnt" th:text="${#lists.size(following)}"></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="userIntroduceDiv">
                     <div class="userIntro1Div">
-                        <div class="username">
-                            심정훈
+                        <div class="username" th:text="${user.name}">
                         </div>
                         <div class="usernameFunctionalDiv" id="usernameFunctionalDiv" onclick="foldUserIntroDiv()">
                             <i class="fa-solid fa-chevron-down" id="fold"></i>
@@ -64,18 +68,6 @@
                         <div th:text="${user.profile.intro}">
                             
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="follwOutterDiv" >
-                <!-- <div class="followButtonDiv">
-                    <div class="followButton">
-                        <p>팔로우</p>
-                    </div>
-                </div> -->
-                <div class="unfollowButtonDiv">
-                    <div class="unFollowButton">
-                        <p>팔로우 취소</p>
                     </div>
                 </div>
             </div>

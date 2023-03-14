@@ -35,27 +35,26 @@
                         <div>
                             <div>
                                 <p>게시물</p>
-                                <p class="cnt" th:text="${#lists.size(user.posts)}">3</p>
+                                <p class="cnt" th:text="${#lists.size(user.posts)}"></p>
                             </div>
                         </div>
                         <div>
                             <div>
-                                <p>팔로우</p>
-                                <p class="cnt">44</p>
+                                <p>팔로워</p>
+                                <p class="cnt" th:text="${#lists.size(follower)}"></p>
                             </div>
                         </div>
                         <div>
                             <div>
                                 <p>팔로잉</p>
-                                <p class="cnt">53</p>
+                                <p class="cnt" th:text="${#lists.size(following)}"></p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="userIntroduceDiv">
                     <div class="userIntro1Div">
-                        <div class="username">
-                            심정훈
+                        <div class="username" th:text="${user.name}">
                         </div>
                         <div class="usernameFunctionalDiv" id="usernameFunctionalDiv" onclick="foldUserIntroDiv()">
                             <i class="fa-solid fa-chevron-down" id="fold"></i>
@@ -68,14 +67,17 @@
                     </div>
                 </div>
             </div>
+
             <div class="follwOutterDiv" >
-                <!-- <div class="followButtonDiv">
-                    <div class="followButton">
+                <div class="followButtonDiv" th:if="${user.id != #authentication.principal.user.id} and ${!#lists.contains(follower, myUser)}">
+                    <div class="followButton" th:user_id="${user.id}" th:my_id="${myUser.id}" 
+                            onclick="follow(this.getAttribute('user_id'), this.getAttribute('my_id'))">
                         <p>팔로우</p>
                     </div>
-                </div> -->
-                <div class="unfollowButtonDiv">
-                    <div class="unFollowButton">
+                </div>
+                <div class="unfollowButtonDiv" th:if="${user.id != #authentication.principal.user.id} and ${#lists.contains(follower, myUser)}">
+                    <div class="unFollowButton" th:user_id="${user.id}" th:my_id="${myUser.id}" 
+                            onclick="unfollow(this.getAttribute('user_id'), this.getAttribute('my_id'))">
                         <p>팔로우 취소</p>
                     </div>
                 </div>

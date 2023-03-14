@@ -1,6 +1,5 @@
 package com.nunukang.nunukang.domain.post;
 
-import com.nunukang.nunukang.domain.post.hashtag.HashTag;
 import com.nunukang.nunukang.domain.post.images.PostImage;
 import com.nunukang.nunukang.domain.post.time.PostTimeEntity;
 import com.nunukang.nunukang.domain.comment.Comment;
@@ -35,9 +34,6 @@ public class Post extends PostTimeEntity {
     @JoinColumn(name = "like_post")
     private List<User> likers = new ArrayList<User>();
 
-
-    @OneToMany(mappedBy = "postId")
-    private List<HashTag> hashTags;
 
     @OneToMany(mappedBy = "post", targetEntity = Comment.class)
     private List<Comment> comments;

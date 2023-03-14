@@ -2,6 +2,9 @@ package com.nunukang.nunukang.controller.community;
 
 import java.io.IOException;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -18,9 +21,13 @@ import com.nunukang.nunukang.domain.post.PostService;
 import com.nunukang.nunukang.domain.post.imageDto.PostImagesDto;
 import com.nunukang.nunukang.domain.user.User;
 import com.nunukang.nunukang.domain.user.UserService;
+import com.nunukang.nunukang.config.authentication.userDetails.NunukangUserDetails;
+import com.nunukang.nunukang.domain.alert.Alert;
+import com.nunukang.nunukang.domain.alert.type.PostLikeAlert;
 
 
 import lombok.RequiredArgsConstructor;
+import com.nunukang.nunukang.domain.user.postTaggedUserDto.PostTaggedUserDto;
 
 @RestController
 @RequestMapping("/api/v4/community")
@@ -32,9 +39,10 @@ public class CommunityAPiController {
 
     @PostMapping("/post/create")
     public Long savePost(@RequestPart(value = "post") Post post,
-                                    @ModelAttribute PostImagesDto imagesDto) throws IOException {
+                                    @ModelAttribute PostImagesDto imagesDto,
+                                    @ModelAttribute PostTaggedUserDto ptud) throws IOException {
 
-        return postService.savePost(post, imagesDto);
+        return postService.savePost(post, ptud, imagesDto);
     }
 
     @PostMapping("/post/{post_id}/comment")
@@ -48,6 +56,7 @@ public class CommunityAPiController {
     public boolean likePost(@PathVariable("post_id") Long id, @RequestBody User user) {
 
         postService.likePost(id, user);
+
         return true;
     }
 

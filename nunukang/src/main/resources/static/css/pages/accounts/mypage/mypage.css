@@ -58,6 +58,10 @@
             /* background-color: red;; */
          }
 
+
+            .nonExistsNewAlerts {
+               color : rgb(222, 194, 34) !important;
+            }
          .setting {
             width : 14%;
             height : 100%;

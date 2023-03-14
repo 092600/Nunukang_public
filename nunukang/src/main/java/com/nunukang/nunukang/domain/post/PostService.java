@@ -10,6 +10,9 @@ import com.nunukang.nunukang.domain.post.imageDto.PostImagesDto;
 import com.nunukang.nunukang.domain.post.imageDto.PostImagesDtoService;
 import com.nunukang.nunukang.domain.user.User;
 import com.nunukang.nunukang.domain.user.UserService;
+import com.nunukang.nunukang.domain.user.postTaggedUserDto.PostTaggedUserDto;
+import com.nunukang.nunukang.domain.alert.AlertService;
+import com.nunukang.nunukang.domain.alert.type.PostLikeAlert;
 
 import lombok.RequiredArgsConstructor;
 import java.util.List;
@@ -22,6 +25,7 @@ public class PostService {
 
 
     private final UserService userService;
+    private final AlertService alertService;
     private final PostRepository postRepository;
     private final PostImagesDtoService postImagesDtoService;
 
@@ -30,7 +34,7 @@ public class PostService {
     String postImagesPath;
 
 
-    public Long savePost(Post post, PostImagesDto postImagesDto) throws IOException {
+    public Long savePost(Post post, PostTaggedUserDto ptud, PostImagesDto postImagesDto) throws IOException {
         Optional<User> optionalUser = userService.findById(post.getPostWriter().getId());
 
         if (optionalUser.isPresent()) {
@@ -39,11 +43,15 @@ public class PostService {
                 post.setPostWriter(optionalUser.get());
                 post = postRepository.save(post);
 
+                // post 생성 알림 > post 작성자의 팔로워들에게 보냄
+                alertService.createPostCreateAlert(post);
+
                 // images를 PostImage 객체로 변환해 DB에 INSERT & 로컬 서버에 이미지를 저장
                 if (postImagesDto.getImages() != null) {
                     postImagesDtoService.saveImages(post, postImagesDto, postImagesPath);
                 }
                 
+                userService.taggingUserToPost(ptud.getPostTaggedUsers(), post);
 
                 return post.getId();
 
@@ -76,6 +84,10 @@ public class PostService {
                 Post post = optionalPost.get();
                 User user = optionalUser.get();
 
+                if (!post.getPostWriter().equals(user)) {
+                    alertService.createLikePostAlert(post, user);
+                }
+                
                 addLikers(post, user);
                 
                 return true;
@@ -131,7 +143,11 @@ public class PostService {
 
 
     public List<Post> findAllPostsOrderByIdDesc() {
-        return postRepository.findAll();
+        return postRepository.findAllByOrderByIdDesc();
+    }
+
+    public List<Post> findAllPostByUser(User user) {
+        return postRepository.findByPostWriterOrderByIdDesc(user);
     }
 
 

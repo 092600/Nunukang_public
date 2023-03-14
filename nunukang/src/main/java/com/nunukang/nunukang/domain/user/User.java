@@ -27,9 +27,11 @@ public class User {
     private String email;
     private String password;
 
-    @Embedded
-    private Profile profile;
 
+    @Embedded
+    private Profile profile = new Profile();
+
+    
     @Enumerated
     private UserRole role = UserRole.User;
 
@@ -40,8 +42,9 @@ public class User {
 
 
 
-    @OneToMany(mappedBy = "alert")
+    @OneToMany(mappedBy = "alertingUser")
     private List<Alert> alerts;
+
 
 
 
@@ -49,50 +52,20 @@ public class User {
     @OneToMany(mappedBy = "user", targetEntity = Comment.class)
     private List<Comment> comments;
 
-
-
-
-
-    @ManyToOne
-    @JoinColumn
-    private User userFollowing = this;
-
-    @ManyToOne
-    @JoinColumn
-    private User userFollower = this;
-
-    @OneToMany(mappedBy = "userFollowing")
-    private List<User> followingList = new ArrayList<User>();
-
-    @OneToMany(mappedBy = "userFollower")
-    private List<User> followerList = new ArrayList<User>();
-
-
     
-    //  연관관계 편의 메서드
-    public void following(User following) {
-        this.followingList.add(following);
+    @ManyToMany
+    private List<User> following = new ArrayList<User>();
 
-        if(!following.getFollowerList().contains(this)) {
-            following.getFollowerList().add(this);
-        }
+    @ManyToMany
+    private List<User> followers = new ArrayList<User>();
 
-        if(!following.getUserFollower().getFollowerList().contains(this)) {
-            following.getUserFollower().getFollowerList().add(this);
-        }
-    }
 
-    public void addFollower(User follower) {
-        this.followerList.add(follower);
+    @ManyToMany
+    private List<Post> taggedPosts = new ArrayList<Post>();
 
-        if(follower.getFollowingList().contains(this)) {
-            follower.getFollowingList().add(this);
-        }
-        //연관관계의 주인을 통한 확인
-        if(!follower.getUserFollowing().getFollowingList().contains(this)) {
-            follower.getUserFollowing().getFollowingList().add(this);
+    public void addTaggedPost(Post post) {
+        if (!this.getTaggedPosts().contains(post)) {
+            this.getTaggedPosts().add(post);
         }
     }
-
-
 }

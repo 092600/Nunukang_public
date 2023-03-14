@@ -7,6 +7,9 @@ import com.nunukang.nunukang.domain.post.PostService;
 import com.nunukang.nunukang.domain.user.User;
 import com.nunukang.nunukang.domain.user.UserService;
 
+import com.nunukang.nunukang.domain.alert.AlertService;
+
+
 import lombok.RequiredArgsConstructor;
 
 import java.util.Optional;
@@ -17,6 +20,7 @@ public class CommentService {
     
     private final UserService userService;
     private final PostService postService;
+    private final AlertService AlertService;
     private final CommentRepository commentRepository;
     
 
@@ -25,13 +29,19 @@ public class CommentService {
         Optional<User> optionalUser = userService.findById(comment.getUser().getId());
         
         try {
-            if (optionalPost.isPresent()) {
+            if (optionalPost.isPresent() && optionalUser.isPresent()) {
 
                 comment.addUser(optionalUser.get());
                 comment.addPost(optionalPost.get());
 
+                if (!optionalUser.get().equals(optionalPost.get().getPostWriter())) {
+                    AlertService.createdCommentAlert(comment);
+                }
 
                 commentRepository.save(comment);
+
+            
+
                 return true;    
             } 
             return false;

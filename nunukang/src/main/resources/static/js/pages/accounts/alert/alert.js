@@ -1,7 +1,6 @@
 function goBackPage() {
     history.go(-1);
 }
-
 var fold = false;
 
 function test() {
@@ -20,4 +19,9 @@ function test() {
         fold = true;
     }
     
+}
+
+function showUserProfile(user_id) {
+    console.log(user_id);
+    window.location.href="/accounts/user/"+user_id;
 }
