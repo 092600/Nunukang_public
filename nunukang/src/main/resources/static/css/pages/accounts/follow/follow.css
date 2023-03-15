@@ -1,0 +1,171 @@
+@media (min-width: 650px) {
+   .content>div {
+        width : 95%;
+        height : 100%;
+
+        overflow-y: scroll;
+   }
+
+      .alertHeaderDiv {
+         width : 100%;
+         height : 13%;
+
+         display : flex;
+         align-items: center;
+         justify-content: left;
+      }
+         .alertHeaderDiv div {
+            width : 100% !important;
+            height : 10%;
+            margin-left : 2%;
+
+            font-size : 64px;
+            display : flex;
+            align-items: center;
+            justify-content: left;
+         }
+
+            .alertHeaderDiv div p {
+               width : 100%;
+               height : 50%;
+            }
+            #before {
+               font-size : 68px;
+
+               margin-right : 20px;
+            }
+
+
+      .alertsTextDiv {
+         width : 100%;
+         height : 45px;
+
+         display : flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+         .alertsTextDiv div {
+            width : 100%;
+            height : 60%;
+
+            display : flex;
+            align-items: center;
+            justify-content: left;
+
+            font-size : 49px;
+            font-weight: 600;
+         }
+      .alertsOutterDiv {
+         width : 100%;
+         height : auto;
+      }
+
+         .alertDiv { 
+            width : 98%;
+            height : 240px;
+
+            display : flex;
+
+            border-radius: 50px;
+
+            border : 4px solid black;
+            background-color: rgba(255, 255, 255, 0.828);
+
+            margin-bottom : 20px;
+         }
+
+            .alertUserDiv {
+               width : 27%;
+               height: 100%;
+            }
+
+               .alertUserProfileDiv {
+                  width : 100%;
+                  height : 80%;
+
+                  display : flex;
+                  align-items: center;
+                  justify-content: center;
+               }
+
+               .alertUsernameDiv {
+                  width : 100%;
+                  height : 20%;
+                  font-size : 44px;
+                  display : flex;
+                  align-items: center;
+                  justify-content: center;
+
+               }
+               .alertUserProfileDiv img {
+                  width : 160px;
+                  height : 160px;
+                  border-radius: 50%;
+
+                  background-color: white;
+
+                  border :4px solid black;
+               }
+
+
+            .alertContentDiv {
+               width : 73%;
+               height : 100%;
+
+               display : flex;
+               align-items: center;
+               justify-content: center;
+               margin-left : -2%;
+            }
+
+            .alertContentDiv>div {
+               width : 90%;
+               height : 80%;
+            }
+
+               .alertMessage {
+                  width : 100%;
+                  height : 100%;
+
+                  font-size :40px;
+                  /* background-color: yellow; */
+               }
+
+               .followerFollowButtonDiv {
+                  position: relative;
+
+                  width : 200px !important;
+                  height :105px !important;
+
+                  background-color: white !important;
+                  color : black;
+                  display : flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  border-radius: 40px;;
+                  border : 4px solid black;
+                  font-size : 40px;
+               }
+
+               .followFollowButtonDiv {
+                  position: relative;
+
+                  width : 200px !important;
+                  height : 105px !important;
+
+                  background-color: white !important;
+                  color : black;
+                  display : flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  border-radius: 40px;;
+                  border : 4px solid black;
+                  font-size : 40px;
+               }
+               
+
+            
+}

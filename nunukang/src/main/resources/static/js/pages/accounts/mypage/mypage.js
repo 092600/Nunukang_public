@@ -33,3 +33,40 @@ function getSettingsDiv() {
 function showUserWritePosts() {
     window.location.href = "/community/myposts";
 }
+
+function showFollowers(user_id) {
+    window.location.href = "/accounts/user/"+user_id+"/followers";
+}
+
+function showFollowing(user_id) {
+    window.location.href = "/accounts/user/"+user_id+"/following";
+}
+
+
+function deleteUser() {
+    var password = prompt("회원탈퇴를 위해 현재 사용하고있는 비밀번호를 입력해주세요");
+
+    const data = {
+        id : $("#user_id").val(),
+        password : password
+    }
+
+    $.ajax({
+        url : '/api/v4/accounts/user',
+        type : 'DELETE',
+        dataType : 'JSON',
+        contentType : "application/json",
+        data : JSON.stringify(data),
+        success:function(bool){
+            if (bool) {
+                window.location.href="/logout";
+            } else {
+                alert("패스워드가 일치하지 않습니다.");
+            }
+        },
+        error:function(err){
+            alert("다시 한번 시도해주세요.");
+        }
+    });
+}
+

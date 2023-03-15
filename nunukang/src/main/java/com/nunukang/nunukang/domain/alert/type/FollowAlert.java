@@ -21,7 +21,7 @@ public class FollowAlert extends Alert{
 
     private String message;
 
-    public FollowAlert(User follower, User follow) {
+    public FollowAlert(User follow, User follower) {
         this.setAlertingUser(follow);
         this.setMakeAlertUser(follower);
         this.message = getAlertMessage(follow, follower);

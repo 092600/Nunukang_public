@@ -26,6 +26,7 @@ import org.springframework.ui.Model;
 
 import java.util.List;
 
+
 @Controller
 @RequiredArgsConstructor
 public class MainPageController {
@@ -68,6 +69,7 @@ public class MainPageController {
 
     @GetMapping(value = "/map")
     public String tempPage() {
+        
         return "pages/main/map/mapPage";
     }
 
@@ -219,6 +221,57 @@ public class MainPageController {
         } else {
 
             return "pages/main/community/communityPage";
+        }
+    }
+
+
+
+    @GetMapping(value = "/accounts/user/{id}/followers")
+    public String followerPage(@PathVariable(value = "id") Long id, Model model,
+                                Authentication auth) {
+
+        NunukangUserDetails nud = (NunukangUserDetails) auth.getPrincipal();
+
+        Optional<User> optionalSessionUser = userService.findById(nud.getUser().getId());
+        Optional<User> optionalUser = userService.findById(id);
+
+        if (optionalUser.isPresent() && optionalSessionUser.isPresent()) {
+            User user = optionalUser.get();
+            User myUser = optionalSessionUser.get();
+
+            model.addAttribute("user", myUser);
+            model.addAttribute("followers", user.getFollowers());
+
+            return "pages/accounts/follow/followerPage";
+
+        } else {
+
+            return "redirect:/accounts/mypage";
+        }
+        
+    }
+
+
+    @GetMapping(value = "/accounts/user/{id}/following")
+    public String followingPage(@PathVariable(value = "id") Long id, Model model,
+                                Authentication auth)  {
+        NunukangUserDetails nud = (NunukangUserDetails) auth.getPrincipal();
+
+        Optional<User> optionalSessionUser = userService.findById(nud.getUser().getId());
+        Optional<User> optionalUser = userService.findById(id);
+
+        if (optionalUser.isPresent() && optionalSessionUser.isPresent()) {
+            User user = optionalUser.get();
+            User myUser = optionalSessionUser.get();
+
+            model.addAttribute("user", myUser);
+            model.addAttribute("following", user.getFollowing());
+
+            return "pages/accounts/follow/followPage";
+
+        } else {
+
+            return "redirect:/accounts/mypage";
         }
     }
 }

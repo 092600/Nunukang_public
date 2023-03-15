@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sodipodi="http://java.sun.com/xml/ns/j2ee"
+        xmlns:inkscape="http://java.sun.com/xml/ns/javaee"
+        layout:decorate="~{settings/layout/pages/main/common/pagesCommonLayout}"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>누누강 : 메인페이지</title>
+
+    <th:block th:replace="settings/config/pages/accounts/follow/followPageConfig :: followPageConfig"></th:block>
+
+
+    <!-- <script th:src="@{/js/mainPages/index.js}"></script> -->
+</head>
+<body>
+
+    
+    <div layout:fragment="content">
+        <div>
+            <div class="alertHeaderDiv">
+                <div class="" onclick="goBackPage()">
+                    <p><span id="before"><i class="fa-solid fa-arrow-left"></i></span><span>팔로우 목록</span></p>
+                </div>
+            </div>
+            <div class="alertsOutterDiv" th:unless="${#lists.isEmpty(following)}">
+                <div class="alertsTextDiv">
+                    <div></div>
+                </div>
+                <div class="alertDiv" th:each="follow : ${following}">
+                    <div class="alertUserDiv"  th:user_id="${follow.id}"  onclick="showUserProfile(this.getAttribute('user_id'))">
+                        <div class="alertUserProfileDiv" >
+                            <img th:src="${follow.profile.profileImg}">
+                        </div>
+                        <div class="alertUsernameDiv">
+                            <p th:text="${follow.name}"></p>
+                        </div>
+                    </div>
+                    <div class="alertContentDiv">
+                        <div>
+                            <div class="alertMessage" th:text="${follow.profile.intro}">
+                        
+                            </div>
+                            <div class="alertCreatedTimeDiv" >
+
+                            </div>
+                        </div>
+                        <div class="followFollowButtonDiv" th:follow_id="${follow.id}"  th:user_id="${user.id}" 
+                        onclick="unfollow(this.getAttribute('follow_id'), this.getAttribute('user_id'))">
+                            언팔로우
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

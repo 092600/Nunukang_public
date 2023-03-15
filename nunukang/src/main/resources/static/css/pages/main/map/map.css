@@ -115,6 +115,17 @@
                         color : rgb(202, 199, 199);
                     }
 
+                        .favorite {
+                            color : rgb(226, 195, 19);
+                        }
+
+                        .unfavorite>i {
+                            color : rgb(202, 199, 199) !important;
+                        }
+                        /* .favorite { */
+                            /* color : yellow; */
+                        /* } */
+
 
 
 
@@ -193,7 +204,7 @@
                                 justify-content: center;
 
                                 font-size : 36px;
-                                background-color: rgb(41, 159, 237);
+                                /* background-color: rgb(41, 159, 237); */
                             }
 
                                 .fishingSpotWeatherHeaderDiv div p {
@@ -240,7 +251,7 @@
                                 /* display : inline-block; */
 
                                 font-size : 36px;
-                                background-color: rgb(41, 159, 237);
+                                /* background-color: rgb(41, 159, 237); */
                             }
 
                                 .fishingSpotWeatherContentDiv>div div {
@@ -279,7 +290,7 @@
                         align-items: center;
                         justify-content: center;
 
-                        background-color: rgb(41, 159, 237);
+                        /* background-color: rgb(41, 159, 237); */
                     }
 
                         .fishingSpotInfoContent2 div {
@@ -293,7 +304,7 @@
                         width : 100%;
                         height : 30%;
 
-                        background-color: rgb(41, 159, 237);
+                        /* background-color: rgb(41, 159, 237); */
                     }
 
                         .fishingSpotInfoContent3 div {
@@ -420,8 +431,6 @@
                 .locationTemperatureOutterContentDiv {
                     width : 100%;
                     height : 74%;
-
-                    background-color: blue;
                 }
 
                 .locationTemperatureOutterFunctionalDiv {

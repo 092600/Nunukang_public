@@ -3,6 +3,7 @@ package com.nunukang.nunukang.domain.fishingSpot;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -18,5 +19,10 @@ public class FishingSpotService {
     public List<FishingSpot> getFishingSpotByType(FishingType type) {
 
         return fishingSpotRepository.findAllByType(type);
+    }
+
+    public Optional<FishingSpot> getFishingSpot(FishingSpot tmp) {
+        return fishingSpotRepository.findById(tmp.getId());
+
     }
 }

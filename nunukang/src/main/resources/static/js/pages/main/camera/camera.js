@@ -62,38 +62,50 @@ function sendPicture(){
                 // crossDomain: true,
                 data : formData,
                 success:function(result){
-        
-                    $.ajax({
-                        url: '/api/v4/fish/picture',
-                        type: 'POST',
-                        cache: false,
-                        contentType: false,               // * 중요 *
-                        processData: false,               // * 중요 *
-                        dataType: 'JSON',
-                        contentType: "application/json",
-                        data: JSON.stringify(result),
-                        success: function (result) {
-                            console.log(result);
-                            if (!result) {
-                                alert("문제가 발생하여 다시 한번 시도해주세요.");
-                            } else {
-                                $("#pictureSubmitButton").click(function(){
-                                    window.location.href = "/ranking"
-                                });
-                                $("#pictureSubmitButton").text("랭킹 보러가기");
+                    if (result != "None") {
+                        $.ajax({
+                            url: '/api/v4/fish/picture',
+                            type: 'POST',
+                            cache: false,
+                            contentType: false,               // * 중요 *
+                            processData: false,               // * 중요 *
+                            dataType: 'JSON',
+                            contentType: "application/json",
+                            data: JSON.stringify(result),
+                            success: function (result) {
+                                console.log(result);
+                                if (!result) {
+                                    alert("문제가 발생하여 다시 한번 시도해주세요.");
+                                } else {
+                                    $("#pictureSubmitButton").click(function(){
+                                        window.location.href = "/ranking"
+                                    });
+                                    $("#pictureSubmitButton").text("랭킹 보러가기");
+                                }
+                            },
+                            error: function (err) {
+                                console.error(err);
                             }
-                        },
-                        error: function (err) {
-                            console.error(err);
-                        }
-                    })
-                    $(".loadingDiv").css("display","none");
-                    $(".fish_species_namePTag").text(result.fishSpeicesName);
-                    $(".fish_sizePTag").text(result.fishSize+"cm");
-                    $(".indexContentInnerDiv").css("height", "93%");
-                    $("#image").css("height", "85%");
-        
-                    imageTag.src = "/fish/images/"+result.fishingUser.email+"/"+result.pictureName+"_model.jpg";
+                        })
+                        $(".loadingDiv").css("display","none");
+                        $(".fish_species_namePTag").text(result.fishSpeicesName);
+                        $(".fish_sizePTag").text(result.fishSize+"cm");
+                        $(".indexContentInnerDiv").css("height", "93%");
+                        $("#image").css("height", "85%");
+                        imageTag.src = "/fish/images/"+result.fishingUser.email+"/"+result.pictureName+"_model.jpg";
+                    } else {
+                        $(".loadingDiv").css("display","none");
+                        $(".fish_sizePTag").text("");
+
+                        $("#pictureSubmitButton").click(function(){
+                            window.location.href = "/"
+                        });
+                        $("#pictureSubmitButton").text("다시 찍으러가기");
+
+                        alert("가이드에 맞도록 사진을 찍어주세요.\n")
+                    }
+                    
+    
                     
                     
         

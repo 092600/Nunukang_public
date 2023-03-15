@@ -92,4 +92,26 @@ public class AccountsApiController {
             return false;
         }
     }
+
+    @DeleteMapping("/user")
+    public boolean deleteUser(@RequestBody User tmp) {
+        Optional<User> optionalUser = userService.findById(tmp.getId());
+
+        try {
+            if (optionalUser.isPresent()) {
+                User user = optionalUser.get();
+    
+                if (userService.matchingPassword(user, tmp)) {
+                    userService.deleteUser(user);
+    
+                    return true;
+                }
+            }
+
+            return false;
+
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

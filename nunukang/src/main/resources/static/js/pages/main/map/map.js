@@ -1,28 +1,13 @@
-function loading() {
-    $("body").append(
-        '<div class="lodingDiv">' +
-            '<i class="fas fa-spinner fa-10x fa-spin"></i>' +
-        '</div>'
-    );
-    if ($(".lodingDiv").css("display") == "none") {
-        $(".lodingDiv").css("display", "block") ;
-    } else {
-        $(".lodingDiv").css("display", "none") ;
-    }
-}
-
+// 데이터 가져오기
 
 function getFishingSpot(type) {
-    console.log(type);
     if (type == null) {
-        console.log('null');
         $.ajax({
             url: "/api/v4/map/fisingSpot?type=OCEAN",
             type: "GET",
             cache: false,
             async: false,
             success: function (result) {
-                console.log(result);
                 spots = result;
             },
             error: function (err) {
@@ -49,10 +34,12 @@ function getFishingSpot(type) {
     }
 }
 
+function setDefaultMapLocation() {
+    this.map.setCenter(new google.maps.LatLng(37.541, 126.986));
+}
 
 
 function initMap(type) {
-    console.log(type);
     this.map = new google.maps.Map(document.getElementById("googleMapDiv"), {
         zoom: 8,
     });
@@ -89,7 +76,6 @@ function initMap(type) {
     
     const spots = getFishingSpot(type);
     const markers = spots.map((i) => {
-        console.log(i)
         const marker = new google.maps.Marker({
             position : new google.maps.LatLng(i["gps"]["latitude"], i["gps"]["longitude"]),
 
@@ -106,6 +92,7 @@ function initMap(type) {
                 scaledSize: new google.maps.Size(43, 58), // scaled size    
             } ,
             address:  {
+                id : i["id"],
                 locationName : i["name"],
                 address : i["address"],
                 gps : {
@@ -165,6 +152,11 @@ function initMap(type) {
     
 }
 
+
+
+
+
+
 function buttonColorChanger(type) {
     if (type == null) {
         $(".fishingSpotType1Button").css("background-color", "rgba(0, 0, 0, 0.36)");
@@ -179,9 +171,6 @@ function buttonColorChanger(type) {
     }
 }
 
-function setDefaultMapLocation() {
-    this.map.setCenter(new google.maps.LatLng(37.541, 126.986));
-}
 
 
 
@@ -199,16 +188,30 @@ function locationClickEvent() {
 
 
 
-
+// 데이터 화면보여주기
 
 
 function getFishingSpotWeather(address) {
     loading();
-
+    
+    const favoriteSpots = [];
     const formData = new FormData();
+    
     formData.append("latitude", address["gps"]["latitude"]);
     formData.append("longitude", address["gps"]["longitude"]);
     
+    $.ajax({
+        url: "/api/v4/map/fishingSpot/favorite",
+        type: "GET",
+        cache: true,
+        async: false,
+        success: function (favoriteSpotList) {
+            favoriteSpotList.forEach((spot) => {
+                favoriteSpots.push(spot);
+            })
+        }
+    });
+
     $.ajax({
         url:'http://127.0.0.1:5000/weather/location',
         type:'POST',
@@ -219,11 +222,19 @@ function getFishingSpotWeather(address) {
         // crossDomain: true,
         data : formData,
         success: function (result) {
-            console.log(result)
             $(".fishingSpotNamePTag").text(address["locationName"]);
+            
+            if (favoriteSpots.includes(address["id"])) {
+                addFavoriteButton(address["id"]);
+            } else {
+                addUnfavoriteButton(address["id"]);
+            }
+
 
             result.at(0).forEach(setupWeatherDatas);
+
             
+
             getFishingSpotMap(address);
             loading();            
         },
@@ -269,7 +280,24 @@ function setupWeatherDatas(weatherData) {
     showFishingSpotInfoContent2();
     showFishingSpotInfoContent3();
 }
+ 
 
+//  로딩
+
+function loading() {
+    $("body").append(
+        '<div class="lodingDiv">' +
+            '<i class="fas fa-spinner fa-10x fa-spin"></i>' +
+        '</div>'
+    );
+    if ($(".lodingDiv").css("display") == "none") {
+        $(".lodingDiv").css("display", "block") ;
+    } else {
+        $(".lodingDiv").css("display", "none") ;
+    }
+}
+
+//  
 
 function showFishingSpotInfoContent1() {
     $(".fishingSpotInfoContent1").css("display", "flex");
@@ -348,3 +376,71 @@ function setupFishingSpotInfoContent3InnerDiv(obj) {
 }
 
 
+
+// favorite
+
+function addFavoriteButton(spot_id) {
+    $(".fishingSpotInfoHeader1InnerLeftDiv").children().remove();
+    $(".fishingSpotInfoHeader1InnerLeftDiv").append(
+        '<p class="fishingSpotId favorite" spotId='+spot_id+' onclick="unfavoriteSpot()"><i class="fa-solid fa-star"></i></p>'
+    );
+}
+
+
+function addUnfavoriteButton(spot_id) {
+    $(".fishingSpotInfoHeader1InnerLeftDiv").children().remove();
+    $(".fishingSpotInfoHeader1InnerLeftDiv").append(
+        '<p class="fishingSpotId unfavorite" spotId='+spot_id+' onclick="favoriteSpot()"><i class="fa-solid fa-star"></i></p>'
+    )
+}
+
+
+
+function favoriteSpot() {
+    const spot_id = $(".fishingSpotId").attr("spotId");
+
+    const data = {
+        id : spot_id, 
+    }
+
+    $.ajax({
+        url: "/api/v4/map/fisingSpot/favorite",
+        type: "Post",
+        dataType : 'JSON',
+        contentType : "application/json",
+        data : JSON.stringify(data),
+        success: function (result) {
+            addFavoriteButton(spot_id);
+
+            alert("즐겨찾기에 추가되었습니다.");
+        },
+        error: function (err) {
+            console.error(err);
+        }
+    });
+}
+
+
+function unfavoriteSpot() {
+    const spot_id = $(".fishingSpotId").attr("spotId");
+
+    const data = {
+        id : spot_id, 
+    }
+
+    $.ajax({
+        url: "/api/v4/map/fisingSpot/favorite",
+        type: "DELETE",
+        dataType : 'JSON',
+        contentType : "application/json",
+        data : JSON.stringify(data),
+        success: function (result) {
+            addUnfavoriteButton(spot_id);
+            
+            alert("즐겨찾기에서 제거되었습니다.");
+        },
+        error: function (err) {
+            console.error(err);
+        }
+    });
+}

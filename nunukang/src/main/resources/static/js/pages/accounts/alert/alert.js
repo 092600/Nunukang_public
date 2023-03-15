@@ -25,3 +25,4 @@ function showUserProfile(user_id) {
     console.log(user_id);
     window.location.href="/accounts/user/"+user_id;
 }
+

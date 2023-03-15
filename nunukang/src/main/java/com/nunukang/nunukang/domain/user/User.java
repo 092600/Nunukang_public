@@ -7,6 +7,7 @@ import javax.persistence.*;
 import com.nunukang.nunukang.domain.alert.Alert;
 import com.nunukang.nunukang.domain.comment.Comment;
 import com.nunukang.nunukang.domain.fish.Fish;
+import com.nunukang.nunukang.domain.fishingSpot.FishingSpot;
 import com.nunukang.nunukang.domain.post.Post;
 import com.nunukang.nunukang.domain.user.profile.Profile;
 
@@ -63,9 +64,14 @@ public class User {
     @ManyToMany
     private List<Post> taggedPosts = new ArrayList<Post>();
 
+    @ElementCollection
+    private List<Long> favoriteSpotsId = new ArrayList<Long>();
+    
+
     public void addTaggedPost(Post post) {
         if (!this.getTaggedPosts().contains(post)) {
             this.getTaggedPosts().add(post);
         }
     }
+
 }

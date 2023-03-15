@@ -320,4 +320,16 @@
 
          border-radius: 45px;;
       }
+      
+      .tmpDiv {
+         background-color: cornflowerblue !important;
+      }
+      .deleteUserDiv {
+         color : rgb(175, 5, 5) !important;
+      }
+
+
+      #user_id {
+         display : none;
+      }
 }

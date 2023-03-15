@@ -15,6 +15,8 @@ import com.nunukang.nunukang.domain.post.Post;
 import com.nunukang.nunukang.domain.alert.Alert;
 import com.nunukang.nunukang.domain.alert.type.PostTaggedAlert;
 
+import com.nunukang.nunukang.domain.fishingSpot.FishingSpot;
+
 import javax.transaction.Transactional;
 
 
@@ -40,6 +42,21 @@ public class UserService {
     public Optional<User> findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+
+    public boolean matchingPassword(User user, User tmp) {
+        if (passwordEncoder.matches(tmp.getPassword(), user.getPassword())) {
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public void deleteUser(User user) {
+        userRepository.delete(user);
+    }
+
 
     public boolean signup(User user) {
         try {
@@ -127,5 +144,25 @@ public class UserService {
             return false;
         }
     }
+
+    @Transactional
+    public void favoriteSpot(Long spotId, User user) {
+        if (!user.getFavoriteSpotsId().contains(spotId)) {
+            user.getFavoriteSpotsId().add(spotId);
+        }
+    }
+
+    @Transactional
+    public void unfavoriteSpot(Long spotId, User user) {
+        if (user.getFavoriteSpotsId().contains(spotId)) {
+            user.getFavoriteSpotsId().remove(spotId);
+        }
+    }
+
+
+    public List<Long> getFavoriteSpots(User user) {
+        return user.getFavoriteSpotsId();
+    }
+
 
 }
