@@ -28,7 +28,7 @@ import lombok.Setter;
 public class PostImage {
 
     @Id @GeneratedValue(generator = "postImageGenerator")
-    @Column(name = "image_id")
+    @Column(name = "post_image_id")
     private Long id;
     
     private String name;
@@ -36,8 +36,11 @@ public class PostImage {
 
     @ManyToOne
     @JoinColumn(name = "post_id")
-    private Post postWriter;
+    private Post postId;
 
+
+    // @ManyToOne
+    // public Post post;
 
     private String imageSavePath;
 
@@ -46,7 +49,7 @@ public class PostImage {
         this.name = imageName;
         this.imageSavePath = "/post/images/" + post.getId() + "/Pictures/" + imageName;
 
-        this.postWriter = post;
+        this.postId = post;
     }
     
 }

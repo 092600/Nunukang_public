@@ -6,5 +6,5 @@ import com.nunukang.nunukang.domain.post.Post;;
 
 public interface PostImageRepository extends JpaRepository<PostImage, Long> {
  
-    List<PostImage> findAllByPostWriter(Post post);
+    List<PostImage> findAllByPostId(Post post);
 }

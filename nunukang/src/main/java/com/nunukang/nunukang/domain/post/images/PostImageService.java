@@ -14,7 +14,6 @@ public class PostImageService {
 
 
     public void savePostImage(PostImage image) {
-        System.out.println(image);
         try {
             postImageRepository.save(image);
         } catch (Exception e) {
@@ -27,6 +26,6 @@ public class PostImageService {
 
 
     public List<PostImage> findByPostWriter(Post post) {
-        return postImageRepository.findAllByPostWriter(post);
+        return postImageRepository.findAllByPostId(post);
     }
 }

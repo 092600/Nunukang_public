@@ -1,25 +1,21 @@
 package com.nunukang.nunukang.domain.fish.score;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 
 import lombok.Getter;
 import lombok.Setter;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 
 @Setter
 @Getter
 @Entity
-// @Table(name = "BlackProgy")
-public class BlackProgy {
+@DiscriminatorValue("2")
+public class BlackProgy extends FishForScore {
     
-    @Id @GeneratedValue
-    private Long id;
+    
+    private Integer species = 2;
 
-    private Integer species;
-
-    private Double fishSize;
-    private Double fishScore;
+    
 }

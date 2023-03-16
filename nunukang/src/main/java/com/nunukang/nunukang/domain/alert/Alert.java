@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "TYPE")
+@DiscriminatorColumn(name = "ALERT_TYPE")
 public abstract class Alert extends AlertTimeEntity {
 
     @Id @GeneratedValue

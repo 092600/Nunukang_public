@@ -1,17 +1,19 @@
 var fishRankList = [];
-var cnt = 0;
 
+var totalPage;
+var rank = 0;
 $(document).ready(function(){
-    var rankCount = $("#rankCount").val();
-    var species = parseInt($("#rankingSelectTag").val());
+    var species = $("#rankingSelectTag").val();
     
     $.ajax({
-        url: "/api/v4/fish/ranking?rankCount="+rankCount+"&species="+species,
+        url: "/api/v4/fish/ranking?species="+species+"&cnt="+0,
         type: "GET",
         cache: false,
         async: false,
         success: function (result) {
 
+            totalPage = result.totalPages;
+            
             $("#rankingContentInnerDiv").append(
                 '<div class="rankingTextDiv">'+
                     '<div class="rankNumHeaderDiv">' +
@@ -30,9 +32,7 @@ $(document).ready(function(){
             );
 
             if (result != "[]"){
-                fishRankList.push(result);
-                console.log(fishRankList);
-                result.forEach(appendDiv);
+                result.content.forEach(appendDiv);
             }
             $("#rankingContentInnerDiv").append('<button class="rankingContentInnerButton" onclick="rankCountP5()">랭킹 더 보기</button>')
 
@@ -45,25 +45,41 @@ $(document).ready(function(){
 })
 
 function rankCountP5(){
+    var species = $("#rankingSelectTag").val();
 
-    // for (let i = cnt;i<=cnt+5; i++) {
+    const cnt = 1;
 
-    // }
-    // if (result != "[]"){
-    //     result.forEach(appendDiv, parseInt(result.indexOf(this)));
-    // }
-    // $("#rankingContentInnerDiv").append('<button class="rankingContentInnerButton" onclick="rankCountP5()">랭킹 더 보기</button>')
+    if (cnt < totalPage) {
+        $.ajax({
+            url: "/api/v4/fish/ranking?species="+species+"&cnt="+cnt,
+            type: "GET",
+            cache: false,
+            async: false,
+            success: function (result) {
+                console.log(result);
+            
+                
+                if (result != "[]"){
+                    $(".rankingContentInnerButton").remove();
+                    result.content.forEach(appendDiv);
+                    $("#rankingContentInnerDiv").append('<button class="rankingContentInnerButton" onclick="rankCountP5()">랭킹 더 보기</button>')
+                }
+                
+            },
+            error: function (err) {
+                console.error(err);
+            }
+        })
+    } 
 
 }
 
 function test(){
-    $("#rankCount").val("5");
-    var rankCount = $("#rankCount").val();
-    var species = parseInt($("#rankingSelectTag").val())
-    
+    var species = $("#rankingSelectTag").val();
+    rank = 0;
 
     $.ajax({
-        url: "/api/v4/fish/ranking?rankCount="+rankCount+"&species="+species,
+        url: "/api/v4/fish/ranking?species="+species+"&cnt="+0,
         type: "GET",
         cache: false,
         async: false,
@@ -88,7 +104,7 @@ function test(){
             );
 
             if (result != "[]"){
-                result.forEach(appendDiv, parseInt(result.indexOf(this)));
+                result.content.forEach(appendDiv);
             }
             $("#rankingContentInnerDiv").append('<button class="rankingContentInnerButton" onclick="rankCountP5()">랭킹 더 보기</button>')
         },
@@ -98,13 +114,14 @@ function test(){
     })
 }
 
-function appendDiv(item, index){
-    index += 1; cnt += 1;
-    console.log(cnt)
+function appendDiv(item){
+    rank += 1;
+    
+    // console.log(item.get("fishingUser"))
     $("#rankingContentInnerDiv").append(
         '<div class="rankingDiv">'+
             '<div class="rankNumDiv">' +
-                '<p>'+index+'등</p>'+
+                '<p>'+rank+'등</p>'+
             '</div>'+
             '<div class="userNameDiv">' +
                 '<p>'+item.fishingUser.email+'</p>'+

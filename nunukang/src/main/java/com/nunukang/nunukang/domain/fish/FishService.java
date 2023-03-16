@@ -7,11 +7,14 @@ import lombok.RequiredArgsConstructor;
 import java.util.Optional;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import com.nunukang.nunukang.domain.fish.species.FishSpecies;
 
 import java.util.stream.Stream;
 
+import com.nunukang.nunukang.domain.fish.species.FishSpecies;
 import javax.transaction.Transactional;
 
 @Service
@@ -74,5 +77,10 @@ public class FishService {
         }
     }
 
+
+
+    public Page<Fish> getFishRanking(FishSpecies Species, Pageable pageable) {
+        return fishRepository.findBySpecies(Species, pageable);
+    }
     
 }

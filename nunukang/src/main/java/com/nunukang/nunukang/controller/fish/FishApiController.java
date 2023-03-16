@@ -12,6 +12,9 @@ import lombok.RequiredArgsConstructor;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,8 +22,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.data.domain.Sort;
 import java.util.stream.Stream;
+
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 
 @RestController
@@ -53,18 +59,29 @@ public class FishApiController {
     }
 
     @GetMapping("/ranking")
-    public List<Fish> getPictures(@RequestParam(name = "rankCount") Integer rankCount,
-                                    @RequestParam("species") Integer species) {
+    public Page<Fish> getPictures(@RequestParam("cnt") Integer page, FishSpecies species) {
+        
+        Pageable pageable = PageRequest.of(page, 7, Sort.by("id").descending());
 
-        System.out.println(rankCount);
-        System.out.println(species);
-        List<Fish> fishs = fishService.getFishRankList(species, rankCount);
-
-        for (Fish f : fishs) {
+        for (Fish f : fishService.getFishRanking(species, pageable)) {
             System.out.println(f.getPictureName());
         }
         
-        return fishs;
+        return fishService.getFishRanking(species, pageable);
     }
+
+    // @GetMapping("/ranking")
+    // public Page<Fish> getPictures(@RequestParam("cnt") Integer page, FishSpecies species,
+    //             @PageableDefault(size = 7, page = 0, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+
+    //     for (Fish f : fishService.getFishRanking(species, pageable)) {
+    //         System.out.println(f.getPictureName());
+    //     }
+        
+    //     return fishService.getFishRanking(species, pageable);
+    // }
+
+
+    
 
 }

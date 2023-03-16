@@ -55,16 +55,37 @@ public class User {
 
     
     @ManyToMany
+    @JoinTable(name = "user_following", 
+        joinColumns = @JoinColumn(name = "user_id"), 
+        inverseJoinColumns = @JoinColumn(name = "following_user_id"))
     private List<User> following = new ArrayList<User>();
 
+
+    
     @ManyToMany
+    @JoinTable(name = "user_followers", 
+        joinColumns = @JoinColumn(name = "user_id"), 
+        inverseJoinColumns = @JoinColumn(name = "followers_user_id"))
     private List<User> followers = new ArrayList<User>();
 
 
+    
+
     @ManyToMany
+    @JoinTable(name = "user_tagged_posts", 
+        joinColumns = @JoinColumn(name = "user_id"), 
+        inverseJoinColumns = @JoinColumn(name = "tagged_post_id"))
     private List<Post> taggedPosts = new ArrayList<Post>();
 
+
+
+
     @ElementCollection
+    @CollectionTable(
+        name = "favorite_spots_id",
+        joinColumns=@JoinColumn(name = "user_id")
+    )
+    @Column(name = "favorite_spots_id")
     private List<Long> favoriteSpotsId = new ArrayList<Long>();
     
 

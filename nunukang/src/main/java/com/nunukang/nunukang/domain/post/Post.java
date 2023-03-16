@@ -30,17 +30,23 @@ public class Post extends PostTimeEntity {
     @ManyToOne
     private User postWriter;
 
+
     @ManyToMany
-    @JoinColumn(name = "like_post")
+    @JoinTable(name = "post_like_user", 
+        joinColumns = @JoinColumn(name = "post_id"), 
+        inverseJoinColumns = @JoinColumn(name = "post_like_user_id"))
     private List<User> likers = new ArrayList<User>();
+
 
 
     @OneToMany(mappedBy = "post", targetEntity = Comment.class)
     private List<Comment> comments;
 
-    @OneToMany
+
+    @OneToMany(mappedBy = "postId")
     private List<PostImage> images = new ArrayList<PostImage>();
 
+    
     public void viewPost() {
         this.viewCnt += 1;
     }
