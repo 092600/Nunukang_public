@@ -1,9 +1,10 @@
-package com.nunukang.nunukang.domain.fish.score;
+package com.nunukang.nunukang.domain.fish.score.species;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 
+import com.nunukang.nunukang.domain.fish.score.FishForScore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,11 +12,10 @@ import lombok.Setter;
 @Setter
 @Getter
 @Entity
-@DiscriminatorValue("2")
 public class BlackProgy extends FishForScore {
-    
-    
+
+
     private Integer species = 2;
 
-    
+
 }

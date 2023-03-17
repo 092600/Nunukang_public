@@ -6,27 +6,7 @@ function changable() {
     changable = true;
 }
 
-function goBackPage() {
-    history.go(-1);
-}
 
-var fold = false;
-
-function test() {
-    $(".userIntro2Div").toggle();
-
-    $("#fold").remove();
-
-    if (fold == true) {
-        $(".usernameFunctionalDiv").append('<i class="fa-solid fa-chevron-down" id="fold"></i>');
-        
-        fold = false;
-    } else {
-        $(".usernameFunctionalDiv").append('<i class="fa-solid fa-chevron-up" id="fold"></i>');
-        fold = true;
-    }
-    
-}
 
 function getProfileImg() {
     $("#profileImg").click();
@@ -34,6 +14,7 @@ function getProfileImg() {
 
 function changeProfileImg(input) {
     if (input.files && input.files[0]) {
+        
         var reader = new FileReader();
         reader.onload = function(e) {
           document.getElementById('profileImgDiv').src = e.target.result;
@@ -53,6 +34,7 @@ function getBackgroundImg() {
 function changeBackgroundImg(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
+
         reader.onload = function(e) {
           document.getElementById('backgroundImgDiv').src = e.target.result;
         };
@@ -86,8 +68,6 @@ function changeProfile() {
     if (backgroundImg != undefined) {
         formData.append("backgroundImage", backgroundImg);
     }
-
-    console.log($("#user_id").val(), profileImg, backgroundImg);
 
     if (confirm("프로필을 변경하시겠습니까?")) {
         $.ajax({

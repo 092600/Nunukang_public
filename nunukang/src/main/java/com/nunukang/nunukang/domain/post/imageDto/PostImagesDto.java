@@ -4,9 +4,6 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.nunukang.nunukang.domain.post.Post;
-import com.nunukang.nunukang.domain.post.images.PostImage;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

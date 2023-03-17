@@ -11,7 +11,6 @@ import com.nunukang.nunukang.domain.post.Post;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 
 @Setter
 @Getter

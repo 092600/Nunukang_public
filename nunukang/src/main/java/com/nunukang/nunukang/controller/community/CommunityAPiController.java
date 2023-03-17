@@ -1,18 +1,12 @@
 package com.nunukang.nunukang.controller.community;
 
 import java.io.IOException;
+import java.util.Optional;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.nunukang.nunukang.domain.comment.Comment;
 import com.nunukang.nunukang.domain.comment.CommentService;
@@ -45,6 +39,26 @@ public class CommunityAPiController {
         return postService.savePost(post, ptud, imagesDto);
     }
 
+
+    @DeleteMapping("/post/{id}")
+    public Boolean deletePost(@PathVariable("id") Long id, Authentication auth) {
+        Optional<Post> optionalPost = postService.findById(id);
+
+        if (optionalPost.isPresent()) {
+            Post post = optionalPost.get();
+
+            NunukangUserDetails nud = (NunukangUserDetails) auth.getPrincipal();
+            if (post.getPostWriter().getId() == nud.getUser().getId()) {
+                postService.deletePost(post);
+
+                return true;
+            }
+
+            return false;
+        } else {
+            return false;
+        }
+    }
     @PostMapping("/post/{post_id}/comment")
     public boolean saveComment(@RequestBody Comment comment) {
 
@@ -62,8 +76,8 @@ public class CommunityAPiController {
 
     @PatchMapping("/post/{post_id}/unlike")
     public boolean unlikePost(@PathVariable("post_id") Long id, @RequestBody User user) {
-        
+
         return postService.unlikePost(id, user);
     }
-    
+
 }

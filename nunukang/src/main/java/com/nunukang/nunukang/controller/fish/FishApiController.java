@@ -38,13 +38,14 @@ public class FishApiController {
 
     @PostMapping("/picture")
     public Boolean fishPicture(@RequestBody Fish fish) {
+        System.out.println(fish);
        return fishService.saveFish(fish);
     }
 
     @GetMapping(value = "/pictures")
     public List<Fish> getPictures(@RequestParam("id") Long id){
         Optional<User> optionalUser = userService.findById(id);
-        
+
         if (optionalUser.isPresent()) {
             return fishService.getFishs(optionalUser.get());
         } else {
@@ -60,28 +61,15 @@ public class FishApiController {
 
     @GetMapping("/ranking")
     public Page<Fish> getPictures(@RequestParam("cnt") Integer page, FishSpecies species) {
-        
+
         Pageable pageable = PageRequest.of(page, 7, Sort.by("id").descending());
 
         for (Fish f : fishService.getFishRanking(species, pageable)) {
             System.out.println(f.getPictureName());
         }
-        
+
         return fishService.getFishRanking(species, pageable);
     }
 
-    // @GetMapping("/ranking")
-    // public Page<Fish> getPictures(@RequestParam("cnt") Integer page, FishSpecies species,
-    //             @PageableDefault(size = 7, page = 0, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
-
-    //     for (Fish f : fishService.getFishRanking(species, pageable)) {
-    //         System.out.println(f.getPictureName());
-    //     }
-        
-    //     return fishService.getFishRanking(species, pageable);
-    // }
-
-
-    
 
 }

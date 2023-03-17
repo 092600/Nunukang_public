@@ -39,8 +39,8 @@ try :
 
             if (tmp[-2]=='0') :
 
-                insert_sql = "INSERT INTO fish_for_score (id, fish_size, fish_type) VALUES (%s, %s, %s);"
-                val = (cnt , tmp[-1], "1")
+                insert_sql = "INSERT INTO fish_for_score (id, fish_size) VALUES (%s, %s);"
+                val = (cnt , tmp[-1])
 
                 cursor.execute(insert_sql, val)
                 conn.commit()
@@ -54,8 +54,8 @@ try :
             
             elif (tmp[-2] == '1'):
 
-                insert_sql = "INSERT INTO fish_for_score (id, fish_size, fish_type) VALUES (%s, %s, %s);"
-                val = (cnt , tmp[-1], "2")
+                insert_sql = "INSERT INTO fish_for_score (id, fish_size) VALUES (%s, %s);"
+                val = (cnt , tmp[-1])
 
                 cursor.execute(insert_sql, val)
                 conn.commit()
@@ -68,8 +68,8 @@ try :
             
             elif (tmp[-2] == '2'):
 
-                insert_sql = "INSERT INTO fish_for_score (id, fish_size, fish_type) VALUES (%s, %s, %s);"
-                val = (cnt , tmp[-1], "3")
+                insert_sql = "INSERT INTO fish_for_score (id, fish_size) VALUES (%s, %s);"
+                val = (cnt , tmp[-1])
 
                 cursor.execute(insert_sql, val)
                 conn.commit()
@@ -82,8 +82,8 @@ try :
 
             elif (tmp[-2] == '3'):
 
-                insert_sql = "INSERT INTO fish_for_score (id, fish_size, fish_type) VALUES (%s, %s, %s);"
-                val = (cnt , tmp[-1], "4")
+                insert_sql = "INSERT INTO fish_for_score (id, fish_size) VALUES (%s, %s);"
+                val = (cnt , tmp[-1])
 
                 cursor.execute(insert_sql, val)
                 conn.commit()
@@ -96,8 +96,8 @@ try :
             
             elif (tmp[-2] == "4"):
             
-                insert_sql = "INSERT INTO fish_for_score (id, fish_size, fish_type) VALUES (%s, %s, %s);"
-                val = (cnt , tmp[-1], "5")
+                insert_sql = "INSERT INTO fish_for_score (id, fish_size) VALUES (%s, %s);"
+                val = (cnt , tmp[-1])
 
                 cursor.execute(insert_sql, val)
                 conn.commit()

@@ -10,7 +10,6 @@ import javax.persistence.*;
 @Getter
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "FISH_TYPE")
 public class FishForScore {
 
     @Id @GeneratedValue
@@ -18,5 +17,5 @@ public class FishForScore {
 
     private Double fishSize;
     private Integer fishScore;
-    
+
 }

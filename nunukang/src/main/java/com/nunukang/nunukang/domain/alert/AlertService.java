@@ -16,6 +16,7 @@ import com.nunukang.nunukang.domain.comment.Comment;
 import com.nunukang.nunukang.domain.alert.type.FollowAlert;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -27,26 +28,26 @@ public class AlertService {
     private final AlertRepository alertRepository;
     
     public void createLikePostAlert(Post post, User user) {
-        Alert alert = new PostLikeAlert(post, user);
+        Alert alert = (Alert) new PostLikeAlert(post, user);
 
         alertRepository.save(alert);
     }
 
 
     public void createdCommentAlert(Comment comment) {
-        Alert alert = new CommentCreatedAlert(comment);
+        Alert alert = (Alert) new CommentCreatedAlert(comment);
 
         alertRepository.save(alert);
     }
 
     public void createFollowAlert(User follow, User follower) {
-        Alert alert = new FollowAlert(follow, follower);
+        Alert alert = (Alert) new FollowAlert(follow, follower);
 
         alertRepository.save(alert);
     }
 
     public void createPostTaggedAlert(Post post, User user, int taggedUserCnt) {
-        Alert alert = new PostTaggedAlert(post, user, taggedUserCnt);
+        Alert alert = (Alert) new PostTaggedAlert(post, user, taggedUserCnt);
 
         alertRepository.save(alert);
     }
@@ -55,11 +56,30 @@ public class AlertService {
     public void createPostCreateAlert(Post post) {
 
         for (User follower : post.getPostWriter().getFollowers()) {
-            Alert alert = new PostCreateAlert(post, follower);
+            Alert alert = (Alert) new PostCreateAlert(post, follower);
 
             alertRepository.save(alert);
         }
         
+    }
+
+    public boolean deleteAlert(Long alert_id, User user)  {
+        Optional<Alert> optionalAlert = alertRepository.findById(alert_id);
+
+        if (optionalAlert.isPresent()) {
+            Alert alert = optionalAlert.get();
+
+            if (alert.getAlertingUser().getId() == user.getId()) {
+                alertRepository.delete(alert);
+            
+                return true;
+            }
+
+            return false;
+        } else {
+            return false;
+        }
+
     }
 
     @Transactional

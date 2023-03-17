@@ -19,7 +19,6 @@ $(document).ready(function(){
                 )
             } else {
                 fish.forEach(function(x) {
-                    console.log(x.id);
                     $("#myFishsContentOutterDiv").append(
                         '<div class="myFishsContentInnerDiv">'+
                             '<div class="myFishsContentInnerHeaderDiv">'+
@@ -33,21 +32,7 @@ $(document).ready(function(){
 
                     )
                 })
-                // for (var i=0; i<=fish.length;i++){
-                //     const id = fish.at(i).id;
-                //     // $("#myFishsContentOutterDiv").append(
-                //     //     '<div class="myFishsContentInnerDiv">'+
-                //     //         '<div class="myFishsContentInnerHeaderDiv">'+
-                //     //             '<div class="pictureDeleteDiv" onClick="deletePicture('+fish.at(i)['id']+')"></div>'+
-                //     //             '<p>'+fish.at(i).pictureName+'</p>'+
-                //     //         '</div>'+
-                //     //         '<div class="myFishsContentInnerContentDiv">'+
-                //     //             '<a href="/picture/'+fish.at(i).id+'"><img class="fishPicture" src="'+fish.at(i).picturePath+'.jpg"></a>'+
-                //     //         '</div>'+
-                //     //     '</div>'
 
-                //     // )
-                // }
             }
         },
         error: function (err) {

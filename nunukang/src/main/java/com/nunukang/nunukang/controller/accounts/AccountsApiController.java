@@ -1,6 +1,8 @@
 package com.nunukang.nunukang.controller.accounts;
 
 import com.nunukang.nunukang.domain.user.followDto.FollowDto;
+import com.nunukang.nunukang.config.authentication.userDetails.NunukangUserDetails;
+import com.nunukang.nunukang.domain.alert.AlertService;
 import com.nunukang.nunukang.domain.user.User;
 import com.nunukang.nunukang.domain.user.UserService;
 import com.nunukang.nunukang.domain.user.imagesDto.UserProfileImageDto;
@@ -8,7 +10,9 @@ import com.nunukang.nunukang.domain.user.imagesDto.UserProfileImageDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,6 +30,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class AccountsApiController {
 
+    private final AlertService alertService;
     private final UserService userService;
     private final UserProfileImageDtoService upidService;
 
@@ -50,6 +55,16 @@ public class AccountsApiController {
                             @ModelAttribute UserProfileImageDto upid) throws IOException {
 
         return upidService.updateUserProfile(user, upid);
+    }
+
+    @DeleteMapping("/alert/{id}")
+    public boolean deleteAlert(@PathVariable("id") Long alert_id, Authentication auth) {
+        NunukangUserDetails nud = (NunukangUserDetails) auth.getPrincipal();
+        User user = nud.getUser();
+
+        System.out.println(alert_id);
+
+        return alertService.deleteAlert(alert_id, user);
     }
 
 

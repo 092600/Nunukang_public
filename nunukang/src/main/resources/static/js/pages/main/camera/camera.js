@@ -62,6 +62,7 @@ function sendPicture(){
                 // crossDomain: true,
                 data : formData,
                 success:function(result){
+                    console.log(result);
                     if (result != "None") {
                         $.ajax({
                             url: '/api/v4/fish/picture',
@@ -73,7 +74,7 @@ function sendPicture(){
                             contentType: "application/json",
                             data: JSON.stringify(result),
                             success: function (result) {
-                                console.log(result);
+                                console.log(result)
                                 if (!result) {
                                     alert("문제가 발생하여 다시 한번 시도해주세요.");
                                 } else {
@@ -88,8 +89,8 @@ function sendPicture(){
                             }
                         })
                         $(".loadingDiv").css("display","none");
-                        $(".fish_species_namePTag").text(result.fishSpeicesName);
-                        $(".fish_sizePTag").text(result.fishSize+"cm");
+                        $(".fish_species_namePTag").text("어종 : " + get_species_name_kor(result.species));
+                        $(".fish_sizePTag").text("길이 : "+result.fishSize+"cm");
                         $(".indexContentInnerDiv").css("height", "93%");
                         $("#image").css("height", "85%");
                         imageTag.src = "/fish/images/"+result.fishingUser.email+"/"+result.pictureName+"_model.jpg";
@@ -123,4 +124,19 @@ function sendPicture(){
 
 function goRanking() {
     window.location.href = "/ranking";
+}
+
+
+function get_species_name_kor(name_eng) {
+    if (name_eng == "RED_SEABREAM") {
+        return "참돔";
+    } else if (name_eng == "BLACK_PROGY") {
+        return "감성돔";
+    } else if (name_eng == "OLIVE_FLOUNDER") {
+        return "광어";
+    } else if (name_eng == "KOREA_ROCKFISH") {
+        return "우럭";
+    } else if (name_eng == "ROCK_BREAM") {
+        return "돌돔";
+    }
 }

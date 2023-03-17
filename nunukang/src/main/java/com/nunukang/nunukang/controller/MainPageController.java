@@ -12,16 +12,13 @@ import com.nunukang.nunukang.domain.fish.Fish;
 import com.nunukang.nunukang.domain.user.User;
 import com.nunukang.nunukang.domain.user.UserService;
 import com.nunukang.nunukang.domain.fish.FishService;
-import com.nunukang.nunukang.domain.fish.species.FishSpecies;
+
 import com.nunukang.nunukang.domain.post.Post;
 import com.nunukang.nunukang.domain.alert.Alert;
 import com.nunukang.nunukang.domain.post.PostService;
 import com.nunukang.nunukang.domain.alert.AlertService;
 import com.nunukang.nunukang.domain.post.images.PostImageService;
 
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.Authentication;
 import com.nunukang.nunukang.config.authentication.userDetails.NunukangUserDetails;
 

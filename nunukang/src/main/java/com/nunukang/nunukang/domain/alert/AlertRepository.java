@@ -2,6 +2,7 @@ package com.nunukang.nunukang.domain.alert;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -10,6 +11,9 @@ import com.nunukang.nunukang.domain.user.User;
 
 
 public interface AlertRepository extends JpaRepository<Alert, Long> {
+    
+
+    Optional<Alert> findById(Long AlertId);
     
     @Query(value = "SELECT a FROM Alert a WHERE a.alertingUser.id = :id ORDER BY a.id DESC")
     List<Alert> getAlerts(@Param(value = "id") Long id);

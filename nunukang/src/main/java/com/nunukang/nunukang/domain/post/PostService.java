@@ -12,7 +12,6 @@ import com.nunukang.nunukang.domain.user.User;
 import com.nunukang.nunukang.domain.user.UserService;
 import com.nunukang.nunukang.domain.user.postTaggedUserDto.PostTaggedUserDto;
 import com.nunukang.nunukang.domain.alert.AlertService;
-import com.nunukang.nunukang.domain.alert.type.PostLikeAlert;
 
 import lombok.RequiredArgsConstructor;
 import java.util.List;
@@ -63,6 +62,12 @@ public class PostService {
         } else {
             return 0L;
         }
+    }
+
+
+    @Transactional
+    public void deletePost(Post post) {
+        postRepository.delete(post);
     }
 
     public Optional<Post> findById(Long id) {

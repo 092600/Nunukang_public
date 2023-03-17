@@ -78,6 +78,7 @@ function getImages(event){
 
             $('.postContentImgInnerDiv').children().remove();
             cnt = 0;
+            
             for (const image of imageList){
                 const reader = new FileReader();
 
@@ -123,10 +124,6 @@ function imgZoomDown(){
 
 function postSave(){
     const formData = new FormData();
-    const imageSize = imageList.length;
-    
-    
-    // formData.append("postHashtagUserList", hashtagUserList);
     
     var post = {
         "title" : $("#postTitle").val(),

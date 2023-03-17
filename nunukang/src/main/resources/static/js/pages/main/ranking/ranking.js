@@ -116,8 +116,7 @@ function test(){
 
 function appendDiv(item){
     rank += 1;
-    
-    // console.log(item.get("fishingUser"))
+
     $("#rankingContentInnerDiv").append(
         '<div class="rankingDiv">'+
             '<div class="rankNumDiv">' +

@@ -2,7 +2,6 @@ package com.nunukang.nunukang.domain.post.time;
 
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 

@@ -3,19 +3,14 @@ package com.nunukang.nunukang.domain.user;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import com.nunukang.nunukang.domain.user.imagesDto.UserProfileImageDto;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
-import com.nunukang.nunukang.domain.user.profile.Profile;
 import com.nunukang.nunukang.domain.alert.AlertService;
 import com.nunukang.nunukang.domain.post.Post;
-import com.nunukang.nunukang.domain.alert.Alert;
-import com.nunukang.nunukang.domain.alert.type.PostTaggedAlert;
 
-import com.nunukang.nunukang.domain.fishingSpot.FishingSpot;
 
 import javax.transaction.Transactional;
 

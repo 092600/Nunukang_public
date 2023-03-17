@@ -25,8 +25,6 @@ function searchPost(){
 function postLike(obj, post_id, user_id) {
     obj.style.color = "red";
 
-    console.log(post_id);
-
     const data = {
         id : user_id,
     }

@@ -1,7 +1,7 @@
 package com.nunukang.nunukang.domain.alert.type;
 
 import com.nunukang.nunukang.domain.alert.Alert;
-import com.nunukang.nunukang.domain.user.User;
+
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +12,6 @@ import com.nunukang.nunukang.domain.comment.Comment;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 
 @Setter
 @Getter
@@ -34,9 +33,5 @@ public class CommentCreatedAlert extends Alert{
 
         return comment.getUser().getName() + " 님께서 " + post.getPostWriter().getName() + " 님의 " +post.getTitle() + " 글에 \"" +comment.getContent() + "\" 댓글을 남겼습니다.";
     }
-
-
-
-
 
 }

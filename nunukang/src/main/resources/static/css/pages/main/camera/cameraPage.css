@@ -20,16 +20,14 @@
 
         .indexContainer {
             width : 90%;
-            height: 85%;
-
-            margin-top: 10%;
+            height: 88%;
         }
 
         .fishNameOutterDiv {
             width : 100%;
             height : 10%;
 
-            margin-top : -9%;
+            /* margin-top : -9%; */
 
             display : none;
 
@@ -89,22 +87,32 @@
 
         .indexContentDiv {
             width : 96%;
-            height : 84%;
+            height : 86%;
+
+            text-align: center;
             /*background-color: yellow;*/
         }
+        
         .contentMainPTag {
             font-size : 64px;
             font-weight: bolder;
             padding-top : 23px;
             text-align: center;
+            margin-bottom : 23px;
+        }
+
+        .contentSubPTag {
+            font-size : 43px;
         }
 
         .indexContentSubDiv {
+            width : 100%;
+            height : auto;
+
             display: inline-block;
-            text-align: left;
+            text-align: center;
             font-size : 38px;
             line-height: 67px;
-            margin-top : 88px;
         }
         .indexContentInnerDiv {
             width : 100%;
@@ -113,13 +121,16 @@
             position: relative;
             display :flex;
             justify-content: center;
+
             align-items: center;
         }
 
         .indexContentInnerDiv img {
-            width : 92%;
-            height : 92%;
+            width : 83%;
+            height : 83%;
             border : 3px solid black;
+
+            border-radius: 50px;
         }
 
 
@@ -151,6 +162,7 @@
         }
         #imgDiv{
             display:none;
+            height : 80%;
         }
 
         .camera {
@@ -196,12 +208,34 @@
             text-align: center;
             font-size : 36px;
             font-weight: bolder;
+
+            margin-top : 2%;
+
         }
 
         .fish_sizePTag {
             text-align: center;
             font-size : 48px;
-            margin-top : 3%;
+            margin-top : 1%;
+            margin-bottom : -3%;
+        }
+
+        .sampleImageDiv {
+            width : 100%;
+            height : 533px;
+
+            display : flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sampleImageDiv img {
+            width : 80%;;
+            height : 465px;
+
+            border : 3px solid black;
+
+            border-radius: 50px;;
         }
 
         .brp {
@@ -217,7 +251,7 @@
     .loadingDiv {
         position: absolute;
         width : 100%;
-        height: 74vh;
+        height: 78vh;
         background-color: black;
         opacity: 0.9;
         display : none;

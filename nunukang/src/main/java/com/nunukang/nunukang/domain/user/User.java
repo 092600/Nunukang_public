@@ -6,8 +6,6 @@ import javax.persistence.*;
 
 import com.nunukang.nunukang.domain.alert.Alert;
 import com.nunukang.nunukang.domain.comment.Comment;
-import com.nunukang.nunukang.domain.fish.Fish;
-import com.nunukang.nunukang.domain.fishingSpot.FishingSpot;
 import com.nunukang.nunukang.domain.post.Post;
 import com.nunukang.nunukang.domain.user.profile.Profile;
 
@@ -24,8 +22,13 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String email;
+    
+    @Column(nullable = false)
     private String password;
 
 
