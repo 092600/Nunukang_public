@@ -1,0 +1,31 @@
+{
+    "os": "Linux-5.4.144+-x86_64-with-Ubuntu-18.04-bionic",
+    "python": "3.7.13",
+    "heartbeatAt": "2022-04-26T23:58:31.119719",
+    "startedAt": "2022-04-26T23:58:27.912104",
+    "docker": null,
+    "gpu": "Tesla P100-PCIE-16GB",
+    "gpu_count": 1,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [
+        "--data",
+        "data/fish_sample_1000.yaml",
+        "--weights",
+        "yolov5m.pt",
+        "--epochs",
+        "100"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/ultralytics/yolov5",
+        "commit": "b53917de8d204be075d82b1392562aacb397fe64"
+    },
+    "email": null,
+    "root": "/content/yolov5",
+    "host": "c1729c6e5998",
+    "username": "root",
+    "executable": "/usr/bin/python3"
+}
