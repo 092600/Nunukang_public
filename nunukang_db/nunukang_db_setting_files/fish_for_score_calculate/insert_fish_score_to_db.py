@@ -1,16 +1,13 @@
 
 import sys
 import os
+import pymysql
 
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
-import pymysql
-
-from config.config import DB_Config as db
+from config import DB_Config as db_config
 
 
-
-db_config = db()
 
 conn = pymysql.connect(host=db_config.host,
                              user=db_config.user,
@@ -29,7 +26,7 @@ rock_bream_cnt = 0
 
 
 try :
-    with open("nunukang_db/nunukang_db_setting_files/fish_for_score_calculate/csv/fish_score.csv", "r", encoding="utf-8") as f:
+    with open("/Users/sim/github/Nunukang_public/nunukang_db/nunukang_db_setting_files/fish_for_score_calculate/csv/fish_score.csv", "r", encoding="utf-8") as f:
         lines = f.readlines()
 
         for line in lines:

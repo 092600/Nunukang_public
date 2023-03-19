@@ -76,6 +76,21 @@ function imgZoomDown(){
 }
 
 
-function deleteComment(comment_id){
-    alert(comment_id);
+function deleteComment(post_id, comment_id){
+    $.ajax({
+        url : '/api/v4/community/post/'+post_id+"/comment/"+comment_id,
+        type:'DELETE',
+        success:function(result){
+            console.log(result);
+            if (result){
+                alert("댓글이 삭제되었습니다.");
+                location.reload();
+            } else {
+                alert("다시 한번 시도해주세요.");
+            }
+        },
+        error:function(err){
+            alert("다시 한번 시도해주세요.");
+        }
+    });
 }

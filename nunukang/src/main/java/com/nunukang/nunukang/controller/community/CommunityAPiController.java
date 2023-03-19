@@ -66,6 +66,13 @@ public class CommunityAPiController {
     }
 
 
+    @DeleteMapping("/post/{post_id}/comment/{comment_id}")
+    public boolean saveComment(@PathVariable("comment_id") Long commentId) {
+
+        return commentService.deleteComment(commentId);
+    }
+
+
     @PatchMapping("/post/{post_id}/like")
     public boolean likePost(@PathVariable("post_id") Long id, @RequestBody User user) {
 

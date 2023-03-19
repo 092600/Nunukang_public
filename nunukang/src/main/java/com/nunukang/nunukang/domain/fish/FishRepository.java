@@ -22,5 +22,5 @@ public interface FishRepository extends JpaRepository<Fish, Long> {
     
     // Page<Fish> findAllBySpecies(FishSpecies species species, Pageable pageable);
 
-    Page<Fish> findBySpecies(FishSpecies species, Pageable pageable);
+    Page<Fish> findBySpeciesOrderByFishSizeDesc(FishSpecies species, Pageable pageable);
 }

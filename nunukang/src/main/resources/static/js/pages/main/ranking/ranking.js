@@ -2,6 +2,7 @@ var fishRankList = [];
 
 var totalPage;
 var rank = 0;
+var cnt = 1;
 $(document).ready(function(){
     var species = $("#rankingSelectTag").val();
     
@@ -46,9 +47,7 @@ $(document).ready(function(){
 
 function rankCountP5(){
     var species = $("#rankingSelectTag").val();
-
-    const cnt = 1;
-
+    
     if (cnt < totalPage) {
         $.ajax({
             url: "/api/v4/fish/ranking?species="+species+"&cnt="+cnt,
@@ -56,14 +55,14 @@ function rankCountP5(){
             cache: false,
             async: false,
             success: function (result) {
-                console.log(result);
-            
                 
                 if (result != "[]"){
                     $(".rankingContentInnerButton").remove();
                     result.content.forEach(appendDiv);
+
+                    if (cnt != totalPage - 1)
                     $("#rankingContentInnerDiv").append('<button class="rankingContentInnerButton" onclick="rankCountP5()">랭킹 더 보기</button>')
-                }
+                } 
                 
             },
             error: function (err) {
@@ -72,11 +71,14 @@ function rankCountP5(){
         })
     } 
 
+    cnt++;
+
 }
 
 function test(){
     var species = $("#rankingSelectTag").val();
     rank = 0;
+    cnt = 0;
 
     $.ajax({
         url: "/api/v4/fish/ranking?species="+species+"&cnt="+0,

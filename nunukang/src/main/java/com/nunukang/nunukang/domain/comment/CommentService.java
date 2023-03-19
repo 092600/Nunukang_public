@@ -51,4 +51,18 @@ public class CommentService {
         }
         
     }
+
+
+    public boolean deleteComment(Long commentId) {
+        Optional<Comment> comment = commentRepository.findById(commentId);
+
+        if (comment.isPresent()) {
+            commentRepository.delete(comment.get());
+            
+            return true;
+        } else {
+            
+            return false;
+        }
+    }
 }

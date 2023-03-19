@@ -38,7 +38,6 @@ public class FishApiController {
 
     @PostMapping("/picture")
     public Boolean fishPicture(@RequestBody Fish fish) {
-        System.out.println(fish);
        return fishService.saveFish(fish);
     }
 
@@ -67,8 +66,8 @@ public class FishApiController {
         for (Fish f : fishService.getFishRanking(species, pageable)) {
             System.out.println(f.getPictureName());
         }
+        return fishService.getFishRanking(species, pageable);    
 
-        return fishService.getFishRanking(species, pageable);
     }
 
 

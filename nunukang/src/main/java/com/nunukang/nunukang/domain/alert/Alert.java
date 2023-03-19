@@ -20,9 +20,11 @@ public abstract class Alert extends AlertTimeEntity {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "alerting_user_id")
     private User alertingUser;
 
     @ManyToOne
+    @JoinColumn(name = "make_alert_user_id")
     private User makeAlertUser;
 
     private Boolean isRead = false;

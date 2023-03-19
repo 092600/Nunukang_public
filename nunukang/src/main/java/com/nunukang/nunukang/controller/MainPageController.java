@@ -108,7 +108,7 @@ public class MainPageController {
         User sessionUser = nud.getUser();
 
         User user = userService.findById(sessionUser.getId()).get();
-
+        model.addAttribute("user", user);
         model.addAttribute("posts", postService.findAllPostByUser(user));
 
         return "pages/main/community/communityPage";

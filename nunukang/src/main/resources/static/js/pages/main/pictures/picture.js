@@ -6,5 +6,5 @@ function changeImg(e){
 
 
 function goToBeforePage(){
-    window.location.href = "/pictures"
+    window.location.href = "/pictures";
 }

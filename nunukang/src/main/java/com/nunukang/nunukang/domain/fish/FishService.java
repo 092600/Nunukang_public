@@ -75,7 +75,7 @@ public class FishService {
 
 
     public Page<Fish> getFishRanking(FishSpecies Species, Pageable pageable) {
-        return fishRepository.findBySpecies(Species, pageable);
+        return fishRepository.findBySpeciesOrderByFishSizeDesc(Species, pageable);
     }
     
 }

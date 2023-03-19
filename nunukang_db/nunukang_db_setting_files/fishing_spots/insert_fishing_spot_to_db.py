@@ -4,11 +4,10 @@ import pymysql, csv, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 
 
-from config.config import DB_Config as db
+from config import DB_Config as db_config
 
 
 
-db_config = db()
 
 conn = pymysql.connect(host=db_config.host,
                              user=db_config.user,
@@ -19,11 +18,11 @@ cursor = conn.cursor()
 
 cnt = 0
 
-path = "./nunukang_db/nunukang_db_setting_files/fishing_spots/csv"
+path = "nunukang_db_setting_files/fishing_spots/csv"
 spot_list = os.listdir(path)
 
 for loc in spot_list:
-    with open("nunukang_db/nunukang_db_setting_files/fishing_spots/csv/"+loc, "r", encoding="utf-8") as f:
+    with open("nunukang_db_setting_files/fishing_spots/csv/"+loc, "r", encoding="utf-8") as f:
         line =  csv.reader(f)
 
         for spot in line:

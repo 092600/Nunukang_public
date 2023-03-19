@@ -9,11 +9,7 @@ from domain.fish.species import fish_species
 class FishScore:
 
     def __init__(self, species):
-        print(config.user)
-        print(config.password)
-        print(config.db)
-        print(config.port)
-        
+
         self.species = species
         self.db = pymysql.connect(host="localhost", user=str(config.user), password=config.password, db=str(config.db), charset='utf8')
     

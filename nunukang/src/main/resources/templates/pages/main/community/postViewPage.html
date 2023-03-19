@@ -57,7 +57,7 @@
                 <div class="commentOutterDiv">
                     <!-- <div class="commentGapDiv"></div> -->
         
-                    <div class="commentHeaderDiv">
+                    <div class="commentHeaderDiv" th:if="${!#lists.isEmpty(post.comments)}">
                         <div>
                             <p>댓글</p>
                         </div>
@@ -85,12 +85,19 @@
                         <div class="commentCreateButtonDiv">
                             <div>
                                 <button 
-                                th:comment_id="${comment.id}"
-                                 th:onclick="deleteComment(this.getAttribute('comment_id'))">삭제</button>
+                                th:post_id="${post.id}"
+                                th:comment_id="${comment.id}" th:if="${comment.user.id} == ${#authentication.principal.user.id}"
+                                 th:onclick="deleteComment(this.getAttribute('post_id'), this.getAttribute('comment_id'))">삭제</button>
                             </div>
                         </div>
                     </div>
-        
+
+                    <div class="createCommentTextDiv">
+                        <div>
+                            <p>댓글 작성</p>
+                        </div>
+                    </div>
+
                     <div class="commentNullContentDiv">
                         <div class="commentUserInfoDiv">
                             <div>
