@@ -16,6 +16,8 @@
 
 팀 프로젝트 당시의 **버전 1의 기여도는 25% 정도**라고 생각하며 개인적으로 만든 **버전 2의 경우는 모델을 제외한 모든 기능을 직접 구현하였기 때문에 기여도는 90%**라고 생각합니다.
 
+<br>
+
 ### 2-1. 팀 프로젝트 당시 맡은 역할
 
 1. 사용자가 찍은 물고기 사진을 저장하고 딥러닝 모델을 사용하여 얻은 어종 및 길이 정보를 사용자에게 보여주는 **메인 서비스 로직 작성**
@@ -26,11 +28,15 @@
 
 팀 프로젝트로 개발한 버전 1의 경우, 위의 메인 서비스 로직 및 여러 기능 개발을 담당하였습니다. 
 
+<br>
+
 ### 2-2. 아쉬웠던 점
 
 1. **불필요하고 복잡하게 작성한 코드**
 2. 유저간의 소통을 위한 **커뮤니티 기능의 부재**
 3. 메인 서비스의 **딥러닝 모델 실행 시간**
+
+<br>
 
 ### 2-2. 개인 프로젝트 성과(개선사항 및 추가 기능)
 
@@ -52,21 +58,23 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 
 ---
 
+<br>
+
 ## 3. 기능 소개
 
 ### 3-1 . 사진 촬영 페이지
 
-- 1. 사진 찍기 페이지
+1. 사진 찍기 페이지
+
+<img src="./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/1.png" width = 300>
     
-    ![1](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/1.png)
+2. 사진 찍은 후 이름 입력
+
+<img src="./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/2.png" width = 300>
     
-- 2. 사진 찍은 후 이름 입력
-    
-    ![2](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/1.png)
-    
-- 크기 확인하기
-    
-    ![3](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/3.gif)
+3. 크기 확인하기
+ 
+<img src="./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/3.gif" width = 300>\
     
 
 1. 물고기 사진과 담배값을 나란히 놓은 후 사진을 찍고 “물고기 종 및 크기 확인하기” 버튼을 누르면 Flask API 서버로 유저 정보 및 찍은 사진을 전송합니다.
@@ -75,12 +83,17 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 
 ---
 
+<br>
+<br>
+
 ### 3-2. 랭킹 페이지 & 나의 어장 페이지
 
 - 랭킹페이지
-    ![랭킹페이지.gif](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EB%9E%AD%ED%82%B9%ED%8E%98%EC%9D%B4%EC%A7%80.gif)
+
+<img src="./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EB%9E%AD%ED%82%B9%ED%8E%98%EC%9D%B4%EC%A7%80.gif" width = 300>\
+
     
-    
+<br>
 
 - 랭킹 페이지 소개
 1. 랭킹 페이지에 접속하면 데이터베이스에 저장된 참돔 데이터를 페이징하여 화면에 표시합니다. 더 가져올 랭킹 데이터가 있다면 "랭킹 더 보기" 버튼을 누를 수 있습니다.
@@ -89,8 +102,11 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 
 ---
 
+<br>
+
 - 나의 어장 페이지
-    ![나의어장](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EB%82%98%EC%9D%98%20%EC%96%B4%EC%9E%A5.gif)
+
+<img src="./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EB%82%98%EC%9D%98%20%EC%96%B4%EC%9E%A5.gif" width = 300>\
     
     
 
@@ -101,10 +117,15 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 
 ---
 
+<br>
+
+
 ### 3-3. 낚시터 정보 페이지
 
 - 낚시터 페이지
-    ![낚시터](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EB%82%9A%EC%8B%9C%ED%84%B0.gif)
+
+<img src="./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EB%82%9A%EC%8B%9C%ED%84%B0.gif" width = 300>\
+    
     
 
 - 낚시터 기능 소개
@@ -119,7 +140,9 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ### 3-4. 커뮤니티 페이지
 
 - 글 쓰기
-    ![글작성.gif](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B8%80%EC%9E%91%EC%84%B1.gif)
+
+<img src="./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B8%80%EC%9E%91%EC%84%B1.gif" width = 300>\
+    
     
     
 - 글 쓰기 기능 소개
@@ -129,7 +152,8 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ---
 
 - 글 확인 및 댓글 작성/삭제
-    ![글 확인 및 댓글 작성:삭제.gif](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B8%80%20%ED%99%95%EC%9D%B8%20%EB%B0%8F%20%EB%8C%93%EA%B8%80%20%EC%9E%91%EC%84%B1_%EC%82%AD%EC%A0%9C.gif)
+
+<img src="./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B8%80%20%ED%99%95%EC%9D%B8%20%EB%B0%8F%20%EB%8C%93%EA%B8%80%20%EC%9E%91%EC%84%B1_%EC%82%AD%EC%A0%9C.gif" width = 300>\
     
 
 - 글 확인 기능 소개
@@ -143,7 +167,8 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ---
 
 - 글 좋아요 및 글 작성 유저 페이지(팔로우/팔로우 취소)
-    ![좋아요 및 글 작성 유저페이지.gif](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A2%8B%EC%95%84%EC%9A%94%20%EB%B0%8F%20%EA%B8%80%20%EC%9E%91%EC%84%B1%20%EC%9C%A0%EC%A0%80%ED%8E%98%EC%9D%B4%EC%A7%80.gif)
+
+<img src="./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A2%8B%EC%95%84%EC%9A%94%20%EB%B0%8F%20%EA%B8%80%20%EC%9E%91%EC%84%B1%20%EC%9C%A0%EC%A0%80%ED%8E%98%EC%9D%B4%EC%A7%80.gif" width = 300>\
     
     
 - 글 좋아요 기능 소개
@@ -162,7 +187,8 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ### 3-5. 마이페이지
 
 - 작성 게시물 모두 보기 및 알림 확인
-    ![알림 및 내 작성글.gif](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%95%8C%EB%A6%BC%20%EB%B0%8F%20%EB%82%B4%20%EC%9E%91%EC%84%B1%EA%B8%80.gif)
+
+<img src="./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%95%8C%EB%A6%BC%20%EB%B0%8F%20%EB%82%B4%20%EC%9E%91%EC%84%B1%EA%B8%80.gif" width = 300>\
     
     
 
@@ -182,9 +208,10 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ---
 
 - 프로필/배경 사진 및 자기소개 글 변경
-   ![유저 프로필 변경.gif](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%9C%A0%EC%A0%80%20%ED%94%84%EB%A1%9C%ED%95%84%20%EB%B3%80%EA%B2%BD.gif)
-    
-    
+
+<img src="./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%9C%A0%EC%A0%80%20%ED%94%84%EB%A1%9C%ED%95%84%20%EB%B3%80%EA%B2%BD.gif" width = 300>\
+
+
 - 프로필/배경 사진 및 자기소개 글 변경
     1. 회원가입 시 기본으로 설정되는 유저의 프로필 이미지와 배경 이미지 그리고 자기소개 글을 변경할 수 있습니다.
     1. 프로필 이미지와 자기소개 글은 유저 상세 페이지에서 확인할 수 있으며, 자기소개 글은 유저 이름 오른쪽의 버튼을 통해 접고 펼칠 수 있습니다.
@@ -192,7 +219,8 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ---
 
 - 내 팔로잉/팔로워 확인하기
-    ![팔로우 팔로워 확인.gif](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%ED%8C%94%EB%A1%9C%EC%9A%B0%20%ED%8C%94%EB%A1%9C%EC%9B%8C%20%ED%99%95%EC%9D%B8.gif)
+
+<img src="./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%ED%8C%94%EB%A1%9C%EC%9A%B0%20%ED%8C%94%EB%A1%9C%EC%9B%8C%20%ED%99%95%EC%9D%B8.gif" width = 300>\
     
 
 - 팔로워/팔로워 확인하기
@@ -206,4 +234,5 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 
 ## 4. ERD
 
-![nunukang_erd.png](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/nunukang_erd.png)
+<img src="./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/nunukang_erd.png" width = 1000>\
+
