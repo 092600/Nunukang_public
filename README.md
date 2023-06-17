@@ -1,4 +1,4 @@
-![스크린샷 2023-03-20 14.54.23.png](./이미지/스크린샷)
+![누누강 로고.png](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EB%88%84%EB%88%84%EA%B0%95%20%EB%A1%9C%EA%B3%A0.png)
 
 # 누누강 ( 누가누가 강태공)
 
@@ -58,15 +58,15 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 
 - 1. 사진 찍기 페이지
     
-    ![1.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b4f9b3e9-4efd-4236-9fcc-5b1712c2a5dd/1.png)
+    ![1](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/1.png)
     
 - 2. 사진 찍은 후 이름 입력
     
-    ![2.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/15b971bf-94e8-433d-8fdf-6ffc7fa9fafe/2.png)
+    ![2](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/1.png)
     
 - 크기 확인하기
     
-    ![3.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ec2ac112-e9f8-4fec-9271-29a116b46649/3.gif)
+    ![3](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/3.gif)
     
 
 1. 물고기 사진과 담배값을 나란히 놓은 후 사진을 찍고 “물고기 종 및 크기 확인하기” 버튼을 누르면 Flask API 서버로 유저 정보 및 찍은 사진을 전송합니다.
@@ -78,8 +78,8 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ### 3-2. 랭킹 페이지 & 나의 어장 페이지
 
 - 랭킹페이지
+    ![랭킹페이지.gif](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EB%9E%AD%ED%82%B9%ED%8E%98%EC%9D%B4%EC%A7%80.gif)
     
-    ![랭킹페이지.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6c13987e-e182-4454-8ef6-4915b1463574/%E1%84%85%E1%85%A2%E1%86%BC%E1%84%8F%E1%85%B5%E1%86%BC%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5.gif)
     
 
 - 랭킹 페이지 소개
@@ -90,8 +90,8 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ---
 
 - 나의 어장 페이지
+    ![나의어장](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EB%82%98%EC%9D%98%20%EC%96%B4%EC%9E%A5.gif)
     
-    ![Mar-18-2023 16-03-23.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d5abb28d-0b0f-4c92-bc74-f5e341042528/Mar-18-2023_16-03-23.gif)
     
 
 - 나의 어장 페이지 소개
@@ -104,8 +104,7 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ### 3-3. 낚시터 정보 페이지
 
 - 낚시터 페이지
-    
-    ![Mar-18-2023 15-41-45.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a2c91f8d-20e9-4614-8fa7-9f2f46eb4265/Mar-18-2023_15-41-45.gif)
+    ![낚시터](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EB%82%9A%EC%8B%9C%ED%84%B0.gif)
     
 
 - 낚시터 기능 소개
@@ -120,8 +119,8 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ### 3-4. 커뮤니티 페이지
 
 - 글 쓰기
+    ![글작성.gif](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B8%80%EC%9E%91%EC%84%B1.gif)
     
-    ![글작성.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/80dc8ffc-0011-4ed5-98f8-94743a649a81/%E1%84%80%E1%85%B3%E1%86%AF%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC.gif)
     
 - 글 쓰기 기능 소개
     1. 유저는 글 제목과 글 내용을 작성할 수 있으며, 최대 4개까지의 이미지를 첨부할 수 있습니다. 또한, 자신을 팔로우하고 있는 팔로워들을 글에 태그할 수 있습니다.
@@ -130,8 +129,7 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ---
 
 - 글 확인 및 댓글 작성/삭제
-    
-    ![글 확인 및 댓글 작성:삭제.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0c7066b2-131f-4f11-9c63-ea3e9cf931a7/%E1%84%80%E1%85%B3%E1%86%AF_%E1%84%92%E1%85%AA%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%AB_%E1%84%86%E1%85%B5%E1%86%BE_%E1%84%83%E1%85%A2%E1%86%BA%E1%84%80%E1%85%B3%E1%86%AF_%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%E1%84%89%E1%85%A1%E1%86%A8%E1%84%8C%E1%85%A6.gif)
+    ![글 확인 및 댓글 작성:삭제.gif](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EA%B8%80%20%ED%99%95%EC%9D%B8%20%EB%B0%8F%20%EB%8C%93%EA%B8%80%20%EC%9E%91%EC%84%B1_%EC%82%AD%EC%A0%9C.gif)
     
 
 - 글 확인 기능 소개
@@ -145,8 +143,8 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ---
 
 - 글 좋아요 및 글 작성 유저 페이지(팔로우/팔로우 취소)
+    ![좋아요 및 글 작성 유저페이지.gif](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%A2%8B%EC%95%84%EC%9A%94%20%EB%B0%8F%20%EA%B8%80%20%EC%9E%91%EC%84%B1%20%EC%9C%A0%EC%A0%80%ED%8E%98%EC%9D%B4%EC%A7%80.gif)
     
-    ![좋아요 및 글 작성 유저페이지.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9b986a60-32f5-411a-8db0-91b0539b4fb8/%E1%84%8C%E1%85%A9%E1%87%82%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%AD_%E1%84%86%E1%85%B5%E1%86%BE_%E1%84%80%E1%85%B3%E1%86%AF_%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC_%E1%84%8B%E1%85%B2%E1%84%8C%E1%85%A5%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5.gif)
     
 - 글 좋아요 기능 소개
     1. 커뮤니티 화면에서 하트 버튼을 눌러 해당 글에 좋아요를 표시할 수 있습니다.
@@ -164,8 +162,8 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ### 3-5. 마이페이지
 
 - 작성 게시물 모두 보기 및 알림 확인
+    ![알림 및 내 작성글.gif](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%95%8C%EB%A6%BC%20%EB%B0%8F%20%EB%82%B4%20%EC%9E%91%EC%84%B1%EA%B8%80.gif)
     
-    ![알림 및 내 작성글.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6b75a42e-923d-4382-aa76-8360fc01cb60/%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%85%E1%85%B5%E1%86%B7_%E1%84%86%E1%85%B5%E1%86%BE_%E1%84%82%E1%85%A2_%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC%E1%84%80%E1%85%B3%E1%86%AF.gif)
     
 
 - 작성 글 모두 보기
@@ -184,8 +182,8 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ---
 
 - 프로필/배경 사진 및 자기소개 글 변경
+   ![유저 프로필 변경.gif](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%EC%9C%A0%EC%A0%80%20%ED%94%84%EB%A1%9C%ED%95%84%20%EB%B3%80%EA%B2%BD.gif)
     
-    ![유저 프로필 변경.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/241b1a63-6bd2-40e6-9365-046adcdf2ee1/%E1%84%8B%E1%85%B2%E1%84%8C%E1%85%A5_%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%91%E1%85%B5%E1%86%AF_%E1%84%87%E1%85%A7%E1%86%AB%E1%84%80%E1%85%A7%E1%86%BC.gif)
     
 - 프로필/배경 사진 및 자기소개 글 변경
     1. 회원가입 시 기본으로 설정되는 유저의 프로필 이미지와 배경 이미지 그리고 자기소개 글을 변경할 수 있습니다.
@@ -194,8 +192,7 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 ---
 
 - 내 팔로잉/팔로워 확인하기
-    
-    ![팔로우 팔로워 확인.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/10ae7492-8b7e-4bf4-9aad-78a105e0112b/%E1%84%91%E1%85%A1%E1%86%AF%E1%84%85%E1%85%A9%E1%84%8B%E1%85%AE_%E1%84%91%E1%85%A1%E1%86%AF%E1%84%85%E1%85%A9%E1%84%8B%E1%85%AF_%E1%84%92%E1%85%AA%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%AB.gif)
+    ![팔로우 팔로워 확인.gif](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/%ED%8C%94%EB%A1%9C%EC%9A%B0%20%ED%8C%94%EB%A1%9C%EC%9B%8C%20%ED%99%95%EC%9D%B8.gif)
     
 
 - 팔로워/팔로워 확인하기
@@ -209,6 +206,4 @@ Flask로 API 서버에서 PyTorch로 딥러닝 모델을 실행하여 모델 실
 
 ## 4. ERD
 
-![nunukang_erd.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0eee4b2c-d138-44da-a120-976afb0ca34e/nunukang_erd.png)
-
-[◀ 이전 페이지 돌아가기](https://www.notion.so/3349642bb3584282a6da2ac69d036498?pvs=21)
+![nunukang_erd.png](./READMD%20%EC%9D%B4%EB%AF%B8%EC%A7%80/nunukang_erd.png)
